@@ -252,7 +252,7 @@ a:focus {
     padding-top: 100px;
 }
 
-.download-section {
+.teaching-section {
     width: 100%;
     padding: 50px 0;
     color: #fff;
@@ -264,6 +264,20 @@ a:focus {
     -o-background-size: cover;
 }
 
+.research-section {
+  width: 100%;
+  padding: 50px 0;
+  color: #fff;
+  background: rgba(0,0,0,1);
+  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(60,60,60,1) 50%, rgba(0,0,0,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(50%, rgba(60,60,60,1)), color-stop(100%, rgba(0,0,0,1)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(60,60,60,1) 50%, rgba(0,0,0,1) 100%);
+  background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(60,60,60,1) 50%, rgba(0,0,0,1) 100%);
+  background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(60,60,60,1) 50%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(60,60,60,1) 50%, rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+}
+
 #map {
     width: 100%;
     height: 200px;
@@ -272,10 +286,11 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 175px;
+        padding-bottom: 75px;
     }
 
-    .download-section {
+    .teaching-section, .research-section {
         padding: 100px 0;
     }
 
