@@ -32,6 +32,7 @@
         "simple-line-icons": "^2.4.1"
     },
     "devDependencies": {
+        "@fortawesome/fontawesome-free": "^5.9.0",
         "browser-sync": "2.23.6",
         "gulp": "^3.9.1",
         "gulp-clean-css": "3.9.2",
