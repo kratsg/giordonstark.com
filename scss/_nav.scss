@@ -28,6 +28,12 @@
         max-height: 10rem;
         border: 0.5rem solid fade-out($white, 0.8);
       }
+
+      &.active, &:hover, &:active, &:focus {
+        .img-profile {
+          border-color: fade-out($white, 0.4);
+        }
+      }
     }
     .navbar-collapse {
       display: flex;

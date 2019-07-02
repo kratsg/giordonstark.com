@@ -85,6 +85,9 @@ h2 {
     max-height: 10rem;
     border: 0.5rem solid rgba(255, 255, 255, 0.2);
   }
+  #sideNav .navbar-brand.active .img-profile, #sideNav .navbar-brand:hover .img-profile, #sideNav .navbar-brand:active .img-profile, #sideNav .navbar-brand:focus .img-profile {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
   #sideNav .navbar-collapse {
     display: flex;
     align-items: flex-start;
