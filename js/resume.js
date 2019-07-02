@@ -4,12 +4,16 @@
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      var href = this.hash;
+      var target = $(href);
+      target = target.length ? target : $('[name=' + href.slice(1) + ']');
       if (target.length) {
         $('html, body').animate({
           scrollTop: (target.offset().top)
-        }, 1000, "easeInOutExpo");
+        }, 1000, "easeInOutExpo", function(){
+          if(href == '#page-top') href = '';
+          history.replaceState({}, "", href);
+        });
         return false;
       }
     }
@@ -23,6 +27,11 @@
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#sideNav'
+  });
+
+  // https://stackoverflow.com/a/48306722
+  $(window).on('activate.bs.scrollspy', function(e) {
+    history.replaceState({}, "", $('.nav-item .active').attr("href"));
   });
 
 })(jQuery); // End of use strict
