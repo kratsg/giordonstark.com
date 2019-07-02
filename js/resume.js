@@ -2,7 +2,7 @@
   "use strict"; // Start of use strict
 
   // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var href = this.hash;
       var target = $(href);
@@ -11,10 +11,9 @@
         $('html, body').animate({
           scrollTop: (target.offset().top)
         }, 1000, "easeInOutExpo", function(){
-          if(href == '#page-top') href = '';
           history.replaceState({}, "", href);
         });
-        return false;
+        e.preventDefault();
       }
     }
   });
@@ -31,7 +30,9 @@
 
   // https://stackoverflow.com/a/48306722
   $(window).on('activate.bs.scrollspy', function(e) {
-    history.replaceState({}, "", $('.nav-item .active').attr("href"));
+    if(!$('html, body').is(':animated')){
+      history.replaceState({}, "", $('.nav-item .active').attr("href"));
+    }
   });
 
 })(jQuery); // End of use strict
