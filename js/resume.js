@@ -25,7 +25,8 @@
 
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
-    target: '#sideNav'
+    target: '#sideNav',
+    offset: 10
   });
 
   // https://stackoverflow.com/a/48306722
