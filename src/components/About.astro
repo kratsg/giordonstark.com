@@ -46,13 +46,22 @@ const { links: socialLinks } = yaml.load(
         </p>
       </div>
 
-      <!-- Portrait trace -->
-      <img
-        src="/img/giordon_trace.svg"
-        alt="Portrait of Giordon Stark"
-        class="hidden sm:block shrink-0 w-40 md:w-56 lg:w-64 select-none pointer-events-none"
-        aria-hidden="false"
-      />
+      <!-- Portrait trace + credit -->
+      <div class="hidden sm:flex flex-col items-end gap-1 shrink-0">
+        <img
+          src="/img/giordon_trace.svg"
+          alt="Portrait of Giordon Stark"
+          class="w-40 md:w-56 lg:w-64 select-none pointer-events-none"
+        />
+        <a
+          href="https://www.instagram.com/garrett.nichols.37"
+          target="_blank"
+          rel="noopener"
+          class="text-[10px] text-brand-muted/60 hover:text-brand-muted transition-colors duration-200 tracking-wide"
+        >
+          art by @garrett.nichols.37
+        </a>
+      </div>
     </div>
 
     <!-- Bio -->
