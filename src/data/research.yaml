@@ -1,0 +1,123 @@
+categories:
+  - name: Physics Searches
+    projects:
+      - title: Electroweak SUSY Statistical Combination
+        role: Lead analyst
+        subtitle: SUSY Run-2 Summaries Convener (2020-2022)
+        images: []
+        description: >
+          Led the first large-scale statistical combination of 14 electroweak
+          SUSY searches at ATLAS, extending mass exclusion limits by up to
+          100 GeV. Appointed first convener of the new "Run 2 Summaries"
+          subgroup to coordinate harmonization across analysis teams. As part
+          of this work, developed the technical software needed for likelihood
+          serialization and inference, open-source particle-level analysis
+          framework, and analysis preservation efforts.
+        timeline:
+          - year: 2018
+            label: Joined Combinations Task Force; groundwork for statistical models
+          - year: 2020
+            label: Appointed first Run-2 Summaries convener
+          - year: 2022
+            label: 14-analysis statistical combination published
+        links:
+          - label: INSPIRE
+            url: https://inspirehep.net/authors/1319078
+
+      - title: Strong SUSY Searches
+        role: Lead analyst (thesis)
+        subtitle: University of Chicago, 2015-2018
+        images: []
+        description: >
+          Pioneered optimized selections for gluino/squark searches via strong
+          production with multiple heavy-flavor and large-radius jets. Set the
+          strongest limits on gluino and stop squark masses multiple times over.
+        timeline:
+          - year: 2015
+            label: ATLAS-CONF-2015-067
+            url: https://cds.cern.ch/record/2114839
+          - year: 2016
+            label: ATLAS-CONF-2016-052
+            url: https://cds.cern.ch/record/2206149
+          - year: 2017
+            label: Published SUSY-2016-10
+          - year: 2018
+            label: PhD Thesis (Springer Thesis Award)
+            url: https://kratsg.github.io/thesis/
+        links:
+          - label: Thesis
+            url: https://kratsg.github.io/thesis/
+            icon: book
+          - label: Springer
+            url: https://books.google.com/books?vid=ISBN978-3-030-34548-8
+            icon: book
+
+      - title: EWK SUSY Radiative Decays
+        role: Analysis contact
+        subtitle: 2024-present
+        images: []
+        description: >
+          Current analysis targeting new physics signatures with radiative
+          decays in electroweak supersymmetry.
+
+      - title: Collinear W-boson Radiation
+        role: Analysis contact
+        subtitle: 2019-2024
+        images: []
+        description: >
+          Cross-section measurement of collinear W-boson radiation in the
+          ATLAS detector.
+
+      - title: pMSSM Scans & RPV-RPC Reinterpretations
+        role: Coordinator
+        subtitle: 2020-2022
+        images: []
+        description: >
+          Coordinated analysis contacts for pMSSM parameter scans and
+          R-parity violating/conserving reinterpretations as Run 2 Summaries
+          convener.
+
+  - name: Detector Instrumentation
+    projects:
+      - title: ATLAS ITk Pixel Module Testing
+        role: Lead, infrastructure builder
+        subtitle: UCSC SCIPP, 2018-present
+        images: []
+        description: >
+          Built UCSC into one of the leading U.S. institutions for digital
+          pixel module QC/QA for the ATLAS Inner Tracker upgrade. Designed and
+          built the full test bench infrastructure: four testing stands (alpha,
+          beta, delta, epsilon), 9 low-voltage power supplies, 8-channel
+          high-voltage supply, 2 multimeters, 2 chillers, 4 DAQ PCs, 1 server,
+          a dry air cabinet, and 14 Raspberry Pis.
+        details:
+          - "Software stack: Ansible orchestration, Prometheus metrics, Mosquitto MQTT, InfluxDB + Telegraf, Grafana dashboards, supervisord/multivisor"
+          - "Custom PCB for per-stand interlock system"
+          - "TUI/GUI for slow control, monitoring, and visual inspection"
+          - "All electrical QC tests except visual inspection and radiation scanning can be done remotely"
+          - "Module and stand status monitored through Grafana dashboards mounted on lab walls"
+        links:
+          - label: itkdb
+            url: https://pypi.org/project/itkdb/
+            icon: code
+
+      - title: gFEX Trigger Electronics
+        role: Key contributor
+        subtitle: University of Chicago, 2014-2018
+        images: []
+        description: >
+          Critical contributions to design and prototyping of the Global
+          Feature Extractor (gFEX), a high-speed trigger electronics system
+          for the ATLAS Phase 1 upgrade. Developed firmware, ML algorithms,
+          and monitoring systems. Mentored undergraduates on firmware, ML
+          algorithms, and monitoring. Successfully installed and commissioned
+          inside the ATLAS detector in October 2021.
+        timeline:
+          - year: 2014
+            label: Joined gFEX team
+          - year: 2017
+            label: Final Design Report published
+          - year: 2018
+            label: Mentored undergrads on firmware/ML/monitoring
+          - year: 2021
+            label: Installed and commissioned in ATLAS

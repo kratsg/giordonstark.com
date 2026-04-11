@@ -1,0 +1,119 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'node:fs';
+
+interface Role {
+  title: string;
+  role: string;
+  period: string;
+  description?: string;
+}
+interface ARCRole {
+  title: string;
+  organization: string;
+  period: string;
+}
+interface Outreach {
+  title: string;
+  period: string;
+  url?: string;
+  description?: string;
+}
+interface ServiceData {
+  roles: Role[];
+  american_red_cross: ARCRole[];
+  outreach: Outreach[];
+}
+
+const serviceData = yaml.load(
+  readFileSync('src/data/service.yaml', 'utf8')
+) as ServiceData;
+---
+
+<section id="service" class="relative section-fade bg-gray-50/60" style="z-index: 1;">
+  <div class="max-w-5xl mx-auto px-6 py-20">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-12">
+      <span class="h-px flex-1 max-w-[3rem] bg-brand-accent"></span>
+      <h2 class="font-display font-bold text-2xl text-brand-text tracking-tight">
+        Service &amp; Leadership
+      </h2>
+    </div>
+
+    <!-- Academic / community roles -->
+    <div class="mb-14">
+      <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+        <span>Academic &amp; Community Roles</span>
+        <span class="h-px flex-1 bg-gray-200"></span>
+      </h3>
+      <div class="divide-y divide-gray-100">
+        {serviceData.roles.map((item) => (
+          <div class="py-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+            <div class="flex-1">
+              <p class="font-medium text-sm text-brand-text leading-snug">{item.title}</p>
+              <p class="text-xs text-brand-accent font-medium mt-0.5">{item.role}</p>
+              {item.description && (
+                <p class="text-xs text-brand-muted mt-1.5 leading-relaxed max-w-[60ch]">{item.description}</p>
+              )}
+            </div>
+            <span class="shrink-0 text-xs text-brand-muted tabular-nums bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-full self-start">
+              {item.period}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- American Red Cross -->
+    <div class="mb-14">
+      <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+        <span>American Red Cross</span>
+        <span class="h-px flex-1 bg-gray-200"></span>
+      </h3>
+      <div class="divide-y divide-gray-100">
+        {serviceData.american_red_cross.map((item) => (
+          <div class="py-3 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+            <div>
+              <span class="font-medium text-sm text-brand-text">{item.title}</span>
+              <span class="text-sm text-brand-muted"> · {item.organization}</span>
+            </div>
+            <span class="text-xs text-brand-muted shrink-0">{item.period}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Outreach -->
+    <div>
+      <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+        <span>Outreach &amp; Advocacy</span>
+        <span class="h-px flex-1 bg-gray-200"></span>
+      </h3>
+      <div class="divide-y divide-gray-100">
+        {serviceData.outreach.map((item) => (
+          <div class="py-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+            <div class="flex-1">
+              {item.url ? (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener"
+                  class="font-medium text-sm text-brand-text hover:text-brand-accent transition-colors duration-200"
+                >
+                  {item.title}
+                </a>
+              ) : (
+                <p class="font-medium text-sm text-brand-text">{item.title}</p>
+              )}
+              {item.description && (
+                <p class="text-xs text-brand-muted mt-1 leading-relaxed max-w-[60ch]">{item.description}</p>
+              )}
+            </div>
+            <span class="shrink-0 text-xs text-brand-muted tabular-nums self-start">{item.period}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

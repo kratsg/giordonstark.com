@@ -1,0 +1,50 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'node:fs';
+
+interface Award {
+  name: string;
+  date: string;
+  description?: string;
+  citation?: string;
+}
+interface AwardsData {
+  awards: Award[];
+}
+
+const { awards } = yaml.load(
+  readFileSync('src/data/awards.yaml', 'utf8')
+) as AwardsData;
+---
+
+<section id="awards" class="relative section-fade bg-brand-bg" style="z-index: 1;">
+  <div class="max-w-5xl mx-auto px-6 py-20">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-12">
+      <span class="h-px flex-1 max-w-[3rem] bg-brand-accent"></span>
+      <h2 class="font-display font-bold text-2xl text-brand-text tracking-tight">
+        Awards
+      </h2>
+    </div>
+
+    <div class="divide-y divide-gray-100">
+      {awards.map((award) => (
+        <div class="group py-5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 hover:bg-gray-50/60 -mx-3 px-3 rounded-lg transition-colors duration-200">
+          <div class="flex-1">
+            <p class="font-medium text-brand-text leading-snug group-hover:text-brand-text/90 transition-colors duration-200">
+              {award.name}
+            </p>
+            {(award.description || award.citation) && (
+              <p class="mt-1.5 text-sm text-brand-muted leading-relaxed max-w-[65ch] italic">
+                {award.citation ?? award.description}
+              </p>
+            )}
+          </div>
+          <span class="shrink-0 text-sm text-brand-muted font-medium tabular-nums">
+            {award.date}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'node:fs';
+import SoftwareCard from './cards/SoftwareCard.astro';
+import type { SoftwareProject } from './cards/SoftwareCard.astro';
+
+interface SoftwareCategory {
+  name: string;
+  projects: SoftwareProject[];
+}
+interface SoftwareData {
+  categories: SoftwareCategory[];
+}
+
+const { categories } = yaml.load(
+  readFileSync('src/data/software.yaml', 'utf8')
+) as SoftwareData;
+---
+
+<section id="software" class="relative section-fade bg-gray-50/60" style="z-index: 1;">
+  <div class="max-w-5xl mx-auto px-6 py-20">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-12">
+      <span class="h-px flex-1 max-w-[3rem] bg-brand-accent"></span>
+      <h2 class="font-display font-bold text-2xl text-brand-text tracking-tight">
+        Software &amp; Open Source
+      </h2>
+    </div>
+
+    {categories.map((category) => (
+      <div class="mb-14 last:mb-0">
+        <!-- Category label -->
+        <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+          <span>{category.name}</span>
+          <span class="h-px flex-1 bg-gray-200"></span>
+        </h3>
+
+        <!-- Cards grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {category.projects.map((project) => (
+            <SoftwareCard project={project} />
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

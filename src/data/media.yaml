@@ -1,0 +1,208 @@
+items:
+  - title: "Python, Particle Physics, and Data Visualization | The Python Exchange January 2026"
+    source: Don't Use This Code
+    description: >
+      Introducing a lightweight, modular Python framework for transparent and
+      efficient likelihood-based statistical modeling in particle physics.
+    url: https://www.youtube.com/watch?v=45_hXIdPc08
+    date: February 2nd, 2026
+    type: video
+
+  - title: "'I don't have a voice in my head': Life with no inner monologue"
+    source: AFP
+    description: >
+      Mel May only realised she was different reading a news article one day.
+      Quote by Giordon Stark within the article.
+    url: https://web.archive.org/web/20250407135016/https://www.france24.com/en/live-news/20250405-i-don-t-have-a-voice-in-my-head-life-with-no-inner-monologue
+    date: April 6th, 2025
+    type: article
+
+  - title: "Spacing out with Particle Physics: Deaf Space Camp"
+    source: CSD Learns / U.S. Space & Rocket Center
+    description: >
+      Collaborated with U.S. Space and Rocket Center, NASA, and CSD Learns to
+      facilitate Space Camp Unlimited for DHH middle and high school students
+      as a STEM role model.
+    url: https://atomichands.com/events/space-camp-unlimited/
+    date: April 2024
+    type: event
+
+  - title: "Recycling Particle Physics Results | The Python Exchange August 2023"
+    source: Don't Use This Code
+    description: >
+      MaPyDe stands for MadGraph-Pythia-Delphes which is a utility that allows
+      one to run all of the various HEP toolings or chain them together and
+      perform a quick analysis with the results.
+    url: https://www.youtube.com/watch?v=YtXvmopQdT0
+    date: August 30th, 2023
+    type: video
+
+  - title: "Postdoctober 2022: Featuring Dr. Xinting Yu and Dr. Giordon Stark"
+    source: UC Santa Cruz - Renee Wall
+    description: >
+      Throughout October 2022, UCSC celebrates postdocs' contributions to and
+      enrichment of our campus with Postdoctoberfest! In the Physical &
+      Biological Sciences Division, we're highlighting the work of Dr. Yu and
+      Dr. Stark.
+    url: https://web.archive.org/web/20240222115720/https://science.ucsc.edu/postdoctober-2022/
+    date: October 19th, 2022
+    type: article
+
+  - title: "The last great mystery of the mind: meet the people who have unusual or non-existent inner voices"
+    source: The Guardian - Sirin Kale
+    description: >
+      Does your internal monologue play out on a television, in an attic, as a
+      bickering Italian couple -- or is it entirely, blissfully silent?
+    url: https://web.archive.org/web/20211025125540/https://www.theguardian.com/science/2021/oct/25/the-last-great-mystery-of-the-mind-meet-the-people-who-have-unusual-or-non-existent-inner-voices
+    date: October 25th, 2021
+    type: article
+
+  - title: "PARTY CALL PHYSICS: when access and physics collide"
+    source: ICPS 2021 - Keynote
+    description: >
+      Keynote presentation at the International Conference of Physics Students
+      2021.
+    url: https://events.iaps.info/event/9/page/5-keynote-speakers
+    date: August 2021
+    type: event
+
+  - title: "Deaf scientists thrive with interpreters and technology"
+    source: Physics Today - Adria Schwarber
+    description: >
+      Though still underrepresented in STEM, deaf and hard-of-hearing scientists
+      are excelling in their fields and developing ways to more seamlessly
+      communicate with their colleagues.
+    url: https://web.archive.org/web/20210723175238/https://physicstoday.scitation.org/do/10.1063/PT.6.4.20210723a/full/
+    date: July 23rd, 2021
+    type: article
+
+  - title: "PSD climate grants foster belonging while socially distanced"
+    source: The University of Chicago - Physical Sciences Division
+    description: >
+      PSD members found creative ways to impact climate in the Division and
+      further values of equity, diversity, and inclusion.
+    url: https://web.archive.org/web/20210415190429/https://physicalsciences.uchicago.edu/news/article/psd-climate-grants-foster-belonging-while-socially-distanced/
+    date: April 13th, 2021
+    type: article
+
+  - title: "ATLAS releases 'full orchestra' of analysis instruments"
+    source: symmetry magazine
+    description: >
+      The ATLAS collaboration has begun to publish likelihood functions,
+      information that will allow researchers to better understand and use their
+      experiment's data in future analyses.
+    url: https://web.archive.org/web/20210115133429/https://www.symmetrymagazine.org/article/atlas-releases-full-orchestra-of-analysis-instruments
+    date: January 14th, 2021
+    type: article
+
+  - title: "My Journey Obtaining a Physics PhD While Deaf"
+    source: RIT WoW Seminar
+    description: >
+      Seminar presentation at Rochester Institute of Technology's WoW (Words of
+      Wisdom) series for Deaf scientists.
+    url: https://www.rit.edu/ntid/deafscientists/wow
+    date: April 2020
+    type: event
+
+  - title: "GitLab CI/CD Tutorial"
+    source: HEP Software Foundation
+    description: >
+      [CC] Fully captioned tutorial for using continuous integration to support
+      and enable physics workflows in high energy physics.
+    url: https://www.youtube.com/watch?v=NxhDGMo9ILM&list=PLWZ1NKCZTdqcnTEx_CkfTP_3uZWcDOgxY
+    date: May 27th, 2020
+    type: video
+
+  - title: "My life as a particle physicist (in American Sign Language)"
+    source: CERN
+    description: >
+      Particle physicist Giordon Stark describes his life as a Deaf physicist
+      working for the ATLAS experiment at CERN.
+    url: https://youtu.be/3sESUT1UO6E
+    date: February 21st, 2020
+    type: video
+
+  - title: "Analysis Preservation Bootcamp"
+    source: IRIS-HEP
+    description: >
+      SCIPPer Giordon Stark was an Instructor at the recent IRIS-HEP analysis
+      preservation hands-on bootcamp.
+    url: https://web.archive.org/web/20200225185628/https://iris-hep.org/2020/02/17/analysis-preservation.html
+    date: February 17th, 2020
+    type: article
+
+  - title: "New open release streamlines interactions with theoretical physicists"
+    source: ATLAS Experiment
+    description: >
+      The ATLAS Collaboration has released the first open likelihoods from an
+      LHC experiment.
+    url: https://web.archive.org/web/20201221150149/https://atlas.cern/updates/news/new-open-likelihoods
+    date: December 12th, 2019
+    type: article
+
+  - title: "A matter of interpretation"
+    source: symmetry magazine
+    description: >
+      Deaf scientist Giordon Stark works to ensure the field of physics research
+      is accessible to all.
+    url: http://web.archive.org/web/20191205000925/https://www.symmetrymagazine.org/article/a-matter-of-interpretation-asl-physics
+    date: December 3rd, 2019
+    type: article
+
+  - title: "Alternate-Universe ASEE"
+    source: ASEE CDEI Distinguished Lecture Series
+    description: >
+      Presentation as part of the ASEE Committee on Diversity, Equity, and
+      Inclusion Distinguished Lecture Series.
+    url: https://diversity.asee.org/deicommittee/wp-content/uploads/sites/2/2020/03/CDEI-Newsletter_Issue12_Fall2019.pdf
+    date: July 2019
+    type: event
+
+  - title: "Particle physics laboratory uses GitLab to connect researchers from across the globe"
+    source: GitLab.com
+    description: >
+      CERN is the European Organization for Nuclear Research. Using highly
+      sophisticated instruments, the organization's physicists and engineers
+      study the fundamental particles that are the building blocks of the
+      universe. How does CERN solve the challenge of finding a tool that can
+      handle thousands of projects and contributors as well as a revolving door
+      of contributors from across the world?
+    url: https://web.archive.org/web/20181019022114/https://about.gitlab.com/customers/cern/
+    date: October 18th, 2018
+    type: article
+
+  - title: "How do the LHC experiments work?"
+    source: CERN
+    description: >
+      Giordon Stark explains how the LHC experiments at CERN work in ASL
+      (American Sign Language).
+    url: https://youtu.be/BaGjAruqFec
+    date: February 17th, 2017
+    type: video
+
+  - title: "TV: Not Quite Dead, But Time to Pull the Plug?"
+    source: Forbes
+    description: >
+      TV sets are going out of fashion. Actually, not quite. But that's what it
+      seems like. You could feign a comparison between Online Shopping and Brick
+      & Mortar stores.
+    url: http://www.forbes.com/sites/quora/2014/11/25/tv-not-quite-dead-but-time-to-pull-the-plug/
+    date: November 25th, 2014
+    type: article
+
+  - title: "The Pros and Cons of Inbox by Gmail"
+    source: Forbes
+    description: >
+      It's reminiscent of a Facebook-style newsfeed that changes the way that I
+      look at email.
+    url: http://www.forbes.com/sites/quora/2014/10/24/the-pros-and-cons-of-inbox-by-gmail/
+    date: November 24th, 2014
+    type: article
+
+  - title: "My Inner Voice as a Deaf Person"
+    source: Thought Catalog
+    description: >
+      If a person is born deaf, which language do they think in?
+    url: http://thoughtcatalog.com/giordon-stark/2014/09/my-inner-voice-as-a-deaf-person
+    date: September 17th, 2014
+    type: article

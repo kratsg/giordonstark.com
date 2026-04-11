@@ -1,0 +1,322 @@
+# Complete teaching data compiled from LaTeX teaching qualifications portfolio
+
+workshops_and_tutorials:
+  # All 43 workshops with Indico URLs
+  - title: "CAMPFIRE: How to do an ATLAS Analysis"
+    role: Instructor
+    date: Jun 2024
+    url: https://indico.cern.ch/event/1360774/
+
+  - title: "ATLAS ITk Week: Tutorial: Access to PDB backup at CERN"
+    role: Instructor
+    date: Apr 2024
+    url: https://indico.cern.ch/event/1395925/
+
+  - title: "pyhf Users and Developers Workshop"
+    role: Organizer & Instructor
+    date: Dec 2023
+    url: https://indico.cern.ch/event/1294577/
+
+  - title: "US-ATLAS Workshop @ SLAC: Systematic Uncertainties"
+    role: Instructor
+    date: Oct 2023
+    url: https://indico.cern.ch/event/1309794/
+
+  - title: "PyHEP: pyhf tutorial and exploration"
+    role: Instructor
+    date: Oct 2023
+    url: https://indico.cern.ch/event/1252095/
+
+  - title: "Reinterpretation Forum: Reduce, Reuse, Reinterpret (mapyde)"
+    role: Instructor
+    date: Aug 2023
+    url: https://conference.ippp.dur.ac.uk/event/1178/
+
+  - title: "CAMPFIRE: How to do an ATLAS Analysis"
+    role: Instructor
+    date: Jul 2023
+    url: https://indico.cern.ch/event/1258921/
+
+  - title: "Reinterpretation Forum: MaPyDe + ATLAS SimpleAnalysis"
+    role: Instructor
+    date: Dec 2022
+    url: https://indico.cern.ch/event/1197680/
+
+  - title: "ATLAS Exotics Workshop: Data (Products) Preservation"
+    role: Instructor
+    date: Sep 2022
+    url: https://indico.cern.ch/event/1147662/
+
+  - title: "DANCE/CoDaS @ Snowmass 2022"
+    role: Instructor
+    date: Jul 2022
+    url: https://indico.cern.ch/event/1151329/
+
+  - title: "ATLAS ITk Week: Using the Production Database API"
+    role: Instructor
+    date: May 2022
+    url: https://indico.cern.ch/event/1149581/
+
+  - title: "US-ATLAS Computing Bootcamp"
+    role: Organizer & Instructor
+    date: Oct 2021
+    url: https://indico.cern.ch/event/1075740/
+
+  - title: "PyHEP: Distributed statistical inference with pyhf"
+    role: Instructor
+    date: Jul 2021
+    url: https://indico.cern.ch/event/1019958/
+
+  - title: "ATLAS Induction Day: Intro to pyhf and hands-on"
+    role: Instructor
+    date: Jul 2021
+    url: https://indico.cern.ch/event/1042811/
+
+  - title: "ATLAS Induction Day: Using GitLab for Analysis"
+    role: Instructor
+    date: Jul 2021
+    url: https://indico.cern.ch/event/1042811/
+
+  - title: "SUSY+HDBS+Exotics RECAST Tutorial"
+    role: Organizer & Instructor
+    date: Mar 2021
+    url: https://indico.cern.ch/event/1009271/
+
+  - title: "HSF / IRIS-HEP GitHub CI/CD Training"
+    role: Instructor
+    date: Feb 2021
+    url: https://indico.cern.ch/event/1001128/
+
+  - title: "Future Analysis Systems and Facilities: Making an Analysis Pipeline"
+    role: Instructor
+    date: Oct 2020
+    url: https://indico.cern.ch/event/960587/
+
+  - title: "CMS B2G Workshop: pyhf tutorial and exploration"
+    role: Instructor
+    date: Sep 2020
+    url: https://indico.cern.ch/event/898965/
+
+  - title: "US-ATLAS Computing Bootcamp"
+    role: Organizer & Instructor
+    date: Aug 2020
+    url: https://indico.cern.ch/event/933434/
+
+  - title: "ATLAS Canada Computing Workshop: GitLab CI and Statistical Analysis"
+    role: Instructor
+    date: Jul 2020
+    url: https://indico.cern.ch/event/892952/
+
+  - title: "HSF / IRIS-HEP Virtual Pipelines Training"
+    role: Instructor
+    date: Jun 2020
+    url: https://indico.cern.ch/event/904759/
+
+  - title: "Analysis Preservation Bootcamp"
+    role: Core Instructor
+    date: Feb 2020
+    url: https://indico.cern.ch/e/awesome
+
+  - title: "ATLAS Induction Day: Intro to pyhf and hands-on"
+    role: Instructor
+    date: Jan 2020
+    url: https://indico.cern.ch/event/860971/
+
+  - title: "ATLAS Induction Day: Using GitLab for Analysis"
+    role: Instructor
+    date: Jan 2020
+    url: https://indico.cern.ch/event/860971/
+
+  - title: "ATLAS Induction Day: Intro to pyhf and hands-on"
+    role: Instructor
+    date: Oct 2019
+    url: https://indico.cern.ch/event/831761/
+
+  - title: "ATLAS Induction Day: Using GitLab for Analysis"
+    role: Instructor
+    date: Oct 2019
+    url: https://indico.cern.ch/event/831761/
+
+  - title: "USATLAS/FIRST-HEP Computing Bootcamp"
+    role: Organizer & Instructor
+    date: Aug 2019
+    url: https://indico.cern.ch/event/816946/
+
+  - title: "Analysis Systems Topical Workshop: Likelihood publishing & Reinterpretation"
+    role: Instructor
+    date: Jun 2019
+    url: https://indico.cern.ch/event/822074/
+
+  - title: "ATLAS Induction Day: Using GitLab for Analysis"
+    role: Instructor
+    date: Jan 2019
+    url: https://indico.cern.ch/event/772589/
+
+  - title: "US-ATLAS Hadronic Final State Forum: Jet and MET triggers"
+    role: Instructor
+    date: Dec 2018
+    url: https://indico.cern.ch/event/747355/
+
+  - title: "ATLAS Machine Learning Workshop: Intro to pyhf and hands-on"
+    role: Instructor
+    date: Oct 2018
+    url: https://indico.cern.ch/event/735932/
+
+  - title: "ATLAS Induction Day: Using GitLab for Analysis"
+    role: Instructor
+    date: Oct 2018
+    url: https://indico.cern.ch/event/757797/
+
+  - title: "ATLAS Induction Day: Using GitLab for Analysis"
+    role: Instructor
+    date: Jul 2018
+    url: https://indico.cern.ch/event/731951/
+
+  - title: "ATLAS Exotics Workshop: Tips and tricks for GitLab CI"
+    role: Instructor
+    date: May 2018
+    url: https://indico.cern.ch/event/709718/
+
+  - title: "ATLAS Software Tutorial: Using GitLab for Analysis"
+    role: Instructor
+    date: Apr 2018
+    url: https://indico.cern.ch/event/710710/
+
+  - title: "US ATLAS Induction Week: Using GitLab for Analysis Code and CI"
+    role: Instructor
+    date: Jan 2018
+    url: https://indico.cern.ch/event/684668
+
+  - title: "ATLAS S&C Documentation Workshop: Modern doc tools and approaches"
+    role: Instructor
+    date: Dec 2017
+    url: https://indico.cern.ch/event/649804/
+
+  - title: "ATLAS P&P Week: ASG Parallel Session: Using GitLab for Analysis Code Management"
+    role: Instructor
+    date: Dec 2017
+    url: https://indico.cern.ch/event/681128/
+
+  - title: "UChicago EFI Data Analytics workshop: Python, Jupyter, and ROOT"
+    role: Instructor
+    date: Oct 2017
+    url: https://indico.cern.ch/event/676637/
+
+  - title: "ATLAS Hadronic Calibration Workshop: Analysis Optimization"
+    role: Instructor
+    date: Aug 2017
+    url: https://indico.cern.ch/event/642438/
+
+  - title: "ATLAS Software Tutorial: multiple tutorials"
+    role: Instructor
+    date: Jun 2016
+    url: https://indico.cern.ch/event/524296/
+
+  - title: "UChicago/ASC-ANL software tutorial: multiple tutorials"
+    role: Instructor
+    date: Mar 2016
+    url: https://indico.cern.ch/event/463456/
+
+  # Standalone educational materials
+  - title: "pyhf Tutorial"
+    role: Developer & Instructor
+    date: 2018-present
+    url: https://pyhf.github.io/pyhf-tutorial/
+    description: >
+      Pedagogical material for statistical inference in particle physics using
+      pyhf. Continuously developing new material based on mentor interactions
+      with students to bridge gaps in statistical knowledge.
+
+  - title: "GitLab CI/CD for HEP (YouTube, HSF)"
+    role: Course Developer
+    date: May 2020
+    url: https://www.youtube.com/watch?v=NxhDGMo9ILM&list=PLWZ1NKCZTdqcnTEx_CkfTP_3uZWcDOgxY
+    description: >
+      HEP Software Foundation fully-captioned lesson on CI/CD for physics
+      workflows. Inspired the GitHub Actions equivalent course.
+
+  - title: "GitLab CI/CD lesson (HSF/Software Carpentries)"
+    role: Course Developer
+    date: 2018-present
+    url: https://hsf-training.github.io/hsf-training-cicd/
+    description: >
+      Wrote a brand new lesson on how to use GitLab CI/CD in particle physics.
+      Continuously updating based on student feedback. Inspired the equivalent
+      GitHub Actions version.
+
+courses_taught:
+  - title: "Web Programming (CS 3)"
+    role: Student Instructor
+    period: 2010-2011
+    institution: California Institute of Technology
+    description: >
+      One of ten student-taught classes ever approved at Caltech. Designed
+      syllabus and all training materials. Flipped classroom approach with 1.5h
+      hands-on lecture and 1.5h take-home work per week.
+
+  - title: "Computational Physics Lab"
+    role: Lab Assistant
+    period: Mar-Jun 2011
+    institution: California Institute of Technology
+    description: >
+      Migrated the core software "CurveFit" for the computational physics lab
+      from an older version of Mathematica to a newer version.
+
+  - title: "Information Systems and Technology"
+    role: Lead Teaching Assistant
+    period: Mar 2010-Jun 2011
+    institution: California Institute of Technology
+    description: >
+      Lead TA for Prof. Shuki Bruck for one of Caltech's most renowned elective
+      courses. Structured and graded homework assignments for approximately 140
+      students.
+
+courses_ta:
+  - course: "Advanced Physics Laboratory"
+    institution: University of Chicago
+    period: Fall 2016-2017
+
+  - course: "Intermediate and Advanced Electromagnetism"
+    institution: University of Chicago
+    period: Winter 2014-2015
+
+  - course: "Advanced Mechanics"
+    institution: University of Chicago
+    period: Fall 2013-2014
+
+  - course: "Mechanics"
+    institution: University of Chicago
+    period: Summer 2012-2013
+
+  - course: "Special Relativity and Electromagnetism"
+    institution: University of Chicago
+    period: Winter 2012-2013
+
+  - course: "Introductory Mechanics"
+    institution: University of Chicago
+    period: Fall 2012-2013
+
+  - course: "PHYS 141: Mechanics (Honors)"
+    institution: California Institute of Technology
+    period: 2009-2011
+
+other_instruction:
+  - role: Instructor/Trainer
+    organization: American Red Cross
+    period: 2004-2012
+    description: >
+      CPR, First Aid, HIV/AIDS Peer Education instructor and trainer for 8
+      years across Palm Beach County (FL) and San Gabriel Pomona Valley (CA)
+      chapters. Also trained new instructors for the ARC.
+
+  - role: Mentor
+    organization: UChicago Bridge Program
+    period: 2014-2016
+    description: >
+      Mentored underrepresented youth from local high school students in the
+      Chicago Public system.
+
+  - role: Referee
+    organization: JHEP & SciPost Physics
+    description: >
+      Journal referee for 4 JHEP papers and 3 SciPost Physics papers.

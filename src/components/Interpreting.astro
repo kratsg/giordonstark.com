@@ -1,0 +1,81 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'node:fs';
+
+interface InterpLink {
+  label: string;
+  url: string;
+}
+interface InterpItem {
+  number: number;
+  text: string;
+  extra?: string;
+  links?: InterpLink[];
+}
+interface InterpretingData {
+  items: InterpItem[];
+}
+
+const { items } = yaml.load(
+  readFileSync('src/data/interpreting.yaml', 'utf8')
+) as InterpretingData;
+---
+
+<section id="interpreting" class="relative section-fade bg-gray-50/60" style="z-index: 1;">
+  <div class="max-w-5xl mx-auto px-6 py-20">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-4">
+      <span class="h-px flex-1 max-w-[3rem] bg-brand-accent"></span>
+      <h2 class="font-display font-bold text-2xl text-brand-text tracking-tight">
+        Interpreting
+      </h2>
+    </div>
+
+    <!-- Brief intro -->
+    <p class="text-sm text-brand-muted mb-12 max-w-[65ch] leading-relaxed">
+      Information for ASL interpreters working with Giordon at conferences, seminars, and meetings.
+    </p>
+
+    <div class="space-y-6">
+      {items.map((item) => (
+        <div class="flex gap-5 group">
+          <!-- Number -->
+          <div class="shrink-0 w-8 h-8 rounded-full bg-brand-accent/10 flex items-center justify-center group-hover:bg-brand-accent/15 transition-colors duration-200">
+            <span class="text-xs font-bold text-brand-accent tabular-nums">{item.number}</span>
+          </div>
+
+          <!-- Content -->
+          <div class="flex-1 pt-1">
+            <!-- Main text (verbatim) -->
+            <p class="text-sm text-brand-text leading-relaxed">
+              {item.text}
+            </p>
+
+            <!-- Extra note (item 1 only) -->
+            {item.extra && (
+              <p class="mt-2 text-sm text-brand-muted italic leading-relaxed">
+                {item.extra}
+              </p>
+            )}
+
+            <!-- Inline links -->
+            {item.links && item.links.length > 0 && (
+              <div class="flex flex-wrap gap-2 mt-3">
+                {item.links.map((link) => (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener"
+                    class="text-xs font-medium text-brand-accent hover:text-brand-accent/80 underline underline-offset-2 decoration-brand-accent/40 hover:decoration-brand-accent transition-colors duration-200"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

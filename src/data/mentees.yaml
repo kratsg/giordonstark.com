@@ -1,0 +1,224 @@
+# Mentored students - url field = their academic/personal website (TODO for Giordon to fill in)
+undergraduate:
+  - name: Sam Kelson
+    institution: UC Santa Cruz / IRIS-HEP Fellow
+    project: "coffea schemas for ATLAS data format: PHYSLITE"
+    period: "2024"
+    url: ""
+
+  - name: Zach Pizzo
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: Type-1 services cable assembly"
+    period: "2024"
+    url: ""
+
+  - name: Samantha Contreras
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: visual inspection of pixel modules"
+    period: 2023-2024
+    url: ""
+
+  - name: Marco Frank
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: electrical testing of pixel modules"
+    period: 2023-present
+    url: ""
+
+  - name: Scott Philips
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: electrical testing of pixel modules"
+    period: 2023-present
+    url: ""
+
+  - name: Margherita Vittone-Wiersma
+    institution: UC Santa Cruz
+    project: ITk Pixels Upgrade
+    period: 2023-present
+    url: ""
+
+  - name: Hayden Therrien
+    institution: UC Santa Cruz
+    project: ITk Pixels Upgrade
+    period: 2023-present
+    url: ""
+
+  - name: Sambridhi Deo
+    institution: IRIS-HEP Fellow
+    project: "REANA: implement workflow for galaxy rotation-curve fitting analysis"
+    period: "2023"
+    url: ""
+
+  - name: Keaton Ferguson
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: technician for pixel modules and pixel services testing"
+    period: 2022-2024
+    url: ""
+
+  - name: Audrey Mika
+    institution: UC Santa Cruz
+    project: ITk Pixels Upgrade
+    period: 2022-2023
+    url: ""
+
+  - name: Nhan Tran
+    institution: UC Santa Cruz
+    project: pyhf / SUSY
+    period: 2022-2023
+    url: ""
+
+  - name: Christopher Kuruppu
+    institution: UC Santa Cruz
+    project: ITk Pixels Upgrade
+    period: 2021-2023
+    url: ""
+
+  - name: Annie Bowles
+    institution: UC Santa Cruz
+    project: ITk Pixels Upgrade
+    period: 2020-2021
+    url: ""
+
+  - name: Sydney Leither
+    institution: UC Santa Cruz
+    project: IRIS-HEP
+    period: 2020-2021
+    url: ""
+
+  - name: Suyash Tandon
+    institution: University of Wisconsin - Madison
+    project: IRIS-HEP
+    period: 2020-2021
+    url: ""
+
+  - name: William Black
+    institution: UC Santa Cruz
+    project: ITk Pixels Upgrade
+    period: 2020-2021
+    url: ""
+
+  - name: Bo Zheng
+    institution: IRIS-HEP Fellow
+    project: "Hardware acceleration of statistical fitting with GPUs/TPUs"
+    period: "2020"
+    url: ""
+
+  - name: Noah Peake
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: technician for pixel modules and pixel services testing"
+    period: 2019-2022
+    url: ""
+
+  - name: Ryan Roberts
+    institution: UC Santa Cruz
+    project: ITk Pixels Upgrade
+    period: 2019-2020
+    url: ""
+
+  - name: Henry Zheng
+    institution: University of Chicago
+    project: "gFEX: System-on-Chip Development (custom OS and firmware)"
+    period: "2018"
+    url: ""
+
+  - name: Ben Warren
+    institution: University of Chicago
+    project: "gFEX: development of Machine Learning algorithms to run on GPU"
+    period: "2018"
+    url: ""
+
+  - name: Ioana Cioara
+    institution: University of Chicago
+    project: gFEX Monitoring
+    period: 2017-2018
+    url: ""
+
+  - name: Brandon Nadal
+    institution: University of Chicago
+    project: "gFEX: REU MRSEC fellow, software to monitor system statistics and environmental conditions"
+    period: "2017"
+    url: ""
+
+  - name: Joseph Curti
+    institution: University of Chicago
+    project: gFEX ML Algorithms
+    period: 2016-2017
+    url: ""
+
+  - name: Nicole Hartman
+    institution: University of Chicago
+    project: gFEX
+    period: 2015-2017
+    url: ""
+
+  - name: Natalie Harrison
+    institution: University of Chicago
+    project: "Supersymmetry: design of recursive jigsaw selections for strong production of SUSY"
+    period: 2015-2017
+    url: ""
+
+  - name: Daniel Sullivan
+    institution: University of Chicago
+    project: "gFEX: implementing firmware for histogramming and monitoring of real-time data processing"
+    period: 2015-2016
+    url: ""
+
+graduate:
+  - name: Sam Roberts
+    institution: UC Santa Cruz
+    project: EWK SUSY Radiative Decays
+    period: 2024-present
+    url: ""
+
+  - name: Hava Schwartz
+    institution: UC Santa Cruz
+    project: EWK SUSY
+    period: 2023-present
+    url: ""
+
+  - name: Nathan Kang
+    institution: UC Santa Cruz
+    project: pyhf / Statistics
+    period: 2022-present
+    url: ""
+
+  - name: Yuzhan Zhao
+    institution: UC Santa Cruz
+    project: Analysis Infrastructure
+    period: 2022-present
+    url: ""
+
+  - name: Jacob Johnson
+    institution: UC Santa Cruz
+    project: ITk Pixels Upgrade
+    period: 2021-present
+    url: ""
+
+  - name: Jacob Pasner
+    institution: UC Santa Cruz
+    project: EWK SUSY
+    period: 2020-2023
+    url: ""
+
+  - name: Carolyn Gee
+    institution: UC Santa Cruz
+    project: EWK SUSY Combination
+    period: 2020-2022
+    url: ""
+
+  - name: Natasha Woods
+    institution: UC Santa Cruz
+    project: Higgs
+    period: 2020-2022
+    url: ""
+
+  - name: Emily Smith
+    institution: UC Santa Cruz
+    project: SUSY
+    period: 2019-2021
+    url: ""
+
+  - name: Michael Hank
+    institution: University of Chicago
+    project: SUSY
+    period: 2016-2018
+    url: ""

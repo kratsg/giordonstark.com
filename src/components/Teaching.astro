@@ -1,0 +1,328 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'node:fs';
+
+interface Workshop {
+  title: string;
+  role: string;
+  date: string;
+  url?: string;
+  description?: string;
+}
+interface CourseTaught {
+  title: string;
+  role: string;
+  period: string;
+  institution: string;
+  description?: string;
+}
+interface CourseTA {
+  course: string;
+  institution: string;
+  period: string;
+}
+interface OtherInstruction {
+  role: string;
+  organization: string;
+  period?: string;
+  description?: string;
+}
+interface TeachingData {
+  workshops_and_tutorials: Workshop[];
+  courses_taught: CourseTaught[];
+  courses_ta: CourseTA[];
+  other_instruction: OtherInstruction[];
+}
+
+interface Mentee {
+  name: string;
+  institution: string;
+  project: string;
+  period: string;
+  url?: string;
+}
+interface MenteesData {
+  undergraduate: Mentee[];
+  graduate: Mentee[];
+}
+
+const teachingData = yaml.load(
+  readFileSync('src/data/teaching.yaml', 'utf8')
+) as TeachingData;
+
+const menteesData = yaml.load(
+  readFileSync('src/data/mentees.yaml', 'utf8')
+) as MenteesData;
+
+// Separate workshops that have descriptions (standalone materials) from regular workshops
+const standaloneItems = teachingData.workshops_and_tutorials.filter((w) => w.description);
+const regularWorkshops = teachingData.workshops_and_tutorials.filter((w) => !w.description);
+---
+
+<section id="teaching" class="relative section-fade bg-gray-50/60" style="z-index: 1;">
+  <div class="max-w-5xl mx-auto px-6 py-20">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-12">
+      <span class="h-px flex-1 max-w-[3rem] bg-brand-accent"></span>
+      <h2 class="font-display font-bold text-2xl text-brand-text tracking-tight">
+        Teaching &amp; Mentoring
+      </h2>
+    </div>
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
+      {[
+        { num: regularWorkshops.length + standaloneItems.length, label: 'Workshops & Tutorials' },
+        { num: teachingData.courses_taught.length + teachingData.courses_ta.length, label: 'Courses' },
+        { num: menteesData.undergraduate.length, label: 'Undergrad Mentees' },
+        { num: menteesData.graduate.length, label: 'Graduate Mentees' },
+      ].map(({ num, label }) => (
+        <div class="bg-white rounded-2xl p-4 border border-gray-100 text-center">
+          <p class="font-display font-bold text-3xl text-brand-accent tabular-nums">{num}+</p>
+          <p class="text-xs text-brand-muted mt-1 leading-snug">{label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Standalone educational materials -->
+    {standaloneItems.length > 0 && (
+      <div class="mb-14">
+        <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+          <span>Curriculum Developed</span>
+          <span class="h-px flex-1 bg-gray-200"></span>
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {standaloneItems.map((item) => (
+            <a
+              href={item.url ?? '#'}
+              target={item.url ? '_blank' : undefined}
+              rel={item.url ? 'noopener' : undefined}
+              class="group block bg-white rounded-2xl p-5 border border-gray-100 hover:border-brand-accent/30 hover:-translate-y-0.5 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
+            >
+              <p class="font-semibold text-sm text-brand-text group-hover:text-brand-accent transition-colors duration-200 mb-1 leading-snug">
+                {item.title}
+              </p>
+              <p class="text-xs text-brand-muted">{item.role} · {item.date}</p>
+              {item.description && (
+                <p class="text-xs text-brand-muted mt-2 leading-relaxed line-clamp-2">
+                  {item.description}
+                </p>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Courses taught (student instructor / TA) -->
+    <div class="mb-14">
+      <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+        <span>Courses</span>
+        <span class="h-px flex-1 bg-gray-200"></span>
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Student-taught / lead TA courses -->
+        <div>
+          <p class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-3">Instructor / Lead TA</p>
+          <div class="space-y-4">
+            {teachingData.courses_taught.map((course) => (
+              <div class="pl-4 border-l-2 border-gray-100">
+                <p class="font-medium text-sm text-brand-text">{course.title}</p>
+                <p class="text-xs text-brand-muted mt-0.5">{course.role} · {course.institution} · {course.period}</p>
+                {course.description && (
+                  <p class="text-xs text-brand-muted mt-1.5 leading-relaxed">{course.description}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- TA courses -->
+        <div>
+          <p class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-3">Teaching Assistant</p>
+          <div class="space-y-2">
+            {teachingData.courses_ta.map((course) => (
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 py-1.5 border-b border-gray-50 last:border-0">
+                <p class="text-sm text-brand-text">{course.course}</p>
+                <p class="text-xs text-brand-muted shrink-0">{course.period}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Workshops list (collapsible) -->
+    <div class="mb-14">
+      <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+        <span>Workshops &amp; Tutorials ({regularWorkshops.length})</span>
+        <span class="h-px flex-1 bg-gray-200"></span>
+      </h3>
+
+      <!-- Show recent 10, rest toggled -->
+      <div class="divide-y divide-gray-100" id="workshops-list">
+        {regularWorkshops.slice(0, 10).map((workshop) => (
+          <div class="py-3 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+            <div class="flex-1">
+              {workshop.url ? (
+                <a
+                  href={workshop.url}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-sm text-brand-text hover:text-brand-accent transition-colors duration-200 font-medium"
+                >
+                  {workshop.title}
+                </a>
+              ) : (
+                <span class="text-sm text-brand-text font-medium">{workshop.title}</span>
+              )}
+              <span class="text-xs text-brand-muted ml-2">({workshop.role})</span>
+            </div>
+            <span class="text-xs text-brand-muted shrink-0">{workshop.date}</span>
+          </div>
+        ))}
+      </div>
+
+      {regularWorkshops.length > 10 && (
+        <div id="workshops-extra" class="divide-y divide-gray-100 hidden">
+          {regularWorkshops.slice(10).map((workshop) => (
+            <div class="py-3 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <div class="flex-1">
+                {workshop.url ? (
+                  <a
+                    href={workshop.url}
+                    target="_blank"
+                    rel="noopener"
+                    class="text-sm text-brand-text hover:text-brand-accent transition-colors duration-200 font-medium"
+                  >
+                    {workshop.title}
+                  </a>
+                ) : (
+                  <span class="text-sm text-brand-text font-medium">{workshop.title}</span>
+                )}
+                <span class="text-xs text-brand-muted ml-2">({workshop.role})</span>
+              </div>
+              <span class="text-xs text-brand-muted shrink-0">{workshop.date}</span>
+            </div>
+          ))}
+        </div>
+
+        <button
+          id="workshops-toggle"
+          class="mt-4 text-sm font-medium text-brand-accent hover:text-brand-accent/80 transition-colors duration-200"
+        >
+          Show {regularWorkshops.length - 10} more workshops ↓
+        </button>
+      )}
+    </div>
+
+    <!-- Mentees -->
+    <div>
+      <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+        <span>Mentees</span>
+        <span class="h-px flex-1 bg-gray-200"></span>
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Undergraduate mentees -->
+        <div>
+          <p class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-4">
+            Undergraduate ({menteesData.undergraduate.length})
+          </p>
+          <div class="space-y-2">
+            {menteesData.undergraduate.map((mentee) => (
+              <div class="flex flex-col gap-0.5 py-2 border-b border-gray-50 last:border-0">
+                <div class="flex items-baseline justify-between gap-2">
+                  {mentee.url ? (
+                    <a
+                      href={mentee.url}
+                      target="_blank"
+                      rel="noopener"
+                      class="text-sm font-medium text-brand-text hover:text-brand-accent transition-colors duration-200"
+                    >
+                      {mentee.name}
+                    </a>
+                  ) : (
+                    <span class="text-sm font-medium text-brand-text">{mentee.name}</span>
+                  )}
+                  <span class="text-xs text-brand-muted shrink-0 tabular-nums">{mentee.period}</span>
+                </div>
+                <p class="text-xs text-brand-muted leading-snug">{mentee.project}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Graduate mentees -->
+        <div>
+          <p class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-4">
+            Graduate ({menteesData.graduate.length})
+          </p>
+          <div class="space-y-2">
+            {menteesData.graduate.map((mentee) => (
+              <div class="flex flex-col gap-0.5 py-2 border-b border-gray-50 last:border-0">
+                <div class="flex items-baseline justify-between gap-2">
+                  {mentee.url ? (
+                    <a
+                      href={mentee.url}
+                      target="_blank"
+                      rel="noopener"
+                      class="text-sm font-medium text-brand-text hover:text-brand-accent transition-colors duration-200"
+                    >
+                      {mentee.name}
+                    </a>
+                  ) : (
+                    <span class="text-sm font-medium text-brand-text">{mentee.name}</span>
+                  )}
+                  <span class="text-xs text-brand-muted shrink-0 tabular-nums">{mentee.period}</span>
+                </div>
+                <p class="text-xs text-brand-muted leading-snug">{mentee.project}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other instruction -->
+    <div class="mt-14">
+      <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+        <span>Other Instruction</span>
+        <span class="h-px flex-1 bg-gray-200"></span>
+      </h3>
+      <div class="space-y-4">
+        {teachingData.other_instruction.map((item) => (
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+            <div>
+              <span class="font-medium text-sm text-brand-text">{item.role}</span>
+              <span class="text-sm text-brand-muted"> · {item.organization}</span>
+              {item.description && (
+                <p class="text-xs text-brand-muted mt-1 leading-relaxed max-w-[55ch]">{item.description}</p>
+              )}
+            </div>
+            {item.period && (
+              <span class="text-xs text-brand-muted shrink-0">{item.period}</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const toggle = document.getElementById('workshops-toggle');
+  const extra = document.getElementById('workshops-extra');
+
+  if (toggle && extra) {
+    toggle.addEventListener('click', () => {
+      const isHidden = extra.classList.contains('hidden');
+      extra.classList.toggle('hidden', !isHidden);
+      toggle.textContent = isHidden
+        ? 'Show fewer workshops ↑'
+        : `Show ${extra.children.length} more workshops ↓`;
+    });
+  }
+</script>

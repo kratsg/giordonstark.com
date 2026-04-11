@@ -1,0 +1,133 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'node:fs';
+
+interface SocialLink {
+  platform: string;
+  url: string;
+  icon: string;
+  rel?: string;
+}
+interface SocialData {
+  links: SocialLink[];
+}
+
+const { links: socialLinks } = yaml.load(
+  readFileSync('src/data/social.yaml', 'utf8')
+) as SocialData;
+---
+
+<!-- About section: transparent gradient so the collision canvas shows beneath -->
+<section
+  id="about"
+  class="relative section-fade min-h-[100dvh] flex flex-col justify-center"
+  style="z-index: 1; background: linear-gradient(to bottom, rgba(250,250,248,0.72) 0%, rgba(250,250,248,0.88) 60%, #FAFAF8 100%);"
+>
+  <div class="max-w-5xl mx-auto px-6 py-24 w-full">
+    <!-- Eyebrow -->
+    <div class="inline-flex items-center gap-2 mb-8">
+      <span class="h-px w-8 bg-brand-accent"></span>
+      <span class="text-[11px] uppercase tracking-[0.2em] font-medium text-brand-accent">
+        Project Scientist · UCSC
+      </span>
+    </div>
+
+    <!-- Name -->
+    <h1 class="font-display font-bold text-5xl md:text-7xl text-brand-text tracking-tight leading-none mb-6">
+      Giordon<br />Stark
+    </h1>
+
+    <!-- Pronouns -->
+    <p class="text-sm text-brand-muted mb-8 font-medium tracking-wide">
+      he / him / point
+    </p>
+
+    <!-- Bio -->
+    <div class="max-w-[65ch] space-y-4 mb-10">
+      <p class="text-base text-brand-text leading-relaxed">
+        Deaf project scientist and experimental particle physicist working with the
+        <strong class="font-semibold">ATLAS collaboration</strong> at the Santa Cruz
+        Institute for Particle Physics, UC Santa Cruz. PhD in Physics from the University
+        of Chicago (2018); B.S. from Caltech (2012).
+      </p>
+      <p class="text-base text-brand-text leading-relaxed">
+        Research focuses on searches for physics Beyond the Standard Model — Electroweak
+        Supersymmetry, hadronic final states, boosted object reconstruction — and the
+        intersection of particle physics and machine learning. Core developer of
+        <a
+          href="https://github.com/scikit-hep/pyhf"
+          class="text-brand-accent hover:underline font-medium"
+          target="_blank"
+          rel="noopener"
+        >pyhf</a>,
+        the tool that enabled ATLAS to become the first particle physics experiment to
+        publish full statistical likelihoods. Led the first large-scale statistical
+        combination of 14 electroweak SUSY searches at the LHC. Currently building
+        analysis infrastructure for the HL-LHC era and testing pixel modules for the ATLAS
+        Inner Tracker upgrade.
+      </p>
+      <p class="text-base text-brand-text leading-relaxed">
+        When not searching for new physics, found proving sourdoughs, baking pavlovas, and
+        anything else in the kitchen.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <p class="text-sm text-brand-muted mb-8 leading-relaxed">
+      UCSC SCIPP, Natural Sciences 2, Room&nbsp;#337 · 1156 High Street · Santa Cruz, CA 95064
+      ·
+      <a
+        href="mailto:gstark@cern.ch"
+        class="text-brand-accent hover:underline"
+      >gstark@cern.ch</a>
+    </p>
+
+    <!-- Social links -->
+    <div class="flex flex-wrap items-center gap-4">
+      {socialLinks.map((link) => (
+        <a
+          href={link.url}
+          target="_blank"
+          rel={link.rel ? `noopener ${link.rel}` : 'noopener'}
+          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-brand-muted hover:text-brand-text bg-white/70 hover:bg-white border border-gray-200/80 rounded-full transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 active:scale-[0.98]"
+          aria-label={link.platform}
+        >
+          {link.icon === 'github' && (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+          )}
+          {link.icon === 'twitter' && (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          )}
+          {link.icon === 'mastodon' && (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+              <path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/>
+            </svg>
+          )}
+          {link.icon === 'facebook' && (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          )}
+          {link.platform}
+        </a>
+      ))}
+
+      <!-- CV link -->
+      <a
+        href="https://kratsg.github.io/cv/?utm_source=giordonstark.com&utm_medium=about"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-brand-accent hover:bg-brand-accent/90 rounded-full transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 active:scale-[0.98]"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+          <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z" clip-rule="evenodd" />
+        </svg>
+        View CV
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+[workspace]
+authors = ["Giordon Stark <kratsg@gmail.com>"]
+channels = ["conda-forge"]
+name = "giordonstark.com"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+install = "npm install"
+dev = "npm run dev"
+build = "npm run build"
+preview = "npm run preview"
+
+[dependencies]
+nodejs = ">=22,<23"

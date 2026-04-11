@@ -1,0 +1,52 @@
+---
+export interface MediaEntry {
+  title: string;
+  source: string;
+  description?: string;
+  url: string;
+  date: string;
+  type: 'video' | 'article' | 'event';
+}
+
+interface Props {
+  item: MediaEntry;
+}
+
+const { item } = Astro.props;
+
+const typeConfig: Record<string, { label: string; color: string }> = {
+  video: { label: 'Video', color: 'text-red-600 bg-red-50 border-red-100' },
+  article: { label: 'Article', color: 'text-blue-700 bg-blue-50 border-blue-100' },
+  event: { label: 'Event', color: 'text-emerald-700 bg-emerald-50 border-emerald-100' },
+};
+
+const typeInfo = typeConfig[item.type] ?? { label: item.type, color: 'text-brand-muted bg-gray-50 border-gray-100' };
+---
+
+<div class="group py-5 border-b border-gray-100 last:border-0 flex gap-4">
+  <!-- Type badge column -->
+  <div class="shrink-0 w-16 pt-0.5">
+    <span class={`inline-block text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${typeInfo.color}`}>
+      {typeInfo.label}
+    </span>
+  </div>
+
+  <!-- Content -->
+  <div class="flex-1 min-w-0">
+    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener"
+        class="font-medium text-sm text-brand-text hover:text-brand-accent transition-colors duration-200 leading-snug group-hover:text-brand-accent/90"
+      >
+        {item.title}
+      </a>
+      <span class="shrink-0 text-xs text-brand-muted tabular-nums">{item.date}</span>
+    </div>
+    <p class="text-xs text-brand-muted font-medium mb-1">{item.source}</p>
+    {item.description && (
+      <p class="text-xs text-brand-muted leading-relaxed line-clamp-2">{item.description}</p>
+    )}
+  </div>
+</div>

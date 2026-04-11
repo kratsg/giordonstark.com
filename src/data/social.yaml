@@ -1,0 +1,14 @@
+links:
+  - platform: Facebook
+    url: https://fb.me/kratsg
+    icon: facebook
+  - platform: Twitter
+    url: https://twitter.com/kratsg
+    icon: twitter
+  - platform: Mastodon
+    url: https://sciencemastodon.com/@kratsg
+    icon: mastodon
+    rel: me
+  - platform: GitHub
+    url: https://github.com/kratsg
+    icon: github

@@ -1,0 +1,201 @@
+---
+const navItems = [
+  { href: '#about', label: 'About' },
+  { href: '#education', label: 'Education' },
+  { href: '#research', label: 'Research & Instrumentation' },
+  { href: '#software', label: 'Software & Open Source' },
+  { href: '#awards', label: 'Awards' },
+  { href: '#teaching', label: 'Teaching & Mentoring' },
+  { href: '#media', label: 'Media' },
+  { href: '#service', label: 'Service & Leadership' },
+  { href: '#talks', label: 'Talk Invitations' },
+  { href: '#interpreting', label: 'Interpreting' },
+];
+---
+
+<!-- Desktop sidebar nav -->
+<nav
+  id="sidebar-nav"
+  class="fixed top-0 left-0 h-full w-64 bg-brand-bg border-r border-gray-100 z-40 hidden lg:flex flex-col overflow-y-auto"
+  aria-label="Main navigation"
+>
+  <div class="p-6 flex flex-col h-full">
+    <!-- Profile -->
+    <div class="mb-8">
+      <a href="#about" class="block">
+        <img
+          src="/img/profile.jpg"
+          alt="Giordon Stark"
+          class="w-20 h-20 rounded-full mb-4 object-cover ring-2 ring-brand-accent/20"
+        />
+        <div class="font-display font-bold text-lg text-brand-text leading-tight">
+          Giordon Stark
+        </div>
+        <div class="text-brand-muted text-sm mt-0.5">Project Scientist · UCSC</div>
+      </a>
+      <a
+        href="https://kratsg.github.io/cv/?utm_source=giordonstark.com&utm_medium=nav"
+        target="_blank"
+        rel="noopener"
+        class="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand-accent hover:text-brand-accent/80 transition-colors duration-200"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
+          <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z" clip-rule="evenodd" />
+        </svg>
+        View CV
+      </a>
+    </div>
+
+    <!-- Nav links -->
+    <ul class="space-y-0.5 flex-1">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="block px-3 py-2 text-sm text-brand-muted hover:text-brand-text hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Interpreting icon at bottom -->
+    <div class="mt-6 pt-4 border-t border-gray-100">
+      <a
+        href="#interpreting"
+        class="flex items-center gap-2 px-3 py-2 text-sm text-brand-muted hover:text-brand-text transition-colors duration-200"
+        title="Information for Interpreters"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+        </svg>
+        ASL Interpreting Info
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile hamburger button -->
+<button
+  id="hamburger-btn"
+  class="lg:hidden fixed top-4 left-4 z-50 p-2 bg-brand-bg border border-gray-200 rounded-lg shadow-sm"
+  aria-label="Open menu"
+  aria-expanded="false"
+>
+  <div id="hamburger-lines" class="w-5 h-4 flex flex-col justify-between">
+    <span class="block w-full h-0.5 bg-brand-text transition-all duration-300 ease-out origin-center"></span>
+    <span class="block w-full h-0.5 bg-brand-text transition-all duration-300 ease-out"></span>
+    <span class="block w-full h-0.5 bg-brand-text transition-all duration-300 ease-out origin-center"></span>
+  </div>
+</button>
+
+<!-- Mobile overlay menu -->
+<div
+  id="mobile-menu"
+  class="lg:hidden fixed inset-0 z-40 bg-brand-bg/95 backdrop-blur-xl hidden flex-col p-8 pt-20"
+  aria-hidden="true"
+>
+  <ul class="space-y-4">
+    {navItems.map((item, i) => (
+      <li
+        class="mobile-nav-item opacity-0 translate-y-4 transition-all duration-300 ease-out"
+        style={`transition-delay: ${i * 50}ms`}
+      >
+        <a
+          href={item.href}
+          class="text-2xl font-display font-bold text-brand-text hover:text-brand-accent transition-colors duration-200"
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  const btn = document.getElementById('hamburger-btn');
+  const menu = document.getElementById('mobile-menu');
+  const lines = btn?.querySelectorAll('span');
+  const navItems = document.querySelectorAll('.mobile-nav-item');
+  let open = false;
+
+  btn?.addEventListener('click', () => {
+    open = !open;
+    btn.setAttribute('aria-expanded', String(open));
+    menu?.setAttribute('aria-hidden', String(!open));
+
+    if (open) {
+      menu?.classList.remove('hidden');
+      menu?.classList.add('flex');
+      // Staggered item reveal
+      navItems.forEach((item) => {
+        item.classList.remove('opacity-0', 'translate-y-4');
+      });
+      // Hamburger → X
+      if (lines) {
+        lines[0].style.transform = 'rotate(45deg) translateY(7px)';
+        lines[1].style.opacity = '0';
+        lines[2].style.transform = 'rotate(-45deg) translateY(-7px)';
+      }
+    } else {
+      navItems.forEach((item) => {
+        item.classList.add('opacity-0', 'translate-y-4');
+      });
+      if (lines) {
+        lines[0].style.transform = '';
+        lines[1].style.opacity = '';
+        lines[2].style.transform = '';
+      }
+      setTimeout(() => {
+        menu?.classList.add('hidden');
+        menu?.classList.remove('flex');
+      }, 300);
+    }
+  });
+
+  // Close on nav link click
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      open = false;
+      btn?.setAttribute('aria-expanded', 'false');
+      menu?.setAttribute('aria-hidden', 'true');
+      navItems.forEach((item) => item.classList.add('opacity-0', 'translate-y-4'));
+      if (lines) {
+        lines[0].style.transform = '';
+        lines[1].style.opacity = '';
+        lines[2].style.transform = '';
+      }
+      setTimeout(() => {
+        menu?.classList.add('hidden');
+        menu?.classList.remove('flex');
+      }, 300);
+    });
+  });
+
+  // Highlight active section in desktop nav
+  const sectionLinks = document.querySelectorAll('#sidebar-nav a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          sectionLinks.forEach((link) => {
+            link.classList.toggle(
+              'text-brand-text',
+              link.getAttribute('href') === `#${entry.target.id}`
+            );
+            link.classList.toggle(
+              'bg-gray-50',
+              link.getAttribute('href') === `#${entry.target.id}`
+            );
+          });
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  sections.forEach((s) => sectionObserver.observe(s));
+</script>

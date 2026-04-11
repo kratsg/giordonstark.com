@@ -1,0 +1,265 @@
+categories:
+  - name: Statistical Tools & Open Science
+    projects:
+      - title: pyhf
+        role: Core Developer
+        images: []
+        description: >
+          Pure-Python implementation of the HistFactory statistical model for
+          multi-bin histogram-based analysis. Supports fitting, limit-setting,
+          and interval estimation with JAX backend for automatic differentiation
+          and GPU acceleration. Enabled ATLAS to become the first LHC experiment
+          to publish full statistical likelihoods. NumFOCUS affiliated project.
+        links:
+          - label: GitHub
+            url: https://github.com/scikit-hep/pyhf
+            icon: github
+          - label: Docs
+            url: https://pyhf.readthedocs.io/en/latest/
+            icon: book
+        tags: [python, statistics, scikit-hep]
+
+      - title: pyhs3
+        role: Developer
+        images: []
+        description: >
+          Python implementation of HS3 (HEP Statistics Serialization Standard),
+          a serialization format for statistical models in high energy physics.
+        links:
+          - label: Docs
+            url: https://pyhs3.readthedocs.io/en/latest/
+            icon: book
+        tags: [python, statistics, serialization]
+
+      - title: mapyde
+        role: Developer
+        images: []
+        description: >
+          MadGraph-Pythia-Delphes reinterpretation pipeline that chains HEP
+          simulation tools to constrain previously untested models of new
+          physics using existing ATLAS search results. Configurable via TOML
+          files with support for multiple containerization backends.
+          MaPyDe allows one to run all of the various HEP toolings or chain
+          them together and perform a quick analysis with the results, such as
+          running CERN ATLAS SimpleAnalysis or pyhf.
+        links:
+          - label: GitHub
+            url: https://github.com/scipp-atlas/mapyde
+            icon: github
+          - label: Docs
+            url: https://scipp-atlas.github.io/mapyde/latest/
+            icon: book
+          - label: SciPost Paper
+            url: https://scipost.org/10.21468/SciPostPhysCodeb.27
+            icon: file-text
+          - label: arXiv
+            url: https://arxiv.org/abs/2306.11055
+            icon: file-text
+        tags: [python, reinterpretation, simulation]
+
+  - name: Analysis Infrastructure
+    projects:
+      - title: atlas-schema
+        role: Developer
+        images: []
+        description: >
+          Python package containing schemas and helper functions enabling
+          analyzers to work with ATLAS datasets (Monte Carlo and Data) using
+          coffea for columnar analysis.
+        links:
+          - label: GitHub
+            url: https://github.com/scipp-atlas/atlas-schema
+            icon: github
+        tags: [python, coffea, atlas]
+
+      - title: histserv
+        role: Developer
+        images: []
+        description: >
+          Dashboard for histogram serving. Distributed histogram management
+          service allowing remote filling and snapshot retrieval for processing
+          large datasets across distributed systems.
+        links:
+          - label: PyPI
+            url: https://pypi.org/project/histserv/
+            icon: package
+        tags: [python, distributed, histograms]
+
+      - title: itkdb
+        role: Developer
+        images: []
+        description: >
+          Python wrapper for the ATLAS ITk Production Database API, enabling
+          programmatic access to database operations for the Inner Tracker
+          upgrade.
+        links:
+          - label: PyPI
+            url: https://pypi.org/project/itkdb/
+            icon: package
+        tags: [python, atlas, database]
+
+      - title: ATLAS Athena
+        role: Contributor
+        images: []
+        description: >
+          Contributions to the ATLAS offline software framework: jet
+          substructure calculations, Xbb tagger, jet reclustering, nanobind
+          Python bindings for CP tools enabling columnar analysis. Led the
+          migration of the entire offline software codebase from SVN to Git.
+        links:
+          - label: GitLab
+            url: https://gitlab.cern.ch/atlas/athena
+            icon: gitlab
+        tags: [c++, python, atlas]
+
+  - name: Analysis Frameworks
+    projects:
+      - title: xAODAnaHelpers
+        role: Core Developer
+        images: []
+        description: >
+          Analysis framework built on top of the ATLAS xAOD data model,
+          providing configurable algorithms for event selection, object
+          calibration, and systematic uncertainties. Used by multiple ATLAS
+          physics groups (SM, SUSY, Exotics, Higgs, Trigger, Jet Calibration).
+        links:
+          - label: Docs
+            url: https://xaodanahelpers.readthedocs.io
+            icon: book
+        tags: [c++, python, atlas]
+
+      - title: root-optimize
+        role: Developer
+        images: []
+        description: >
+          Tool for scanning the phase-space of a physics analysis to identify
+          performant variables for discriminating signal over background.
+        links:
+          - label: GitHub
+            url: https://github.com/kratsg/optimization
+            icon: github
+        tags: [python, optimization, analysis]
+
+  - name: Developer Tools & MCP Servers
+    projects:
+      - title: rucio-mcp
+        role: Developer
+        images: []
+        description: >
+          MCP server enabling LLMs like Claude to query and manage Rucio
+          distributed data management operations -- search datasets, check
+          replicas, manage replication rules, and monitor quotas through
+          natural language.
+        links:
+          - label: GitHub
+            url: https://github.com/kratsg/rucio-mcp
+            icon: github
+        tags: [python, mcp, data-management]
+
+      - title: ami-mcp
+        role: Developer
+        images: []
+        description: >
+          MCP server wrapping ATLAS AMI (Metadata Interface) and the PMG
+          cross-section database, exposing them as tools for LLMs to discover
+          MC samples, retrieve cross-sections, and validate dataset
+          classifications.
+        links:
+          - label: GitHub
+            url: https://github.com/kratsg/ami-mcp
+            icon: github
+        tags: [python, mcp, metadata]
+
+      - title: stare
+        role: Developer
+        images: []
+        description: >
+          Python wrapper for CERN's Glance API, enabling programmatic access
+          to publication data through both CLI and Python interfaces.
+        links:
+          - label: GitHub
+            url: https://github.com/kratsg/stare
+            icon: github
+        tags: [python, cern, api]
+
+      - title: drstorage
+        role: Developer
+        images: []
+        description: >
+          Python library for parsing protocol data from Dr. Storage dry air
+          cabinets, extracting temperature and humidity sensor readings from
+          binary data across multiple cabinet models.
+        links:
+          - label: GitHub
+            url: https://github.com/kratsg/drstorage
+            icon: github
+        tags: [python, hardware, parsing]
+
+      - title: meta-l1calo
+        role: Developer
+        images: []
+        description: >
+          OpenEmbedded firmware layer for compiling Linux kernels from scratch
+          for ATLAS Level-1 Calorimeter trigger instrumentation.
+        links:
+          - label: GitHub
+            url: https://github.com/kratsg/meta-l1calo
+            icon: github
+        tags: [firmware, embedded, atlas]
+
+  - name: Accessibility & Outreach Tools
+    projects:
+      - title: captionator
+        role: Developer
+        images: []
+        description: >
+          Web application enabling small-budget and non-profit theaters to
+          provide free captioning services. Keyboard-controlled navigation
+          through caption content via websockets.
+        links:
+          - label: GitHub
+            url: https://github.com/kratsg/captionator
+            icon: github
+        tags: [nodejs, accessibility, theater]
+
+      - title: SignsFive
+        role: Developer
+        images: []
+        description: >
+          Online dictionary for Science, Technology, Engineering, and Math
+          sign language videos to be stored, uploaded, and searched.
+        links:
+          - label: Website
+            url: http://survey.signsfive.com
+            icon: globe
+        tags: [web, accessibility, asl]
+
+  - name: Ecosystem Contributions
+    projects:
+      - title: conda-forge
+        role: Maintainer
+        images: []
+        description: >
+          Maintainer of 30+ conda-forge feedstocks providing packaged builds
+          of HEP tools and ITk software for the scientific Python ecosystem.
+          Includes pyhf, mapyde, pyhs3, sherpa, hepmc3, fastjet, delphes,
+          atlas-schema, itkdb, itksn, module-qc tools, yarr, klfitter, and
+          many more HEP/ITk tools.
+        links:
+          - label: pyhf
+            url: https://github.com/conda-forge/pyhf-feedstock
+          - label: sherpa
+            url: https://github.com/conda-forge/sherpa-feedstock
+          - label: hepmc3
+            url: https://github.com/conda-forge/hepmc3-feedstock
+          - label: fastjet
+            url: https://github.com/conda-forge/fastjet-feedstock
+          - label: delphes
+            url: https://github.com/conda-forge/delphes-feedstock
+          - label: itksn
+            url: https://github.com/conda-forge/itksn-feedstock
+          - label: mapyde
+            url: https://github.com/conda-forge/mapyde-feedstock
+          - label: pyhs3
+            url: https://github.com/conda-forge/pyhs3-feedstock
+        tags: [packaging, conda, hep]
