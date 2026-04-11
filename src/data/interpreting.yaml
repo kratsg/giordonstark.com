@@ -14,8 +14,8 @@ items:
     links:
       - label: CV
         url: https://kratsg.github.io/cv/?utm_source=giordonstark.com&utm_medium=section:interpreting
-      - label: twitter
-        url: https://twitter.com/kratsg
+      - label: bluesky
+        url: https://bsky.app/profile/giordonstark.com
       - label: thesis website
         url: https://kratsg.github.io/thesis/?utm_source=giordonstark.com&utm_medium=section:interpreting
       - label: Twitter source
