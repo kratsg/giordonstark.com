@@ -24,23 +24,36 @@ const { links: socialLinks } = yaml.load(
   style="z-index: 1; background: linear-gradient(to bottom, rgba(250,250,248,0.72) 0%, rgba(250,250,248,0.88) 60%, #FAFAF8 100%);"
 >
   <div class="max-w-5xl mx-auto px-6 py-24 w-full">
-    <!-- Eyebrow -->
-    <div class="inline-flex items-center gap-2 mb-8">
-      <span class="h-px w-8 bg-brand-accent"></span>
-      <span class="text-[11px] uppercase tracking-[0.2em] font-medium text-brand-accent">
-        Project Scientist · UCSC
-      </span>
+    <!-- Name / portrait row -->
+    <div class="flex items-end justify-between gap-8 max-w-[65ch] mb-8">
+      <div>
+        <!-- Eyebrow -->
+        <div class="inline-flex items-center gap-2 mb-8">
+          <span class="h-px w-8 bg-brand-accent"></span>
+          <span class="text-[11px] uppercase tracking-[0.2em] font-medium text-brand-accent">
+            Project Scientist · UCSC
+          </span>
+        </div>
+
+        <!-- Name -->
+        <h1 class="font-display font-bold text-5xl md:text-7xl text-brand-text tracking-tight leading-none mb-6">
+          Giordon<br /><span class="text-brand-accent">Stark</span>
+        </h1>
+
+        <!-- Pronouns -->
+        <p class="text-sm text-brand-muted font-medium tracking-wide">
+          he / him / point
+        </p>
+      </div>
+
+      <!-- Portrait trace -->
+      <img
+        src="/img/giordon_trace.svg"
+        alt="Portrait of Giordon Stark"
+        class="hidden sm:block shrink-0 w-40 md:w-56 lg:w-64 select-none pointer-events-none"
+        aria-hidden="false"
+      />
     </div>
-
-    <!-- Name -->
-    <h1 class="font-display font-bold text-5xl md:text-7xl text-brand-text tracking-tight leading-none mb-6">
-      Giordon<br /><span class="text-brand-accent">Stark</span>
-    </h1>
-
-    <!-- Pronouns -->
-    <p class="text-sm text-brand-muted mb-8 font-medium tracking-wide">
-      he / him / point
-    </p>
 
     <!-- Bio -->
     <div class="max-w-[65ch] space-y-4 mb-10">
