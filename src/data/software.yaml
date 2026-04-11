@@ -253,7 +253,7 @@ categories:
         tags: [python, root, scikit-hep]
 
       - title: root-optimize
-        role: Developer
+        role: Developer (archived)
         images: []
         description: >
           Tool for scanning the phase-space of a physics analysis to identify
@@ -368,7 +368,7 @@ categories:
         tags: [nodejs, accessibility, theater]
 
       - title: SignsFive
-        role: Developer
+        role: Developer (archived)
         images: []
         description: >
           Online dictionary for Science, Technology, Engineering, and Math

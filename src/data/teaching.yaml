@@ -301,27 +301,7 @@ courses_ta:
     period: 2009-2011
 
 other_instruction:
-  - role: Instructor/Trainer
-    organization: American Red Cross
-    period: 2004-2012
-    description: >
-      CPR, First Aid, HIV/AIDS Peer Education instructor and trainer for 8
-      years across Palm Beach County (FL) and San Gabriel Pomona Valley (CA)
-      chapters. Also trained new instructors for the ARC.
-
-  - role: Mentor
-    organization: UChicago Bridge Program
-    period: 2014-2016
-    description: >
-      Mentored underrepresented youth from local high school students in the
-      Chicago Public system.
-
-  - role: Referee
-    organization: JHEP & SciPost Physics
-    description: >
-      Journal referee for 4 JHEP papers and 3 SciPost Physics papers.
-
-  - role: Day-to-Day Mentor (WATCHEP Program)
+  - role: Mentor (WATCHEP Program)
     organization: UC Santa Cruz / WATCHEP
     period: 2025-present
     description: >
@@ -333,3 +313,23 @@ other_instruction:
       Qi Bin Lei (HTC benchmark monitoring at BNL analysis facility; official
       mentor: Ofer Rind, BNL).
     url: https://watchep.org/
+
+  - role: Referee
+    organization: JHEP & SciPost Physics
+    description: >
+      Journal referee for 4 JHEP papers and 3 SciPost Physics papers.
+
+  - role: Mentor
+    organization: UChicago Bridge Program
+    period: 2014-2016
+    description: >
+      Mentored underrepresented youth from local high school students in the
+      Chicago Public system.
+
+  - role: Instructor/Trainer
+    organization: American Red Cross
+    period: 2004-2012
+    description: >
+      CPR, First Aid, HIV/AIDS Peer Education instructor and trainer for 8
+      years across Palm Beach County (FL) and San Gabriel Pomona Valley (CA)
+      chapters. Also trained new instructors for the ARC.

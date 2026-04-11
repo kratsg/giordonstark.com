@@ -1,5 +1,4 @@
 # Mentored students - url field = their academic/personal website (TODO for Giordon to fill in)
-# 14 undergraduates from the teaching qualifications portfolio LaTeX table
 undergraduate:
   - name: Allex Smith
     institution: UC Santa Cruz
@@ -7,10 +6,28 @@ undergraduate:
     period: 2025-present
     url: ""
 
+  - name: Sylvia Wartell
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: QC/QA technician (performing QC/QA steps using the full test bench infrastructure)"
+    period: "2025"
+    url: ""
+
+  - name: Casey Bishop
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: technician for pixel modules and pixel services testing"
+    period: 2024-2025
+    url: ""
+
   - name: Sam Kelson
     institution: UC Santa Cruz / IRIS-HEP Fellow
     project: "coffea schemas for ATLAS data format: PHYSLITE"
     period: "2024"
+    url: ""
+
+  - name: Aan Yadav
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: PCB design for per-stand interlock board and vacuum monitoring board for pixel module QC/QA"
+    period: 2024-present
     url: ""
 
   - name: Zach Pizzo
@@ -28,13 +45,13 @@ undergraduate:
   - name: Marco Frank
     institution: UC Santa Cruz
     project: "ITk Pixels Upgrade: electrical testing of pixel modules"
-    period: 2023-present
+    period: 2023-2024
     url: ""
 
   - name: Scott Philips
     institution: UC Santa Cruz
     project: "ITk Pixels Upgrade: electrical testing of pixel modules"
-    period: 2023-present
+    period: 2023-2025
     url: ""
 
   - name: Sambridhi Deo
@@ -91,8 +108,6 @@ undergraduate:
     period: 2015-2016
     url: ""
 
-# 10 graduate students from the teaching qualifications portfolio LaTeX table
-# (* = expected graduation year)
 graduate:
   - name: Qi Bin Lei
     institution: UC Santa Cruz
@@ -112,34 +127,46 @@ graduate:
     period: 2025-present
     url: ""
 
+  - name: Marcus Wong
+    institution: UC Santa Cruz
+    project: "SUSY radiative decays + columnar analysis + statistics"
+    period: 2024-present
+    url: ""
+
   - name: Sam Roberts
     institution: UC Santa Cruz
     project: "ITk Pixel Services & Production Database"
     period: 2022-present
     url: ""
 
+  - name: Dongyi (Penny) Liu
+    institution: UC Santa Cruz
+    project: "Higgs + MC generation + columnar analysis + analysis facility usage"
+    period: 2023-present
+    url: ""
+
   - name: Hava Schwartz
     institution: UC Santa Cruz
     project: "ITk Pixels Module Testing + Monte Carlo + Higgs"
-    period: 2022-present
+    period: 2022-2025
     url: ""
 
   - name: Jacob Johnson
     institution: UC Santa Cruz
     project: "SUSY EWK sleptons"
-    period: 2021-present
+    period: 2022-2025
     url: ""
 
   - name: Nathan Kang
     institution: UC Santa Cruz
     project: "SUSY EWK VBF (vector boson fusion)"
-    period: 2022-present
+    period: 2022-2024
     url: ""
 
   - name: Yuzhan Zhao
     institution: UC Santa Cruz
     project: "SM measurement unfolding"
-    period: 2022-present
+    period: 2022-2024
     url: ""
 
   - name: Emily Smith
@@ -154,6 +181,12 @@ graduate:
     period: 2020-2023
     url: ""
 
+  - name: Nicole Hartman
+    institution: UC Santa Cruz
+    project: "statistics and coffea / columnar analysis"
+    period: 2016-present
+    url: ""
+
   - name: Jeffrey Shahinian
     institution: UC Santa Cruz
     project: "SUSY EWK + open data"
@@ -164,10 +197,4 @@ graduate:
     institution: UC Santa Cruz
     project: "pyhf / Statistics / Higgs"
     period: 2019-2023
-    url: ""
-
-  - name: Nicole Hartman
-    institution: University of Chicago
-    project: "gFEX trigger electronics"
-    period: 2015-2017
     url: ""

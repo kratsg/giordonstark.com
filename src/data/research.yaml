@@ -145,6 +145,24 @@ categories:
           - label: itkdb (GitLab)
             url: https://gitlab.cern.ch/atlas-itk/sw/db/itkdb/
             icon: gitlab
+          - label: itksn
+            url: https://pypi.org/project/itksn/
+            icon: package
+          - label: mqdt
+            url: https://pypi.org/project/module-qc-data-transport/
+            icon: package
+          - label: mqdbt
+            url: https://pypi.org/project/module-qc-db-tools/
+            icon: package
+          - label: mqat
+            url: https://pypi.org/project/module-qc-analysis-tools/
+            icon: package
+          - label: mqt
+            url: https://pypi.org/project/module-qc-tools/
+            icon: package
+          - label: localDB
+            url: https://pypi.org/project/localdb/
+            icon: package
           - label: drstorage
             url: https://github.com/kratsg/drstorage
             icon: github
@@ -182,7 +200,7 @@ categories:
     projects:
       - title: IRIS-HEP Analysis Systems
         role: Researcher, Tool Developer
-        subtitle: 2019-present
+        subtitle: 2025-present
         images: []
         description: >
           Active member of the Analysis Systems (AS) focus area of the Institute
@@ -209,7 +227,7 @@ categories:
 
       - title: USATLAS Operations / UChicago Analysis Facility
         role: Analysis Support & Infrastructure
-        subtitle: 2022-present
+        subtitle: 2024-present
         images: []
         description: >
           Maintaining and supporting the UChicago Analysis Facility, one of the
