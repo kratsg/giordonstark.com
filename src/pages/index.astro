@@ -37,4 +37,26 @@ import Interpreting from '../components/Interpreting.astro';
     <Talks />
     <Interpreting />
   </main>
+
+  <!-- Footer -->
+  <footer class="lg:pl-64 relative border-t border-gray-100" style="z-index: 1;">
+    <div class="max-w-5xl mx-auto px-6 py-8">
+      <p class="text-xs text-brand-muted leading-relaxed">
+        <a href="https://giordonstark.com" class="hover:text-brand-text transition-colors duration-200">giordonstark.com</a>
+        {' '}© {new Date().getFullYear()} by{' '}
+        <a href="https://giordonstark.com" class="hover:text-brand-text transition-colors duration-200">Giordon Stark</a>
+        {' '}is licensed under{' '}
+        <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+          target="_blank"
+          rel="noopener"
+          class="hover:text-brand-text transition-colors duration-200"
+        >CC BY-NC-SA 4.0</a>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" class="inline-block align-middle" style="max-width:1em;max-height:1em;margin-left:.2em;" />
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" class="inline-block align-middle" style="max-width:1em;max-height:1em;margin-left:.2em;" />
+        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" class="inline-block align-middle" style="max-width:1em;max-height:1em;margin-left:.2em;" />
+        <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" class="inline-block align-middle" style="max-width:1em;max-height:1em;margin-left:.2em;" />
+      </p>
+    </div>
+  </footer>
 </BaseLayout>
