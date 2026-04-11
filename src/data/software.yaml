@@ -264,6 +264,26 @@ categories:
             icon: github
         tags: [python, optimization, analysis]
 
+      - title: ATLASstylempl
+        role: Developer (archived, migrated to mplhep)
+        images: []
+        description: >
+          Matplotlib stylesheets conforming to the ATLAS experiment's official
+          plotting style guidelines, enabling publication-quality figures without
+          manual style configuration. Archived and contributed upstream into the
+          scikit-hep/mplhep project.
+        links:
+          - label: GitHub
+            url: https://github.com/kratsg/ATLASstylempl/
+            icon: github
+          - label: mplhep
+            url: https://github.com/scikit-hep/mplhep
+            icon: github
+          - label: mplhep Docs
+            url: https://scikit-hep.org/mplhep/dev/
+            icon: book
+        tags: [python, matplotlib, atlas, scikit-hep]
+
   - name: Developer Tools & MCP Servers
     projects:
       - title: rucio-mcp
@@ -413,3 +433,54 @@ categories:
           - label: pyhs3
             url: https://github.com/conda-forge/pyhs3-feedstock
         tags: [packaging, conda, hep]
+
+      - title: Scikit-HEP
+        role: Co-admin / Co-owner (2017-present)
+        images: []
+        description: >
+          Co-administrator and co-owner of the Scikit-HEP organization
+          (2017-present), a community-driven effort to build a coherent Python
+          ecosystem for particle physics data analysis. Joined when root_numpy
+          was brought under the Scikit-HEP umbrella; contributions span
+          root_numpy, pyhf, atlas-schema, and organizational governance.
+        links:
+          - label: Scikit-HEP
+            url: https://scikit-hep.org/
+            icon: globe
+          - label: GitHub org
+            url: https://github.com/scikit-hep/
+            icon: github
+        tags: [python, scikit-hep, community]
+
+  - name: Early Projects
+    projects:
+      - title: canvasGame
+        role: Developer (2006)
+        images: []
+        description: >
+          A tile-based 2D exploration game built to learn the then-new HTML5
+          canvas element. Features a 32×24 block map, coin collection, and
+          physics-inspired player movement with configurable speed and rotation —
+          all written in vanilla JavaScript and jQuery at a time when canvas
+          support was barely in nightlies.
+        links:
+          - label: Live demo
+            url: /canvasGame/
+            icon: globe
+        tags: [javascript, jquery, canvas, game]
+
+      - title: jTypeWriter
+        role: Developer (2006)
+        images: []
+        description: >
+          A jQuery plugin implementing a configurable typewriter animation
+          effect. Handles HTML markup and special characters correctly,
+          supports letter-by-letter, word-by-word, or phrase-based typing
+          modes, and fires an onComplete callback on finishing. Uses jQuery's
+          queue system so multiple calls chain naturally. Built as an exercise
+          in jQuery plugin architecture.
+        links:
+          - label: Live demo
+            url: /jTypeWriter/
+            icon: globe
+        tags: [javascript, jquery, animation]
