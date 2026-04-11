@@ -1,4 +1,5 @@
 # Mentored students - url field = their academic/personal website (TODO for Giordon to fill in)
+# 14 undergraduates from the teaching qualifications portfolio LaTeX table
 undergraduate:
   - name: Sam Kelson
     institution: UC Santa Cruz / IRIS-HEP Fellow
@@ -30,18 +31,6 @@ undergraduate:
     period: 2023-present
     url: ""
 
-  - name: Margherita Vittone-Wiersma
-    institution: UC Santa Cruz
-    project: ITk Pixels Upgrade
-    period: 2023-present
-    url: ""
-
-  - name: Hayden Therrien
-    institution: UC Santa Cruz
-    project: ITk Pixels Upgrade
-    period: 2023-present
-    url: ""
-
   - name: Sambridhi Deo
     institution: IRIS-HEP Fellow
     project: "REANA: implement workflow for galaxy rotation-curve fitting analysis"
@@ -52,48 +41,6 @@ undergraduate:
     institution: UC Santa Cruz
     project: "ITk Pixels Upgrade: technician for pixel modules and pixel services testing"
     period: 2022-2024
-    url: ""
-
-  - name: Audrey Mika
-    institution: UC Santa Cruz
-    project: ITk Pixels Upgrade
-    period: 2022-2023
-    url: ""
-
-  - name: Nhan Tran
-    institution: UC Santa Cruz
-    project: pyhf / SUSY
-    period: 2022-2023
-    url: ""
-
-  - name: Christopher Kuruppu
-    institution: UC Santa Cruz
-    project: ITk Pixels Upgrade
-    period: 2021-2023
-    url: ""
-
-  - name: Annie Bowles
-    institution: UC Santa Cruz
-    project: ITk Pixels Upgrade
-    period: 2020-2021
-    url: ""
-
-  - name: Sydney Leither
-    institution: UC Santa Cruz
-    project: IRIS-HEP
-    period: 2020-2021
-    url: ""
-
-  - name: Suyash Tandon
-    institution: University of Wisconsin - Madison
-    project: IRIS-HEP
-    period: 2020-2021
-    url: ""
-
-  - name: William Black
-    institution: UC Santa Cruz
-    project: ITk Pixels Upgrade
-    period: 2020-2021
     url: ""
 
   - name: Bo Zheng
@@ -108,12 +55,6 @@ undergraduate:
     period: 2019-2022
     url: ""
 
-  - name: Ryan Roberts
-    institution: UC Santa Cruz
-    project: ITk Pixels Upgrade
-    period: 2019-2020
-    url: ""
-
   - name: Henry Zheng
     institution: University of Chicago
     project: "gFEX: System-on-Chip Development (custom OS and firmware)"
@@ -126,28 +67,10 @@ undergraduate:
     period: "2018"
     url: ""
 
-  - name: Ioana Cioara
-    institution: University of Chicago
-    project: gFEX Monitoring
-    period: 2017-2018
-    url: ""
-
   - name: Brandon Nadal
     institution: University of Chicago
     project: "gFEX: REU MRSEC fellow, software to monitor system statistics and environmental conditions"
     period: "2017"
-    url: ""
-
-  - name: Joseph Curti
-    institution: University of Chicago
-    project: gFEX ML Algorithms
-    period: 2016-2017
-    url: ""
-
-  - name: Nicole Hartman
-    institution: University of Chicago
-    project: gFEX
-    period: 2015-2017
     url: ""
 
   - name: Natalie Harrison
@@ -162,63 +85,65 @@ undergraduate:
     period: 2015-2016
     url: ""
 
+# 10 graduate students from the teaching qualifications portfolio LaTeX table
+# (* = expected graduation year)
 graduate:
   - name: Sam Roberts
     institution: UC Santa Cruz
-    project: EWK SUSY Radiative Decays
-    period: 2024-present
+    project: "ITk Pixel Services & Production Database"
+    period: 2022-present
     url: ""
 
   - name: Hava Schwartz
     institution: UC Santa Cruz
-    project: EWK SUSY
-    period: 2023-present
-    url: ""
-
-  - name: Nathan Kang
-    institution: UC Santa Cruz
-    project: pyhf / Statistics
-    period: 2022-present
-    url: ""
-
-  - name: Yuzhan Zhao
-    institution: UC Santa Cruz
-    project: Analysis Infrastructure
+    project: "ITk Pixels Module Testing + Monte Carlo + Higgs"
     period: 2022-present
     url: ""
 
   - name: Jacob Johnson
     institution: UC Santa Cruz
-    project: ITk Pixels Upgrade
+    project: "SUSY EWK sleptons"
     period: 2021-present
     url: ""
 
-  - name: Jacob Pasner
+  - name: Nathan Kang
     institution: UC Santa Cruz
-    project: EWK SUSY
-    period: 2020-2023
+    project: "SUSY EWK VBF (vector boson fusion)"
+    period: 2022-present
     url: ""
 
-  - name: Carolyn Gee
+  - name: Yuzhan Zhao
     institution: UC Santa Cruz
-    project: EWK SUSY Combination
-    period: 2020-2022
-    url: ""
-
-  - name: Natasha Woods
-    institution: UC Santa Cruz
-    project: Higgs
-    period: 2020-2022
+    project: "SM measurement unfolding"
+    period: 2022-present
     url: ""
 
   - name: Emily Smith
     institution: UC Santa Cruz
-    project: SUSY
-    period: 2019-2021
+    project: "gFEX trigger + SUSY EWK"
+    period: 2019-2023
     url: ""
 
-  - name: Michael Hank
+  - name: Carolyn Gee
+    institution: UC Santa Cruz
+    project: "Monte Carlo + Higgs"
+    period: 2020-2023
+    url: ""
+
+  - name: Jeffrey Shahinian
+    institution: UC Santa Cruz
+    project: "SUSY EWK + open data"
+    period: 2018-2020
+    url: ""
+
+  - name: Jacob Pasner
+    institution: UC Santa Cruz
+    project: "pyhf / Statistics / Higgs"
+    period: 2019-2023
+    url: ""
+
+  - name: Nicole Hartman
     institution: University of Chicago
-    project: SUSY
-    period: 2016-2018
+    project: "gFEX trigger electronics"
+    period: 2015-2017
     url: ""

@@ -2,9 +2,9 @@ links:
   - platform: Facebook
     url: https://fb.me/kratsg
     icon: facebook
-  - platform: Twitter
-    url: https://twitter.com/kratsg
-    icon: twitter
+  - platform: Bluesky
+    url: https://bsky.app/profile/giordonstark.com
+    icon: bluesky
   - platform: Mastodon
     url: https://sciencemastodon.com/@kratsg
     icon: mastodon

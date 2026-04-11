@@ -17,6 +17,12 @@ categories:
           - label: Docs
             url: https://pyhf.readthedocs.io/en/latest/
             icon: book
+          - label: Zenodo
+            url: https://doi.org/10.5281/zenodo.1169739
+            icon: file-text
+          - label: JOSS
+            url: https://doi.org/10.21105/joss.02823
+            icon: file-text
         tags: [python, statistics, scikit-hep]
 
       - title: pyhs3
@@ -26,6 +32,9 @@ categories:
           Python implementation of HS3 (HEP Statistics Serialization Standard),
           a serialization format for statistical models in high energy physics.
         links:
+          - label: GitHub
+            url: https://github.com/scipp-atlas/pyhs3/
+            icon: github
           - label: Docs
             url: https://pyhs3.readthedocs.io/en/latest/
             icon: book
@@ -70,6 +79,9 @@ categories:
           - label: GitHub
             url: https://github.com/scipp-atlas/atlas-schema
             icon: github
+          - label: Docs
+            url: https://atlas-schema.readthedocs.io/en/latest/
+            icon: book
         tags: [python, coffea, atlas]
 
       - title: histserv
@@ -80,6 +92,9 @@ categories:
           service allowing remote filling and snapshot retrieval for processing
           large datasets across distributed systems.
         links:
+          - label: GitHub
+            url: https://github.com/pfackeldey/histserv/
+            icon: github
           - label: PyPI
             url: https://pypi.org/project/histserv/
             icon: package
@@ -96,6 +111,9 @@ categories:
           - label: PyPI
             url: https://pypi.org/project/itkdb/
             icon: package
+          - label: GitLab
+            url: https://gitlab.cern.ch/atlas-itk/sw/db/itkdb/
+            icon: gitlab
         tags: [python, atlas, database]
 
       - title: ATLAS Athena
@@ -128,6 +146,20 @@ categories:
             icon: book
         tags: [c++, python, atlas]
 
+      - title: root_numpy
+        role: Developer
+        images: []
+        description: >
+          Python extension module for converting ROOT TTrees to NumPy arrays
+          and vice versa. Widely used in the HEP community for bridging
+          ROOT-based C++ analyses with the Python scientific ecosystem.
+          Archived in 2021 with the transition to uproot-based workflows.
+        links:
+          - label: GitHub
+            url: https://github.com/scikit-hep/root_numpy/
+            icon: github
+        tags: [python, root, scikit-hep]
+
       - title: root-optimize
         role: Developer
         images: []
@@ -154,6 +186,9 @@ categories:
           - label: GitHub
             url: https://github.com/kratsg/rucio-mcp
             icon: github
+          - label: Docs
+            url: https://rucio-mcp.readthedocs.io/en/latest/
+            icon: book
         tags: [python, mcp, data-management]
 
       - title: ami-mcp
@@ -168,6 +203,9 @@ categories:
           - label: GitHub
             url: https://github.com/kratsg/ami-mcp
             icon: github
+          - label: Docs
+            url: https://ami-mcp.readthedocs.io/en/latest/
+            icon: book
         tags: [python, mcp, metadata]
 
       - title: stare
@@ -244,7 +282,8 @@ categories:
           of HEP tools and ITk software for the scientific Python ecosystem.
           Includes pyhf, mapyde, pyhs3, sherpa, hepmc3, fastjet, delphes,
           atlas-schema, itkdb, itksn, module-qc tools, yarr, klfitter, and
-          many more HEP/ITk tools.
+          many more HEP/ITk tools. Also active in the HEP Packaging
+          Coordination group, coordinating cross-experiment packaging efforts.
         links:
           - label: pyhf
             url: https://github.com/conda-forge/pyhf-feedstock
@@ -262,4 +301,6 @@ categories:
             url: https://github.com/conda-forge/mapyde-feedstock
           - label: pyhs3
             url: https://github.com/conda-forge/pyhs3-feedstock
+          - label: HEP Packaging
+            url: https://github.com/hep-packaging-coordination/
         tags: [packaging, conda, hep]

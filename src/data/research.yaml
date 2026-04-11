@@ -18,11 +18,19 @@ categories:
             label: Joined Combinations Task Force; groundwork for statistical models
           - year: 2020
             label: Appointed first Run-2 Summaries convener
+          - year: 2021
+            label: "Initial 3L combination published (EPJC)"
+            url: https://doi.org/10.1140/epjc/s10052-021-09749-7
           - year: 2022
-            label: 14-analysis statistical combination published
+            label: "14-analysis statistical combination published (PRL)"
+            url: https://link.aps.org/doi/10.1103/PhysRevLett.133.031802
         links:
-          - label: INSPIRE
-            url: https://inspirehep.net/authors/1319078
+          - label: PRL
+            url: https://link.aps.org/doi/10.1103/PhysRevLett.133.031802
+            icon: file-text
+          - label: EPJC (3L)
+            url: https://doi.org/10.1140/epjc/s10052-021-09749-7
+            icon: file-text
 
       - title: Strong SUSY Searches
         role: Lead analyst (thesis)
@@ -32,15 +40,25 @@ categories:
           Pioneered optimized selections for gluino/squark searches via strong
           production with multiple heavy-flavor and large-radius jets. Set the
           strongest limits on gluino and stop squark masses multiple times over.
+          Published multiple ATLAS papers and conference notes across Run 1 and
+          Run 2, covering multi-b-jet plus large-R jet plus missing transverse
+          momentum final states.
         timeline:
           - year: 2015
             label: ATLAS-CONF-2015-067
-            url: https://cds.cern.ch/record/2114839
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2015-067/
           - year: 2016
             label: ATLAS-CONF-2016-052
-            url: https://cds.cern.ch/record/2206149
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2016-052/
+          - year: 2016
+            label: "Published SUSY-2015-10 (Phys.Rev.D 94, 032003)"
+            url: https://doi.org/10.1103/PhysRevD.94.032003
           - year: 2017
-            label: Published SUSY-2016-10
+            label: ATLAS-CONF-2017-021
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2017-021/
+          - year: 2017
+            label: "Published SUSY-2016-10 (Phys.Rev.D 97, 012008)"
+            url: https://doi.org/10.1103/PhysRevD.97.012008
           - year: 2018
             label: PhD Thesis (Springer Thesis Award)
             url: https://kratsg.github.io/thesis/
@@ -51,37 +69,54 @@ categories:
           - label: Springer
             url: https://books.google.com/books?vid=ISBN978-3-030-34548-8
             icon: book
+          - label: "Phys.Rev.D 94"
+            url: https://doi.org/10.1103/PhysRevD.94.032003
+            icon: file-text
+          - label: "Phys.Rev.D 97"
+            url: https://doi.org/10.1103/PhysRevD.97.012008
+            icon: file-text
 
       - title: EWK SUSY Radiative Decays
         role: Analysis contact
-        subtitle: 2024-present
+        subtitle: 2024-2025
         images: []
         description: >
-          Current analysis targeting new physics signatures with radiative
-          decays in electroweak supersymmetry.
+          Analysis targeting new physics signatures with radiative decays in
+          electroweak supersymmetry at the ATLAS detector.
 
       - title: Collinear W-boson Radiation
         role: Analysis contact
         subtitle: 2019-2024
         images: []
         description: >
-          Cross-section measurement of collinear W-boson radiation in the
-          ATLAS detector.
+          Cross-section measurement of collinear W-boson radiation in the ATLAS
+          detector at 13 TeV (ANA-STDM-2020-30, in preparation), building on
+          the 7 TeV predecessor measurement. Studies rare QCD topology where a
+          W boson is radiated collinearly from a quark leg.
+        links:
+          - label: "7 TeV predecessor (PLB)"
+            url: https://doi.org/10.1016/j.physletb.2016.12.005
+            icon: file-text
 
       - title: pMSSM Scans & RPV-RPC Reinterpretations
         role: Coordinator
-        subtitle: 2020-2022
+        subtitle: SUSY Run-2 Summaries Convener (2020-2022)
         images: []
         description: >
-          Coordinated analysis contacts for pMSSM parameter scans and
-          R-parity violating/conserving reinterpretations as Run 2 Summaries
-          convener.
+          Coordinated analysis contacts for phenomenological MSSM (pMSSM)
+          parameter scans and R-parity violating/conserving (RPV/RPC)
+          reinterpretations as Run 2 Summaries convener. For RPV-RPC analyses,
+          seeded the Run 2 analysis program and worked on modifying existing
+          RECAST implementations to support the analysis effort. For pMSSM,
+          led work on g-2 interpretations, RECAST executions for existing
+          analyses, and software support — with a general pMSSM parameter scan
+          forthcoming to be made public in the near future.
 
   - name: Detector Instrumentation
     projects:
       - title: ATLAS ITk Pixel Module Testing
         role: Lead, infrastructure builder
-        subtitle: UCSC SCIPP, 2018-present
+        subtitle: UCSC SCIPP, 2018-2025
         images: []
         description: >
           Built UCSC into one of the leading U.S. institutions for digital
@@ -102,21 +137,22 @@ categories:
             icon: code
 
       - title: gFEX Trigger Electronics
-        role: Key contributor
+        role: Key contributor & FDR editor
         subtitle: University of Chicago, 2014-2018
         images: []
         description: >
           Critical contributions to design and prototyping of the Global
           Feature Extractor (gFEX), a high-speed trigger electronics system
-          for the ATLAS Phase 1 upgrade. Developed firmware, ML algorithms,
-          and monitoring systems. Mentored undergraduates on firmware, ML
-          algorithms, and monitoring. Successfully installed and commissioned
-          inside the ATLAS detector in October 2021.
+          for the ATLAS Phase 1 upgrade. Served as editor of the Final Design
+          Report. Developed firmware, ML algorithms, and monitoring systems.
+          Mentored undergraduates on firmware, ML algorithms, and monitoring.
+          Successfully installed and commissioned inside the ATLAS detector in
+          October 2021.
         timeline:
           - year: 2014
             label: Joined gFEX team
           - year: 2017
-            label: Final Design Report published
+            label: "Final Design Report published (editor)"
           - year: 2018
             label: Mentored undergrads on firmware/ML/monitoring
           - year: 2021

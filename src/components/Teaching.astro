@@ -72,13 +72,13 @@ const regularWorkshops = teachingData.workshops_and_tutorials.filter((w) => !w.d
     <!-- Stats row -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
       {[
-        { num: regularWorkshops.length + standaloneItems.length, label: 'Workshops & Tutorials' },
-        { num: teachingData.courses_taught.length + teachingData.courses_ta.length, label: 'Courses' },
-        { num: menteesData.undergraduate.length, label: 'Undergrad Mentees' },
-        { num: menteesData.graduate.length, label: 'Graduate Mentees' },
+        { num: '40+', label: 'Workshops & Tutorials' },
+        { num: String(teachingData.courses_taught.length + teachingData.courses_ta.length) + '+', label: 'Courses' },
+        { num: '20+', label: 'Undergrad Mentees' },
+        { num: '10+', label: 'Graduate Mentees' },
       ].map(({ num, label }) => (
         <div class="bg-white rounded-2xl p-4 border border-gray-100 text-center">
-          <p class="font-display font-bold text-3xl text-brand-accent tabular-nums">{num}+</p>
+          <p class="font-display font-bold text-3xl text-brand-accent tabular-nums">{num}</p>
           <p class="text-xs text-brand-muted mt-1 leading-snug">{label}</p>
         </div>
       ))}
