@@ -39,26 +39,26 @@ const { items } = yaml.load(
     <div class="space-y-6">
       {items.map((item) => (
         <div class="flex gap-5 group">
-          <!-- Number -->
+          {/* Number */}
           <div class="shrink-0 w-8 h-8 rounded-full bg-brand-accent/10 flex items-center justify-center group-hover:bg-brand-accent/15 transition-colors duration-200">
             <span class="text-xs font-bold text-brand-accent tabular-nums">{item.number}</span>
           </div>
 
-          <!-- Content -->
+          {/* Content */}
           <div class="flex-1 pt-1">
-            <!-- Main text (verbatim) -->
+            {/* Main text (verbatim) */}
             <p class="text-sm text-brand-text leading-relaxed">
               {item.text}
             </p>
 
-            <!-- Extra note (item 1 only) -->
+            {/* Extra note (item 1 only) */}
             {item.extra && (
               <p class="mt-2 text-sm text-brand-muted italic leading-relaxed">
                 {item.extra}
               </p>
             )}
 
-            <!-- Inline links -->
+            {/* Inline links */}
             {item.links && item.links.length > 0 && (
               <div class="flex flex-wrap gap-2 mt-3">
                 {item.links.map((link) => (

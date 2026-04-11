@@ -29,13 +29,13 @@ const { categories } = yaml.load(
 
     {categories.map((category) => (
       <div class="mb-14 last:mb-0">
-        <!-- Category label -->
+        {/* Category label */}
         <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
           <span>{category.name}</span>
           <span class="h-px flex-1 bg-gray-200"></span>
         </h3>
 
-        <!-- Cards grid -->
+        {/* Cards grid */}
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {category.projects.map((project) => (
             <SoftwareCard project={project} />

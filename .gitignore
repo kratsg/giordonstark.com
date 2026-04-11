@@ -7,3 +7,8 @@ dist/
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+
+# Common editor files
+*~
+*.swp
+
