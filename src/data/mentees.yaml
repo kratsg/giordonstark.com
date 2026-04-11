@@ -1,6 +1,12 @@
 # Mentored students - url field = their academic/personal website (TODO for Giordon to fill in)
 # 14 undergraduates from the teaching qualifications portfolio LaTeX table
 undergraduate:
+  - name: Allex Smith
+    institution: UC Santa Cruz
+    project: "pyhs3 validation using ATLAS diHiggs yybb analysis"
+    period: 2025-present
+    url: ""
+
   - name: Sam Kelson
     institution: UC Santa Cruz / IRIS-HEP Fellow
     project: "coffea schemas for ATLAS data format: PHYSLITE"
@@ -88,6 +94,24 @@ undergraduate:
 # 10 graduate students from the teaching qualifications portfolio LaTeX table
 # (* = expected graduation year)
 graduate:
+  - name: Qi Bin Lei
+    institution: UC Santa Cruz
+    project: "Analysis facility benchmarking (BNL); k8s deployment for HTC benchmark monitoring"
+    period: 2026-present
+    url: ""
+
+  - name: Yoshinobu Fujikake
+    institution: UC Santa Cruz
+    project: "Columnar analysis framework on Gaudi/Athena (ATLAS)"
+    period: 2026-present
+    url: ""
+
+  - name: Justine Partridge
+    institution: UC Santa Cruz
+    project: "YARR readout system: hardware validation in CI/CD (WATCHEP)"
+    period: 2025-present
+    url: ""
+
   - name: Sam Roberts
     institution: UC Santa Cruz
     project: "ITk Pixel Services & Production Database"

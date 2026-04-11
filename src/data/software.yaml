@@ -10,6 +10,7 @@ categories:
           and interval estimation with JAX backend for automatic differentiation
           and GPU acceleration. Enabled ATLAS to become the first LHC experiment
           to publish full statistical likelihoods. NumFOCUS affiliated project.
+          Development also supported through IRIS-HEP Analysis Systems.
         links:
           - label: GitHub
             url: https://github.com/scikit-hep/pyhf
@@ -23,7 +24,7 @@ categories:
           - label: JOSS
             url: https://doi.org/10.21105/joss.02823
             icon: file-text
-        tags: [python, statistics, scikit-hep]
+        tags: [python, statistics, scikit-hep, iris-hep]
 
       - title: pyhs3
         role: Developer
@@ -31,6 +32,8 @@ categories:
         description: >
           Python implementation of HS3 (HEP Statistics Serialization Standard),
           a serialization format for statistical models in high energy physics.
+          Part of the DEMOS (Democratizing Models) effort, an initiative to
+          broaden access to and reuse of statistical models from LHC experiments.
         links:
           - label: GitHub
             url: https://github.com/scipp-atlas/pyhs3/
@@ -38,6 +41,9 @@ categories:
           - label: Docs
             url: https://pyhs3.readthedocs.io/en/latest/
             icon: book
+          - label: DEMOS
+            url: https://democratizing-models.github.io/
+            icon: globe
         tags: [python, statistics, serialization]
 
       - title: mapyde
@@ -90,7 +96,8 @@ categories:
         description: >
           Dashboard for histogram serving. Distributed histogram management
           service allowing remote filling and snapshot retrieval for processing
-          large datasets across distributed systems.
+          large datasets across distributed systems. Developed as part of
+          IRIS-HEP Analysis Systems work.
         links:
           - label: GitHub
             url: https://github.com/pfackeldey/histserv/
@@ -98,7 +105,7 @@ categories:
           - label: PyPI
             url: https://pypi.org/project/histserv/
             icon: package
-        tags: [python, distributed, histograms]
+        tags: [python, distributed, histograms, iris-hep]
 
       - title: itkdb
         role: Developer
@@ -130,6 +137,84 @@ categories:
             icon: gitlab
         tags: [c++, python, atlas]
 
+  - name: Analysis Facility Tools
+    projects:
+      - title: af-docs
+        role: Developer & Maintainer
+        images: []
+        description: >
+          Documentation for USATLAS Analysis Facilities. Revamped the full
+          documentation site — migrated from Read the Docs to GitHub Pages,
+          improved the build and release cycle, modernized the contributor
+          experience, and cleaned up outdated content.
+        links:
+          - label: Docs
+            url: https://usatlas.github.io/af-docs/
+            icon: book
+          - label: GitHub
+            url: https://github.com/usatlas/af-docs
+            icon: github
+        tags: [documentation, usatlas, analysis-facility]
+
+      - title: af-benchmarking
+        role: Developer
+        images: []
+        description: >
+          Benchmarking framework for USATLAS Analysis Facilities, automating
+          performance testing of compute nodes and storage across multiple
+          facilities.
+        links:
+          - label: Dashboard
+            url: https://usatlas.github.io/af-benchmarking/
+            icon: globe
+          - label: GitHub
+            url: https://github.com/usatlas/af-benchmarking
+            icon: github
+        tags: [benchmarking, usatlas, analysis-facility]
+
+      - title: af-runner
+        role: Developer
+        images: []
+        description: >
+          Custom GitHub Actions runner enabling CI/CD workflows to execute
+          directly on UChicago Analysis Facility hardware, bridging GitHub
+          Actions with HPC/HTC computing resources.
+        links:
+          - label: GitHub
+            url: https://github.com/usatlas/runner
+            icon: github
+        tags: [ci-cd, github-actions, analysis-facility]
+
+      - title: AF Skills Marketplace
+        role: Developer
+        images: []
+        description: >
+          Skills marketplace for analysis users who deploy agents on the
+          UChicago Analysis Facility, providing reusable Claude Code skills
+          tailored to HEP analysis workflows.
+        links:
+          - label: GitHub
+            url: https://github.com/usatlas/marketplace
+            icon: github
+        tags: [agents, mcp, analysis-facility]
+
+      - title: ML Platform (maniaclab)
+        role: Maintainer
+        images: []
+        description: >
+          Machine learning platform container images for JupyterLab and
+          BinderHub deployments on the UChicago Analysis Facility. Provides
+          pre-configured environments with HEP and ML software stacks for
+          interactive analysis.
+        links:
+          - label: GitHub
+            url: https://github.com/maniaclab/ml_platform
+            icon: github
+          - label: Docs
+            url: https://usatlas.github.io/af-docs/uchicago/jupyter/
+            icon: book
+        tags: [jupyter, docker, analysis-facility]
+
   - name: Analysis Frameworks
     projects:
       - title: xAODAnaHelpers
@@ -141,23 +226,30 @@ categories:
           calibration, and systematic uncertainties. Used by multiple ATLAS
           physics groups (SM, SUSY, Exotics, Higgs, Trigger, Jet Calibration).
         links:
+          - label: GitHub
+            url: https://github.com/UCATLAS/xAODAnaHelpers/
+            icon: github
           - label: Docs
             url: https://xaodanahelpers.readthedocs.io
             icon: book
         tags: [c++, python, atlas]
 
       - title: root_numpy
-        role: Developer
+        role: Developer (2014-2021, archived)
         images: []
         description: >
           Python extension module for converting ROOT TTrees to NumPy arrays
           and vice versa. Widely used in the HEP community for bridging
           ROOT-based C++ analyses with the Python scientific ecosystem.
-          Archived in 2021 with the transition to uproot-based workflows.
+          Archived in 2021 with the community transition to uproot-based
+          workflows.
         links:
           - label: GitHub
             url: https://github.com/scikit-hep/root_numpy/
             icon: github
+          - label: Docs
+            url: https://scikit-hep.org/root_numpy/
+            icon: book
         tags: [python, root, scikit-hep]
 
       - title: root-optimize
@@ -226,19 +318,34 @@ categories:
         description: >
           Python library for parsing protocol data from Dr. Storage dry air
           cabinets, extracting temperature and humidity sensor readings from
-          binary data across multiple cabinet models.
+          binary data across multiple cabinet models. Used in the ATLAS ITk
+          pixel module test bench at UCSC.
         links:
           - label: GitHub
             url: https://github.com/kratsg/drstorage
             icon: github
         tags: [python, hardware, parsing]
 
+      - title: ironman
+        role: Developer
+        images: []
+        description: >
+          Monitoring and control software for the ATLAS gFEX trigger
+          electronics system, providing real-time system statistics and
+          environmental condition monitoring.
+        links:
+          - label: GitHub
+            url: https://github.com/kratsg/ironman
+            icon: github
+        tags: [python, monitoring, atlas]
+
       - title: meta-l1calo
         role: Developer
         images: []
         description: >
           OpenEmbedded firmware layer for compiling Linux kernels from scratch
-          for ATLAS Level-1 Calorimeter trigger instrumentation.
+          for ATLAS Level-1 Calorimeter trigger instrumentation, used in the
+          gFEX trigger electronics project.
         links:
           - label: GitHub
             url: https://github.com/kratsg/meta-l1calo
@@ -265,11 +372,12 @@ categories:
         images: []
         description: >
           Online dictionary for Science, Technology, Engineering, and Math
-          sign language videos to be stored, uploaded, and searched.
+          sign language videos to be stored, uploaded, and searched. Part of
+          the CD2Bit accessibility initiative.
         links:
-          - label: Website
-            url: http://survey.signsfive.com
-            icon: globe
+          - label: GitHub
+            url: https://github.com/cd2bit/
+            icon: github
         tags: [web, accessibility, asl]
 
   - name: Ecosystem Contributions
@@ -282,9 +390,12 @@ categories:
           of HEP tools and ITk software for the scientific Python ecosystem.
           Includes pyhf, mapyde, pyhs3, sherpa, hepmc3, fastjet, delphes,
           atlas-schema, itkdb, itksn, module-qc tools, yarr, klfitter, and
-          many more HEP/ITk tools. Also active in the HEP Packaging
-          Coordination group, coordinating cross-experiment packaging efforts.
+          many more HEP/ITk tools. Active in the HEP Packaging Coordination
+          group (formed 2024), coordinating cross-experiment packaging efforts
+          across the HEP community.
         links:
+          - label: HEP Packaging
+            url: https://github.com/hep-packaging-coordination/
           - label: pyhf
             url: https://github.com/conda-forge/pyhf-feedstock
           - label: sherpa
@@ -301,6 +412,4 @@ categories:
             url: https://github.com/conda-forge/mapyde-feedstock
           - label: pyhs3
             url: https://github.com/conda-forge/pyhs3-feedstock
-          - label: HEP Packaging
-            url: https://github.com/hep-packaging-coordination/
         tags: [packaging, conda, hep]

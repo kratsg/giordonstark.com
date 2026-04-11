@@ -320,3 +320,16 @@ other_instruction:
     organization: JHEP & SciPost Physics
     description: >
       Journal referee for 4 JHEP papers and 3 SciPost Physics papers.
+
+  - role: Day-to-Day Mentor (WATCHEP Program)
+    organization: UC Santa Cruz / WATCHEP
+    period: 2025-present
+    description: >
+      Mentoring three students through the WATCHEP program at UC Santa Cruz,
+      providing day-to-day research guidance alongside official lab mentors.
+      Justine Partridge (hardware validation of YARR readout system in CI/CD;
+      official mentor: Timon Heim, LBNL); Yoshinobu Fujikake (columnar
+      analysis framework on Gaudi/Athena; official mentor: Nick Smith, FNAL);
+      Qi Bin Lei (HTC benchmark monitoring at BNL analysis facility; official
+      mentor: Ofer Rind, BNL).
+    url: https://watchep.org/

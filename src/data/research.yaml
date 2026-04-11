@@ -114,7 +114,7 @@ categories:
 
   - name: Detector Instrumentation
     projects:
-      - title: ATLAS ITk Pixel Module Testing
+      - title: ITk Pixel Module Testing
         role: Lead, infrastructure builder
         subtitle: UCSC SCIPP, 2018-2025
         images: []
@@ -131,10 +131,23 @@ categories:
           - "TUI/GUI for slow control, monitoring, and visual inspection"
           - "All electrical QC tests except visual inspection and radiation scanning can be done remotely"
           - "Module and stand status monitored through Grafana dashboards mounted on lab walls"
+        timeline:
+          - year: 2018
+            label: Joined UCSC/SCIPP; began building ITk test bench infrastructure
+          - year: 2019
+            label: Created itkdb — Python library for the ITk Production Database
+          - year: 2022
+            label: Joined admin team as software/database/EOS expert
         links:
-          - label: itkdb
+          - label: itkdb (PyPI)
             url: https://pypi.org/project/itkdb/
-            icon: code
+            icon: package
+          - label: itkdb (GitLab)
+            url: https://gitlab.cern.ch/atlas-itk/sw/db/itkdb/
+            icon: gitlab
+          - label: drstorage
+            url: https://github.com/kratsg/drstorage
+            icon: github
 
       - title: gFEX Trigger Electronics
         role: Key contributor & FDR editor
@@ -157,3 +170,68 @@ categories:
             label: Mentored undergrads on firmware/ML/monitoring
           - year: 2021
             label: Installed and commissioned in ATLAS
+        links:
+          - label: ironman
+            url: https://github.com/kratsg/ironman
+            icon: github
+          - label: meta-l1calo
+            url: https://github.com/kratsg/meta-l1calo
+            icon: github
+
+  - name: Analysis Systems & Facilities
+    projects:
+      - title: IRIS-HEP Analysis Systems
+        role: Researcher, Tool Developer
+        subtitle: 2019-present
+        images: []
+        description: >
+          Active member of the Analysis Systems (AS) focus area of the Institute
+          for Research and Innovation in Software for High Energy Physics
+          (IRIS-HEP). The AS focus area develops sustainable analysis tools to
+          extend the physics reach of the HL-LHC experiments by creating greater
+          functionality, reducing time-to-insight, lowering barriers for smaller
+          teams, and streamlining analysis preservation, reproducibility, and
+          reuse. Contributions include core development of pyhf (enabling the
+          first published likelihoods from an LHC experiment), histserv
+          (distributed histogram management), and analysis workflow tooling.
+          Also engaged with the DEMOS (Democratizing Models) effort, an
+          associated partnership working to broaden reuse of statistical models.
+        links:
+          - label: IRIS-HEP
+            url: https://iris-hep.org/
+            icon: globe
+          - label: Analysis Systems
+            url: https://iris-hep.org/as.html
+            icon: globe
+          - label: DEMOS
+            url: https://democratizing-models.github.io/
+            icon: globe
+
+      - title: USATLAS Operations / UChicago Analysis Facility
+        role: Analysis Support & Infrastructure
+        subtitle: 2022-present
+        images: []
+        description: >
+          Maintaining and supporting the UChicago Analysis Facility, one of the
+          primary ATLAS analysis facilities serving hundreds of physicists for
+          USATLAS Operations. Responsibilities include user support via CERN
+          Mattermost, Discourse, and e-mail; revamping and maintaining AF
+          documentation (migrated from RTD to GitHub Pages with improved build
+          and contributor experience); maintaining ML platform images for
+          JupyterLab/BinderHub; developing a custom GitHub Actions runner for
+          executing CI jobs directly on AF hardware; benchmarking analysis
+          facility performance; and creating a skills marketplace for analysis
+          users who run agents on the AFs.
+        links:
+          - label: AF Docs
+            url: https://usatlas.github.io/af-docs/
+            icon: book
+          - label: Benchmarking
+            url: https://usatlas.github.io/af-benchmarking/
+            icon: globe
+          - label: Mattermost
+            url: https://mattermost.web.cern.ch/uchicago-af
+            icon: globe
+          - label: Discourse
+            url: https://atlas-talk.sdcc.bnl.gov/
+            icon: globe
