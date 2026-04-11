@@ -17,6 +17,7 @@ interface Particle {
   radius: number;
   alpha: number;
   color: string;
+  phase: number; // random per-particle offset for scroll-driven wiggle
 }
 
 interface Track {
@@ -77,17 +78,19 @@ function initBunches(w: number, h: number): void {
       x: 0, y: 0,
       vx: (Math.random() - 0.5) * spread,
       vy: (Math.random() - 0.5) * spread,
-      radius: Math.random() * 2 + 1,
+      radius: Math.random() * 2.2 + 1.1,
       alpha: Math.random() * 0.6 + 0.4,
       color: Math.random() > 0.5 ? COLORS.bunch1 : COLORS.bunch2,
+      phase: Math.random() * Math.PI * 2,
     });
     rightBunch.push({
       x: 0, y: 0,
       vx: (Math.random() - 0.5) * spread,
       vy: (Math.random() - 0.5) * spread,
-      radius: Math.random() * 2 + 1,
+      radius: Math.random() * 2.2 + 1.1,
       alpha: Math.random() * 0.6 + 0.4,
       color: Math.random() > 0.5 ? COLORS.bunch1 : COLORS.bunch2,
+      phase: Math.random() * Math.PI * 2,
     });
   }
 
@@ -133,19 +136,24 @@ function render(): void {
 
   // Phase thresholds
   const approachEnd = 0.4;
-  const collisionEnd = 0.6;
+  const collisionEnd = 0.45; // short glow window so tracks appear quickly
 
   if (p < approachEnd) {
-    // Approach phase: bunches move from edges toward center
+    // Approach phase: bunches move from edges toward center, wiggling vertically
     const t = p / approachEnd; // 0..1
     const leftX = t * (w / 2);
     const rightX = w - t * (w / 2);
+
+    // Per-particle scroll-driven wiggle: fast frequency (12π = 6 cycles),
+    // damps to zero as t→1 so particles settle at center on collision.
+    const wiggleAmp = 24 * (1 - t);
 
     [leftBunch, rightBunch].forEach((bunch, bi) => {
       const bx = bi === 0 ? leftX : rightX;
       bunch.forEach((pt) => {
         const px = bx + pt.vx * (1 - t) * 0.5;
-        const py = cy + pt.vy * (1 - t) * 0.5;
+        const py = cy + pt.vy * (1 - t) * 0.5
+          + Math.sin(t * Math.PI * 12 + pt.phase) * wiggleAmp;
         ctx!.save();
         ctx!.globalAlpha = pt.alpha * (0.4 + t * 0.6);
         ctx!.fillStyle = pt.color;
