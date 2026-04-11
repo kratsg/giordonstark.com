@@ -259,10 +259,13 @@ courses_taught:
     period: Mar-Jun 2011
     institution: California Institute of Technology
     description: >
-      Migrated the core software "CurveFit" for the computational physics lab
-      from an older version of Mathematica to a newer version.
+      Developed CurveFit, a Mathematica program for data fitting and error
+      propagation used in the sophomore physics lab. Leveraged Mathematica 8's
+      statistical modeling features to import variable-column data files,
+      automate error propagation, and provide standardized output for fitting
+      resonance peaks, damped oscillations, and similar lab measurements.
 
-  - title: "Information Systems and Technology"
+  - title: "Information Systems and Technology (IST 004)"
     role: Lead Teaching Assistant
     period: Mar 2010-Jun 2011
     institution: California Institute of Technology

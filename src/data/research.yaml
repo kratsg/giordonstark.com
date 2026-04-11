@@ -196,6 +196,50 @@ categories:
             url: https://github.com/kratsg/meta-l1calo
             icon: github
 
+      - title: LIGO Gravitational Wave Detector
+        role: Research Assistant
+        subtitle: MIT, Summer 2011
+        images: []
+        description: >
+          Contributed to improving detection resolution of the LIGO
+          interferometer at MIT. Diagnosed crosstalk between capacitive
+          position sensors (CPS) — used for seismic noise measurement in the
+          feedback/feed-forward systems — finding that racks of sensors
+          generated mutual interference at 25 kHz, corrupting distance
+          measurements. Characterized and implemented a feed-forward seismic
+          noise cancellation system using transfer functions, achieving a
+          2-orders-of-magnitude noise reduction. Developed watchdog/guardian
+          software in Python, Perl, and C to monitor ~32,000 instrument
+          variables and manage safe state transitions across the MIT lab.
+          Findings published as internal LIGO/VIRGO community documents.
+        timeline:
+          - year: 2011
+            label: "Feed-forward seismic noise cancellation — 100× reduction"
+          - year: 2011
+            label: Watchdog/guardian system for 32,000+ instrument variables
+
+      - title: Submillimeter Wave Observatory
+        role: Research Assistant (Edward C. and Alice Stone Fellow)
+        subtitle: Caltech CASIMIR group, 2010
+        images: []
+        description: >
+          Characterized the optical transmittance of materials in the
+          submillimeter band (0.1–1.0 mm, 300 GHz–3 THz) for use in sensitive
+          submillimeter telescopes and detectors. Built the optical arrangement
+          coupling a Fourier Transform Spectrometer to a liquid-helium–cooled
+          bolometer (1.4 K), performed cryogenic cooldowns, and conducted
+          spectral scans of fourteen material types — including Zitex, Crystal
+          Quartz, Sapphire, Mylar, and multi-layer windows. Applied discrete
+          Fourier transform analysis to convert interferograms to frequency-domain
+          spectra. Results inform component selection for the CASIMIR (Caltech
+          Airborne Submillimeter Interstellar Medium Investigations Receiver)
+          instrument.
+        timeline:
+          - year: 2010
+            label: "Spring–summer SURF project (14 weeks); bolometer cooldown procedures"
+          - year: 2010
+            label: Three spectral scans, DFT analysis of interferograms
+
   - name: Analysis Systems & Facilities
     projects:
       - title: IRIS-HEP Analysis Systems
@@ -237,9 +281,8 @@ categories:
           documentation (migrated from RTD to GitHub Pages with improved build
           and contributor experience); maintaining ML platform images for
           JupyterLab/BinderHub; developing a custom GitHub Actions runner for
-          executing CI jobs directly on AF hardware; benchmarking analysis
-          facility performance; and creating a skills marketplace for analysis
-          users who run agents on the AFs.
+          executing CI jobs directly on AF hardware; and benchmarking analysis
+          facility performance across compute nodes and storage systems.
         links:
           - label: AF Docs
             url: https://usatlas.github.io/af-docs/
@@ -253,3 +296,35 @@ categories:
           - label: Discourse
             url: https://atlas-talk.sdcc.bnl.gov/
             icon: globe
+
+      - title: Agentic Analysis Facility (Elwood)
+        role: Principal Investigator / Lead Architect
+        subtitle: UChicago Analysis Facility, 2026-present
+        images: []
+        description: >
+          Building an AI-native analysis platform where a physicist describes
+          their research intent in natural language and Elwood autonomously
+          orchestrates the complete analysis workflow — data discovery via Rucio,
+          columnar delivery via ServiceX, histogram production via coffea, and
+          statistical inference via pyhf — on a real, operating analysis
+          facility. The architecture organizes into three layers: a domain
+          "codebook" of structured HEP knowledge articles, MCP tool wrappers
+          (for HTCondor, Rucio, ServiceX, coffea, pyhf, Kubernetes, and
+          Elasticsearch), and facility configuration files that make the system
+          facility-agnostic (UChicago AF, NERSC, future nodes — swap the config,
+          the reasoning is indifferent); an agentic harness that selects and
+          configures the reasoning loop; and a pluggable reasoning codec.
+          The AF Skills Marketplace provides community-contributed domain skills
+          for use by agents running on the facility. The system is designed to
+          accelerate the full HEP analysis cycle — from petabyte-scale data
+          access through statistical inference — across experiment boundaries.
+        links:
+          - label: AF Skills Marketplace
+            url: https://github.com/usatlas/marketplace
+            icon: github
+          - label: rucio-mcp
+            url: https://github.com/kratsg/rucio-mcp
+            icon: github
+          - label: ami-mcp
+            url: https://github.com/kratsg/ami-mcp
+            icon: github

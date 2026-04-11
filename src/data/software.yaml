@@ -454,6 +454,17 @@ categories:
 
   - name: Early Projects
     projects:
+      - title: CurveFit
+        role: Developer (2011)
+        images: []
+        description: >
+          Mathematica program for curve fitting and error propagation in the
+          Caltech sophomore physics lab. Leveraged Mathematica 8's statistical
+          modeling features to import variable-column data files, automate error
+          propagation, and provide standardized output for fitting resonance
+          peaks, damped oscillations, and similar lab measurements.
+        tags: [mathematica, education, scientific-computing]
+
       - title: canvasGame
         role: Developer (2006)
         images: []

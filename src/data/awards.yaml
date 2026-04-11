@@ -5,12 +5,22 @@ awards:
     date: April 2025
   - name: UC Santa Cruz Outstanding Postdoctoral Fellow Award
     date: May 2022
+    citation: >
+      Nominated by Associate Professor Michael Hance; endorsed by Distinguished
+      Professor and Chair Bruce A. Schumm, Physics, and Hava Schwartz, Physics
+      Graduate Student.
+    url: https://postdocs.ucsc.edu/awards/graduate-division-outstanding-postdoc/2022-winners/
   - name: Springer Thesis Award
     date: August 2019
   - name: CERN Fellowship (turned down)
     date: April 2018
   - name: Nathan Sugarman Award for Excellence in Graduate Student Research
     date: May 2017
+    citation: >
+      For his technical contributions and creative insights in the design and
+      prototyping of a new high-speed electronics trigger system for
+      Lorentz-boosted massive particles for the ATLAS Experiment.
+    url: https://efi.uchicago.edu/the-efi/awards/previous-nathan-sugarman-awards/
   - name: US ATLAS Outstanding Graduate Student Award
     date: June 2016
     citation: >
@@ -24,6 +34,9 @@ awards:
     date: November 2015
   - name: Department of Energy, Office of Science Graduate Student Research
     date: Oct. 2015 - Jan. 2016
+    citation: >
+      Boosted object hardware trigger development and testing for the Phase I
+      upgrade of the ATLAS Experiment at Brookhaven National Lab.
   - name: UChicago Excellence in Graduate Teaching nominee
     date: April 2015
   - name: US LHC Users Association Lightning Round Winner
@@ -41,6 +54,7 @@ awards:
       explanations and enthusiasm.
   - name: Edward C. and Alice Stone Fellow
     date: June 2010
+    citation: "Submillimeter Transmission of Materials"
   - name: Palm Beach Post -- Best of Class 2008
     date: April 2008
   - name: Howard Shavel Youth Award
