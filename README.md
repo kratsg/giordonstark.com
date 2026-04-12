@@ -1,32 +1,21 @@
 # giordonstark.com
 
-Personal academic website for Giordon Stark — Deaf project scientist and experimental particle physicist at UCSC/ATLAS.
+Giordon Stark's personal site — particle physicist, ATLAS/CERN, UC Santa Cruz.
 
 ## Stack
 
-- **[Astro](https://astro.build)** — static site generator, zero JS by default
-- **[Tailwind CSS v3](https://tailwindcss.com)** — utility-first styling with a custom warm-off-white/brand-accent theme
-- **[GSAP + ScrollTrigger](https://gsap.com)** — scroll-driven proton-proton collision canvas animation in the hero
-- **[pixi](https://pixi.sh)** — manages the Node.js environment via conda-forge
+- [Astro](https://astro.build): static site generator, ships zero JS by default
+- [Tailwind CSS v4](https://tailwindcss.com): utility-first styling; theme tokens live in `src/styles/global.css`
+- [GSAP + ScrollTrigger](https://gsap.com): the proton-proton collision animation in the hero
+- [pixi](https://pixi.sh): manages the Node.js toolchain via conda-forge
 
 ## Development
 
-Tasks are defined in `pixi.toml` and self-documented — run `pixi task list` to see all available tasks with their descriptions. Key ones:
-
-```
-pixi run dev           # start dev server (runs install first if needed)
-pixi run build         # build to dist/ (cached: reruns only when sources change)
-pixi run preview       # serve the production build locally
-pixi run format        # auto-format with Prettier
-pixi run format-check  # check formatting without writing (for CI)
-pixi run lint          # lint Astro components
-```
-
-`build` and `install` have `inputs`/`outputs` configured so pixi skips them when nothing has changed.
+Run `pixi task list` to see all tasks with descriptions.
 
 ## Content
 
-All content lives in YAML files under `src/data/`. To update any section, edit the corresponding file and rebuild.
+Everything is YAML under `src/data/`. Edit the file, rebuild, done.
 
 | File                           | Section                                                                |
 | ------------------------------ | ---------------------------------------------------------------------- |
@@ -44,37 +33,37 @@ All content lives in YAML files under `src/data/`. To update any section, edit t
 
 ### Adding a research or software card
 
-Each entry in `research.yaml` and `software.yaml` supports an optional `images` field:
+`research.yaml` and `software.yaml` both support an optional `images` field:
 
 ```yaml
 images:
-  - img/research/my-plot.png # single image: renders as a hero image above the card
-  - img/research/result-2.png # multiple images: renders as a carousel
+  - img/research/my-plot.png # single image shows as a card header
+  - img/research/result-2.png # multiple images become a carousel
 ```
 
-Place image files in `public/img/research/` or `public/img/software/`. Leave `images: []` (or omit the field) to show no image.
+Drop files in `public/img/research/` or `public/img/software/`. Omit `images` entirely if you don't want one.
 
 ### Updating social links
 
-Edit `src/data/social.yaml`. The `icon` field must be one of: `github`, `bluesky`, `mastodon`, `facebook`. The `rel` field (optional) is appended to `noopener` — use `me` for rel-me verification links (e.g. Mastodon).
+Edit `src/data/social.yaml`. `icon` must be one of: `github`, `bluesky`, `mastodon`, `facebook`. The `rel` field is optional — set it to `me` for rel-me verification (Mastodon needs this).
 
-## Collision Animation
+## Collision animation
 
-The particle collision canvas (`src/scripts/collision.ts`) is a scroll-driven GSAP animation tied to the `#about` section. Three phases:
+`src/scripts/collision.ts` is a scroll-linked canvas animation over the About section. Three phases:
 
-1. **Approach** (0–40% scroll): two proton bunches move from the edges toward center with per-particle scroll-driven wiggle
-2. **Collision** (40–45% scroll): brief bright burst at center
-3. **Tracks** (45–100% scroll): curved particle tracks spray outward from the collision point
+1. Approach (0–40%): two proton bunches close in from the edges, each particle wiggling independently with scroll position
+2. Collision (40–45%): brief flash at center
+3. Tracks (45–100%): curved particle tracks spray outward
 
-Particle counts and track counts scale down on mobile (see `particleCount()` / `trackCount()`). The canvas is `aria-hidden` — all content is fully readable without it.
+Mobile gets fewer particles — see `particleCount()` and `trackCount()`. The canvas is `aria-hidden`.
 
 ## Deployment
 
-Pushes to `main` automatically build and deploy to GitHub Pages via `.github/workflows/deploy.yml`. The custom domain is set by `public/CNAME`.
+Push to `main` and it deploys to GitHub Pages via `.github/workflows/deploy.yml`. Custom domain is in `public/CNAME`.
 
 ## Profile image
 
-To resize and compress a new profile photo:
+To resize and compress a new photo:
 
 ```bash
 convert -strip -interlace Plane -gaussian-blur 0.05 -quality 85% -define jpeg:dct-method=float profile.jpg resized.jpg
