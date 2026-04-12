@@ -1,8 +1,8 @@
 ---
-import yaml from 'js-yaml';
-import { readFileSync } from 'node:fs';
-import SoftwareCard from './cards/SoftwareCard.astro';
-import type { SoftwareProject } from './cards/SoftwareCard.astro';
+import yaml from "js-yaml";
+import { readFileSync } from "node:fs";
+import SoftwareCard from "./cards/SoftwareCard.astro";
+import type { SoftwareProject } from "./cards/SoftwareCard.astro";
 
 interface SoftwareCategory {
   name: string;
@@ -13,35 +13,43 @@ interface SoftwareData {
 }
 
 const { categories } = yaml.load(
-  readFileSync('src/data/software.yaml', 'utf8')
+  readFileSync("src/data/software.yaml", "utf8"),
 ) as SoftwareData;
 ---
 
-<section id="software" class="relative section-fade bg-gray-50/60" style="z-index: 1;">
-  <div class="max-w-5xl mx-auto px-6 py-20">
+<section
+  id="software"
+  class="section-fade relative bg-gray-50/60"
+  style="z-index: 1;"
+>
+  <div class="mx-auto max-w-5xl px-6 py-20">
     <!-- Section header -->
-    <div class="flex items-center gap-4 mb-12">
-      <span class="h-px flex-1 max-w-[3rem] bg-brand-accent"></span>
-      <h2 class="font-display font-bold text-2xl text-brand-text tracking-tight">
+    <div class="mb-12 flex items-center gap-4">
+      <span class="bg-brand-accent h-px max-w-12 flex-1"></span>
+      <h2
+        class="font-display text-brand-text text-2xl font-bold tracking-tight"
+      >
         Software &amp; Open Source
       </h2>
     </div>
 
-    {categories.map((category) => (
-      <div class="mb-14 last:mb-0">
-        {/* Category label */}
-        <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
-          <span>{category.name}</span>
-          <span class="h-px flex-1 bg-gray-200"></span>
-        </h3>
+    {
+      categories.map((category) => (
+        <div class="mb-14 last:mb-0">
+          {/* Category label */}
+          <h3 class="text-brand-muted mb-6 flex items-center gap-3 text-[11px] font-medium tracking-[0.2em] uppercase">
+            <span>{category.name}</span>
+            <span class="h-px flex-1 bg-gray-200" />
+          </h3>
 
-        {/* Cards grid */}
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {category.projects.map((project) => (
-            <SoftwareCard project={project} />
-          ))}
+          {/* Cards grid */}
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {category.projects.map((project) => (
+              <SoftwareCard project={project} />
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </section>

@@ -4,8 +4,8 @@
  * Canvas is fixed behind the hero/About section, aria-hidden for accessibility.
  */
 
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,12 +46,12 @@ const rightBunch: Particle[] = [];
 const tracks: Track[] = [];
 
 const COLORS = {
-  bunch1: '#f97316',  // warm orange
-  bunch2: '#fb923c',  // lighter orange
-  track1: '#c53030',  // brand accent (red)
-  track2: '#ffffff',  // white
-  track3: '#94a3b8',  // cool gray
-  glow: 'rgba(249, 115, 22, 0.4)',
+  bunch1: "#f97316", // warm orange
+  bunch2: "#fb923c", // lighter orange
+  track1: "#c53030", // brand accent (red)
+  track2: "#ffffff", // white
+  track3: "#94a3b8", // cool gray
+  glow: "rgba(249, 115, 22, 0.4)",
 };
 
 function isMobile(): boolean {
@@ -75,7 +75,8 @@ function initBunches(w: number, h: number): void {
   for (let i = 0; i < count; i++) {
     const spread = isMobile() ? 18 : 28;
     leftBunch.push({
-      x: 0, y: 0,
+      x: 0,
+      y: 0,
       vx: (Math.random() - 0.5) * spread,
       vy: (Math.random() - 0.5) * spread,
       radius: Math.random() * 2.2 + 1.1,
@@ -84,7 +85,8 @@ function initBunches(w: number, h: number): void {
       phase: Math.random() * Math.PI * 2,
     });
     rightBunch.push({
-      x: 0, y: 0,
+      x: 0,
+      y: 0,
       vx: (Math.random() - 0.5) * spread,
       vy: (Math.random() - 0.5) * spread,
       radius: Math.random() * 2.2 + 1.1,
@@ -117,7 +119,7 @@ function drawGlow(x: number, y: number, radius: number, alpha: number): void {
   if (!ctx) return;
   const grad = ctx.createRadialGradient(x, y, 0, x, y, radius);
   grad.addColorStop(0, `rgba(249,115,22,${alpha})`);
-  grad.addColorStop(1, 'rgba(249,115,22,0)');
+  grad.addColorStop(1, "rgba(249,115,22,0)");
   ctx.fillStyle = grad;
   ctx.beginPath();
   ctx.arc(x, y, radius, 0, Math.PI * 2);
@@ -152,8 +154,10 @@ function render(): void {
       const bx = bi === 0 ? leftX : rightX;
       bunch.forEach((pt) => {
         const px = bx + pt.vx * (1 - t) * 0.5;
-        const py = cy + pt.vy * (1 - t) * 0.5
-          + Math.sin(t * Math.PI * 12 + pt.phase) * wiggleAmp;
+        const py =
+          cy +
+          pt.vy * (1 - t) * 0.5 +
+          Math.sin(t * Math.PI * 12 + pt.phase) * wiggleAmp;
         ctx!.save();
         ctx!.globalAlpha = pt.alpha * (0.4 + t * 0.6);
         ctx!.fillStyle = pt.color;
@@ -166,7 +170,7 @@ function render(): void {
 
     // Subtle glow as they approach
     if (t > 0.7) {
-      drawGlow(w / 2, cy, 40 * (t - 0.7) / 0.3, 0.3 * (t - 0.7) / 0.3);
+      drawGlow(w / 2, cy, (40 * (t - 0.7)) / 0.3, (0.3 * (t - 0.7)) / 0.3);
     }
   } else if (p < collisionEnd) {
     // Collision phase: bright burst at center
@@ -180,7 +184,7 @@ function render(): void {
     // Flash dot
     ctx.save();
     ctx.globalAlpha = burstAlpha;
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = "#fff";
     ctx.beginPath();
     ctx.arc(w / 2, cy, 5, 0, Math.PI * 2);
     ctx.fill();
@@ -224,7 +228,7 @@ function render(): void {
 
 export function initCollision(canvasEl: HTMLCanvasElement): () => void {
   canvas = canvasEl;
-  ctx = canvas.getContext('2d');
+  ctx = canvas.getContext("2d");
 
   function resize(): void {
     if (!canvas) return;
@@ -234,16 +238,16 @@ export function initCollision(canvasEl: HTMLCanvasElement): () => void {
   }
 
   resize();
-  window.addEventListener('resize', resize);
+  window.addEventListener("resize", resize);
 
   // Start render loop
   rafId = requestAnimationFrame(render);
 
   // GSAP ScrollTrigger drives scrollProgress
   ScrollTrigger.create({
-    trigger: '#about',
-    start: 'top top',
-    end: 'bottom top',
+    trigger: "#about",
+    start: "top top",
+    end: "bottom top",
     scrub: 1,
     onUpdate(self) {
       scrollProgress = self.progress;
@@ -253,7 +257,7 @@ export function initCollision(canvasEl: HTMLCanvasElement): () => void {
   // Return cleanup function
   return function cleanup(): void {
     cancelAnimationFrame(rafId);
-    window.removeEventListener('resize', resize);
+    window.removeEventListener("resize", resize);
     ScrollTrigger.getAll().forEach((st) => st.kill());
   };
 }

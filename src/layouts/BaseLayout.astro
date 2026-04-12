@@ -5,15 +5,17 @@ export interface Props {
 }
 
 const {
-  title = 'Giordon Stark, PhD',
+  title = "Giordon Stark, PhD",
   description = "Giordon Stark's online webpage.",
 } = Astro.props;
 
-const siteUrl = 'https://giordonstark.com';
+const siteUrl = "https://giordonstark.com";
 const ogImage = `${siteUrl}/img/profile.jpg`;
+
+import "../styles/global.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -46,40 +48,44 @@ const ogImage = `${siteUrl}/img/profile.jpg`;
 
     <!-- Google Tag Manager -->
     <script is:inline>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-M79B5V7');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-M79B5V7");
     </script>
   </head>
-  <body class="bg-brand-bg text-brand-text font-body antialiased">
+  <body class="bg-brand-bg font-body text-brand-text antialiased">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-M79B5V7"
         height="0"
         width="0"
-        style="display:none;visibility:hidden"
-      ></iframe>
+        style="display:none;visibility:hidden"></iframe>
     </noscript>
 
     <slot />
 
     <!-- Section fade-in via IntersectionObserver -->
     <script is:inline>
-      document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener("DOMContentLoaded", function () {
         const observer = new IntersectionObserver(
           function (entries) {
             entries.forEach(function (entry) {
               if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add("visible");
               }
             });
           },
-          { threshold: 0.08 }
+          { threshold: 0.08 },
         );
-        document.querySelectorAll('.section-fade').forEach(function (el) {
+        document.querySelectorAll(".section-fade").forEach(function (el) {
           observer.observe(el);
         });
       });

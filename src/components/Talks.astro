@@ -1,8 +1,8 @@
 ---
-import yaml from 'js-yaml';
-import { readFileSync } from 'node:fs';
-import TalkAbstract from './cards/TalkAbstract.astro';
-import type { TalkAbstractEntry } from './cards/TalkAbstract.astro';
+import yaml from "js-yaml";
+import { readFileSync } from "node:fs";
+import TalkAbstract from "./cards/TalkAbstract.astro";
+import type { TalkAbstractEntry } from "./cards/TalkAbstract.astro";
 
 interface TalkAbstractsData {
   speaker_bio: string;
@@ -20,11 +20,11 @@ interface TalksData {
 }
 
 const abstractsData = yaml.load(
-  readFileSync('src/data/talk_abstracts.yaml', 'utf8')
+  readFileSync("src/data/talk_abstracts.yaml", "utf8"),
 ) as TalkAbstractsData;
 
 const { talks } = yaml.load(
-  readFileSync('src/data/talks.yaml', 'utf8')
+  readFileSync("src/data/talks.yaml", "utf8"),
 ) as TalksData;
 
 // Group talks by type for display
@@ -35,72 +35,95 @@ for (const talk of talks) {
 }
 ---
 
-<section id="talks" class="relative section-fade bg-brand-bg" style="z-index: 1;">
-  <div class="max-w-5xl mx-auto px-6 py-20">
+<section
+  id="talks"
+  class="section-fade bg-brand-bg relative"
+  style="z-index: 1;"
+>
+  <div class="mx-auto max-w-5xl px-6 py-20">
     <!-- Section header -->
-    <div class="flex items-center gap-4 mb-12">
-      <span class="h-px flex-1 max-w-[3rem] bg-brand-accent"></span>
-      <h2 class="font-display font-bold text-2xl text-brand-text tracking-tight">
+    <div class="mb-12 flex items-center gap-4">
+      <span class="bg-brand-accent h-px max-w-12 flex-1"></span>
+      <h2
+        class="font-display text-brand-text text-2xl font-bold tracking-tight"
+      >
         Talk Invitations
       </h2>
     </div>
 
     <!-- Speaker intro (personal voice, verbatim) -->
-    <div class="mb-12 p-6 bg-gray-50 rounded-2xl border border-gray-100">
-      <p class="text-sm text-brand-muted leading-relaxed">{abstractsData.speaker_intro}</p>
+    <div class="mb-12 rounded-2xl border border-gray-100 bg-gray-50 p-6">
+      <p class="text-brand-muted text-sm leading-relaxed">
+        {abstractsData.speaker_intro}
+      </p>
     </div>
 
     <!-- Abstracts -->
     <div class="mb-14">
-      <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+      <h3
+        class="text-brand-muted mb-6 flex items-center gap-3 text-[11px] font-medium tracking-[0.2em] uppercase"
+      >
         <span>Talk Abstracts</span>
         <span class="h-px flex-1 bg-gray-100"></span>
       </h3>
       <div class="space-y-3">
-        {abstractsData.abstracts.map((entry, i) => (
-          <TalkAbstract entry={entry} index={i} />
-        ))}
+        {
+          abstractsData.abstracts.map((entry, i) => (
+            <TalkAbstract entry={entry} index={i} />
+          ))
+        }
       </div>
     </div>
 
     <!-- Speaker bio -->
-    <div class="mb-14 p-6 bg-gray-50 rounded-2xl border border-gray-100">
-      <p class="text-[10px] uppercase tracking-[0.15em] text-brand-muted font-medium mb-3">Speaker Bio</p>
-      <p class="text-sm text-brand-muted leading-relaxed">{abstractsData.speaker_bio}</p>
+    <div class="mb-14 rounded-2xl border border-gray-100 bg-gray-50 p-6">
+      <p
+        class="text-brand-muted mb-3 text-[10px] font-medium tracking-[0.15em] uppercase"
+      >
+        Speaker Bio
+      </p>
+      <p class="text-brand-muted text-sm leading-relaxed">
+        {abstractsData.speaker_bio}
+      </p>
     </div>
 
     <!-- Prior talks list -->
     <div>
-      <h3 class="text-[11px] uppercase tracking-[0.2em] text-brand-muted font-medium mb-6 flex items-center gap-3">
+      <h3
+        class="text-brand-muted mb-6 flex items-center gap-3 text-[11px] font-medium tracking-[0.2em] uppercase"
+      >
         <span>Prior Talks ({talks.length})</span>
         <span class="h-px flex-1 bg-gray-100"></span>
       </h3>
 
       <div class="divide-y divide-gray-100">
-        {talks.map((talk) => (
-          <div class="py-3 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-            <div class="flex items-baseline gap-3">
-              <span class="text-[10px] font-semibold uppercase tracking-wide text-brand-accent bg-brand-accent/8 px-2 py-0.5 rounded shrink-0">
-                {talk.type}
+        {
+          talks.map((talk) => (
+            <div class="flex flex-col gap-2 py-3 sm:flex-row sm:items-baseline sm:justify-between">
+              <div class="flex items-baseline gap-3">
+                <span class="bg-brand-accent/8 text-brand-accent shrink-0 rounded px-2 py-0.5 text-[10px] font-semibold tracking-wide uppercase">
+                  {talk.type}
+                </span>
+                {talk.url ? (
+                  <a
+                    href={talk.url}
+                    target="_blank"
+                    rel="noopener"
+                    class="text-brand-text hover:text-brand-accent text-sm transition-colors duration-200"
+                  >
+                    {talk.venue}
+                  </a>
+                ) : (
+                  <span class="text-brand-text text-sm">{talk.venue}</span>
+                )}
+              </div>
+              <span class="text-brand-muted shrink-0 text-xs tabular-nums">
+                {talk.date}
               </span>
-              {talk.url ? (
-                <a
-                  href={talk.url}
-                  target="_blank"
-                  rel="noopener"
-                  class="text-sm text-brand-text hover:text-brand-accent transition-colors duration-200"
-                >
-                  {talk.venue}
-                </a>
-              ) : (
-                <span class="text-sm text-brand-text">{talk.venue}</span>
-              )}
             </div>
-            <span class="text-xs text-brand-muted shrink-0 tabular-nums">{talk.date}</span>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
-
   </div>
 </section>

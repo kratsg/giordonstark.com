@@ -22,89 +22,136 @@ const { project } = Astro.props;
 ---
 
 <!-- Compact software card with double-bezel architecture -->
-<div class="rounded-[1.5rem] bg-white/60 ring-1 ring-black/5 p-1 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.07)]">
-  <div class="rounded-[calc(1.5rem-4px)] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)] p-5 flex flex-col h-full">
-
+<div
+  class="rounded-3xl bg-white/60 p-1 ring-1 ring-black/5 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.07)]"
+>
+  <div
+    class="flex h-full flex-col rounded-[calc(1.5rem-4px)] bg-white p-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]"
+  >
     <!-- Header -->
-    <div class="flex items-start justify-between gap-3 mb-3">
+    <div class="mb-3 flex items-start justify-between gap-3">
       <div>
-        <h3 class="font-display font-semibold text-base text-brand-text leading-tight">
+        <h3
+          class="font-display text-brand-text text-base leading-tight font-semibold"
+        >
           {project.title}
         </h3>
-        <p class="text-xs font-medium text-brand-accent mt-0.5">{project.role}</p>
+        <p class="text-brand-accent mt-0.5 text-xs font-medium">
+          {project.role}
+        </p>
       </div>
     </div>
 
     <!-- Description -->
-    {project.description && (
-      <p class="text-sm text-brand-muted leading-relaxed mb-4 flex-1">
-        {project.description}
-      </p>
-    )}
+    {
+      project.description && (
+        <p class="text-brand-muted mb-4 flex-1 text-sm leading-relaxed">
+          {project.description}
+        </p>
+      )
+    }
 
     <!-- Tags -->
-    {project.tags && project.tags.length > 0 && (
-      <div class="flex flex-wrap gap-1.5 mb-3">
-        {project.tags.map((tag) => (
-          <span class="text-[10px] font-mono font-medium text-brand-muted/70 bg-gray-50 border border-gray-100 px-2 py-0.5 rounded">
-            {tag}
-          </span>
-        ))}
-      </div>
-    )}
+    {
+      project.tags && project.tags.length > 0 && (
+        <div class="mb-3 flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <span class="text-brand-muted/70 rounded border border-gray-100 bg-gray-50 px-2 py-0.5 font-mono text-[10px] font-medium">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )
+    }
 
     <!-- Links -->
-    {project.links && project.links.length > 0 && (
-      <div class="flex flex-wrap gap-2 mt-auto pt-3 border-t border-gray-100">
-        {project.links.map((link) => (
-          <a
-            href={link.url}
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-muted hover:text-brand-accent bg-gray-50 hover:bg-gray-100 border border-gray-100 px-2.5 py-1 rounded-full transition-all duration-200 active:scale-[0.98]"
-          >
-            {link.icon === 'github' && (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-              </svg>
-            )}
-            {link.icon === 'book' && (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
-                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 000 2.5v11a.5.5 0 00.707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 00.78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0016 13.5v-11a.5.5 0 00-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-              </svg>
-            )}
-            {link.icon === 'package' && (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
-                <path d="M0 6h4v4H0V6zm0 4h4v2l-2 2-2-2v-2zM4 0l4 2-4 2V0zM8 2l4-2v4l-4-2zM0 0l4 2L0 4V0zm12 4V0l4 2-4 2zM4 6h4v4H4V6zm4 4h4V6H8v4zm0-4V2l4 2-4 2zM4 2l4 2-4 2V2z"/>
-              </svg>
-            )}
-            {link.icon === 'file-text' && (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
-                <path d="M5 4a.5.5 0 000 1h6a.5.5 0 000-1H5zm-.5 2.5A.5.5 0 015 6h6a.5.5 0 010 1H5a.5.5 0 01-.5-.5zM5 8a.5.5 0 000 1h6a.5.5 0 000-1H5zm0 2a.5.5 0 000 1h3a.5.5 0 000-1H5z"/>
-                <path d="M9.5 0H4a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0011 4.5h2V14a1 1 0 01-1 1H4a1 1 0 01-1-1V2a1 1 0 011-1h5.5z"/>
-              </svg>
-            )}
-            {link.icon === 'globe' && (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
-                <path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.5 7.5 0 007.5 1.077v.002zm0 13.846v-.002a7.5 7.5 0 00-.113-.017c.654.687 1.32 1.056 1.887 1.258v-1.24zm.5-13.846v1.24c.567-.202 1.233-.571 1.887-1.258a7.5 7.5 0 00-.113.017v.001zm0 13.846v-.002a7.5 7.5 0 01.113.017c-.654-.687-1.32-1.056-1.887-1.258v1.24zM4 8a4 4 0 108 0A4 4 0 004 8z"/>
-              </svg>
-            )}
-            {link.icon === 'gitlab' && (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3">
-                <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 01-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 014.93 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.49h8.88l2.44-7.51A.42.42 0 0119.5 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.51L23.86 13.45a.84.84 0 01-.21.94z"/>
-              </svg>
-            )}
-            {!link.icon && (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
-                <path d="M4.715 6.542L3.343 7.914a3 3 0 104.243 4.243l1.828-1.829A3 3 0 008.586 5.5L8 6.086a1.002 1.002 0 00-.154.199 2 2 0 01.861 3.337L6.88 11.45a2 2 0 11-2.83-2.83l.793-.792a4.018 4.018 0 01-.128-1.287z"/>
-                <path d="M6.586 4.672A3 3 0 007.414 9.5l.775-.776a2 2 0 01-.896-3.346L9.12 3.55a2 2 0 112.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 10-4.243-4.243L6.586 4.672z"/>
-              </svg>
-            )}
-            {link.label}
-          </a>
-        ))}
-      </div>
-    )}
-
+    {
+      project.links && project.links.length > 0 && (
+        <div class="mt-auto flex flex-wrap gap-2 border-t border-gray-100 pt-3">
+          {project.links.map((link) => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener"
+              class="text-brand-muted hover:text-brand-accent inline-flex items-center gap-1.5 rounded-full border border-gray-100 bg-gray-50 px-2.5 py-1 text-xs font-medium transition-all duration-200 hover:bg-gray-100 active:scale-[0.98]"
+            >
+              {link.icon === "github" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="h-3 w-3"
+                >
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+              )}
+              {link.icon === "book" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="h-3 w-3"
+                >
+                  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 000 2.5v11a.5.5 0 00.707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 00.78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0016 13.5v-11a.5.5 0 00-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                </svg>
+              )}
+              {link.icon === "package" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="h-3 w-3"
+                >
+                  <path d="M0 6h4v4H0V6zm0 4h4v2l-2 2-2-2v-2zM4 0l4 2-4 2V0zM8 2l4-2v4l-4-2zM0 0l4 2L0 4V0zm12 4V0l4 2-4 2zM4 6h4v4H4V6zm4 4h4V6H8v4zm0-4V2l4 2-4 2zM4 2l4 2-4 2V2z" />
+                </svg>
+              )}
+              {link.icon === "file-text" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="h-3 w-3"
+                >
+                  <path d="M5 4a.5.5 0 000 1h6a.5.5 0 000-1H5zm-.5 2.5A.5.5 0 015 6h6a.5.5 0 010 1H5a.5.5 0 01-.5-.5zM5 8a.5.5 0 000 1h6a.5.5 0 000-1H5zm0 2a.5.5 0 000 1h3a.5.5 0 000-1H5z" />
+                  <path d="M9.5 0H4a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0011 4.5h2V14a1 1 0 01-1 1H4a1 1 0 01-1-1V2a1 1 0 011-1h5.5z" />
+                </svg>
+              )}
+              {link.icon === "globe" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="h-3 w-3"
+                >
+                  <path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.5 7.5 0 007.5 1.077v.002zm0 13.846v-.002a7.5 7.5 0 00-.113-.017c.654.687 1.32 1.056 1.887 1.258v-1.24zm.5-13.846v1.24c.567-.202 1.233-.571 1.887-1.258a7.5 7.5 0 00-.113.017v.001zm0 13.846v-.002a7.5 7.5 0 01.113.017c-.654-.687-1.32-1.056-1.887-1.258v1.24zM4 8a4 4 0 108 0A4 4 0 004 8z" />
+                </svg>
+              )}
+              {link.icon === "gitlab" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="h-3 w-3"
+                >
+                  <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 01-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 014.93 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.49h8.88l2.44-7.51A.42.42 0 0119.5 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.51L23.86 13.45a.84.84 0 01-.21.94z" />
+                </svg>
+              )}
+              {!link.icon && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="h-3 w-3"
+                >
+                  <path d="M4.715 6.542L3.343 7.914a3 3 0 104.243 4.243l1.828-1.829A3 3 0 008.586 5.5L8 6.086a1.002 1.002 0 00-.154.199 2 2 0 01.861 3.337L6.88 11.45a2 2 0 11-2.83-2.83l.793-.792a4.018 4.018 0 01-.128-1.287z" />
+                  <path d="M6.586 4.672A3 3 0 007.414 9.5l.775-.776a2 2 0 01-.896-3.346L9.12 3.55a2 2 0 112.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 10-4.243-4.243L6.586 4.672z" />
+                </svg>
+              )}
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )
+    }
   </div>
 </div>

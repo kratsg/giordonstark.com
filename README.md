@@ -28,19 +28,19 @@ pixi run lint          # lint Astro components
 
 All content lives in YAML files under `src/data/`. To update any section, edit the corresponding file and rebuild.
 
-| File | Section |
-|------|---------|
-| `src/data/social.yaml` | Social links in the About section |
-| `src/data/research.yaml` | Research & Instrumentation cards (physics searches, detector hardware) |
-| `src/data/software.yaml` | Software & Open Source cards, grouped by category |
-| `src/data/awards.yaml` | Awards list |
-| `src/data/teaching.yaml` | Teaching highlights, workshops, courses |
-| `src/data/media.yaml` | Media/online presence items |
-| `src/data/service.yaml` | Service roles, outreach, American Red Cross history |
-| `src/data/talks.yaml` | Prior talks list |
-| `src/data/talk_abstracts.yaml` | Invited talk abstracts and speaker bio |
-| `src/data/interpreting.yaml` | Numbered interpreter info items |
-| `src/data/mentees.yaml` | Undergraduate and graduate mentees |
+| File                           | Section                                                                |
+| ------------------------------ | ---------------------------------------------------------------------- |
+| `src/data/social.yaml`         | Social links in the About section                                      |
+| `src/data/research.yaml`       | Research & Instrumentation cards (physics searches, detector hardware) |
+| `src/data/software.yaml`       | Software & Open Source cards, grouped by category                      |
+| `src/data/awards.yaml`         | Awards list                                                            |
+| `src/data/teaching.yaml`       | Teaching highlights, workshops, courses                                |
+| `src/data/media.yaml`          | Media/online presence items                                            |
+| `src/data/service.yaml`        | Service roles, outreach, American Red Cross history                    |
+| `src/data/talks.yaml`          | Prior talks list                                                       |
+| `src/data/talk_abstracts.yaml` | Invited talk abstracts and speaker bio                                 |
+| `src/data/interpreting.yaml`   | Numbered interpreter info items                                        |
+| `src/data/mentees.yaml`        | Undergraduate and graduate mentees                                     |
 
 ### Adding a research or software card
 
@@ -48,8 +48,8 @@ Each entry in `research.yaml` and `software.yaml` supports an optional `images` 
 
 ```yaml
 images:
-  - img/research/my-plot.png   # single image: renders as a hero image above the card
-  - img/research/result-2.png  # multiple images: renders as a carousel
+  - img/research/my-plot.png # single image: renders as a hero image above the card
+  - img/research/result-2.png # multiple images: renders as a carousel
 ```
 
 Place image files in `public/img/research/` or `public/img/software/`. Leave `images: []` (or omit the field) to show no image.
@@ -70,7 +70,7 @@ Particle counts and track counts scale down on mobile (see `particleCount()` / `
 
 ## Deployment
 
-Pushes to `master` automatically build and deploy to GitHub Pages via `.github/workflows/deploy.yml`. The custom domain is set by `public/CNAME`.
+Pushes to `main` automatically build and deploy to GitHub Pages via `.github/workflows/deploy.yml`. The custom domain is set by `public/CNAME`.
 
 ## Profile image
 

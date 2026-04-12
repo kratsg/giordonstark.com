@@ -33,3 +33,6 @@ jobs:
 
       - name: Lint
         run: pixi run lint
+
+      - name: Build
+        run: pixi run build

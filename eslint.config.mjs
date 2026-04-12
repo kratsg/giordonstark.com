@@ -8,7 +8,7 @@ const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 
 export default defineConfig([
   {
-    ignores: ["public/**"]
+    ignores: ["public/**"],
   },
   // Use .gitignore
   includeIgnoreFile(gitignorePath),

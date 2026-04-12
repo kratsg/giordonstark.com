@@ -2,7 +2,7 @@
 node_modules
 _site
 .pixi/
-dist/
+dist*/
 .astro/
 # pixi environments
 .pixi/*

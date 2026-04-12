@@ -1,75 +1,96 @@
 ---
 const navItems = [
-  { href: '#about', label: 'About' },
-  { href: '#education', label: 'Education' },
-  { href: '#research', label: 'Research & Instrumentation' },
-  { href: '#software', label: 'Software & Open Source' },
-  { href: '#awards', label: 'Awards' },
-  { href: '#teaching', label: 'Teaching & Mentoring' },
-  { href: '#media', label: 'Media' },
-  { href: '#service', label: 'Service & Leadership' },
-  { href: '#talks', label: 'Talk Invitations' },
-  { href: '#interpreting', label: 'Interpreting' },
+  { href: "#about", label: "About" },
+  { href: "#education", label: "Education" },
+  { href: "#research", label: "Research & Instrumentation" },
+  { href: "#software", label: "Software & Open Source" },
+  { href: "#awards", label: "Awards" },
+  { href: "#teaching", label: "Teaching & Mentoring" },
+  { href: "#media", label: "Media" },
+  { href: "#service", label: "Service & Leadership" },
+  { href: "#talks", label: "Talk Invitations" },
+  { href: "#interpreting", label: "Interpreting" },
 ];
 ---
 
 <!-- Desktop sidebar nav -->
 <nav
   id="sidebar-nav"
-  class="fixed top-0 left-0 h-full w-64 bg-brand-bg border-r border-gray-100 z-40 hidden lg:flex flex-col overflow-y-auto"
+  class="bg-brand-bg fixed top-0 left-0 z-40 hidden h-full w-64 flex-col overflow-y-auto border-r border-gray-100 lg:flex"
   aria-label="Main navigation"
 >
-  <div class="p-6 flex flex-col h-full">
+  <div class="flex h-full flex-col p-6">
     <!-- Profile -->
     <div class="mb-8">
       <a href="#about" class="block">
         <img
           src="/img/profile.jpg"
           alt="Giordon Stark"
-          class="w-20 h-20 rounded-full mb-4 object-cover ring-2 ring-brand-accent/20"
+          class="ring-brand-accent/20 mb-4 h-20 w-20 rounded-full object-cover ring-2"
         />
-        <div class="font-display font-bold text-lg text-brand-text leading-tight">
+        <div
+          class="font-display text-brand-text text-lg leading-tight font-bold"
+        >
           Giordon Stark, Ph.D.
         </div>
-        <div class="text-brand-muted text-sm mt-0.5">Project Scientist · UCSC</div>
+        <div class="text-brand-muted mt-0.5 text-sm">
+          Project Scientist · UCSC
+        </div>
       </a>
       <a
         href="https://kratsg.github.io/cv/?utm_source=giordonstark.com&utm_medium=nav"
         target="_blank"
         rel="noopener"
-        class="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand-accent hover:text-brand-accent/80 transition-colors duration-200"
+        class="text-brand-accent hover:text-brand-accent/80 mt-3 inline-flex items-center gap-1.5 text-xs font-medium transition-colors duration-200"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
-          <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z" clip-rule="evenodd" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="h-3.5 w-3.5"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z"
+            clip-rule="evenodd"></path>
         </svg>
         View CV
       </a>
     </div>
 
     <!-- Nav links -->
-    <ul class="space-y-0.5 flex-1">
-      {navItems.map((item) => (
-        <li>
-          <a
-            href={item.href}
-            class="block px-3 py-2 text-sm text-brand-muted hover:text-brand-text hover:bg-gray-50 rounded-lg transition-colors duration-200 font-medium"
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
+    <ul class="flex-1 space-y-0.5">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-brand-muted hover:text-brand-text block rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200 hover:bg-gray-50"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
     </ul>
 
     <!-- Interpreting icon at bottom -->
-    <div class="mt-6 pt-4 border-t border-gray-100">
+    <div class="mt-6 border-t border-gray-100 pt-4">
       <a
         href="#interpreting"
-        class="flex items-center gap-2 px-3 py-2 text-sm text-brand-muted hover:text-brand-text transition-colors duration-200"
+        class="text-brand-muted hover:text-brand-text flex items-center gap-2 px-3 py-2 text-sm transition-colors duration-200"
         title="Information for Interpreters"
       >
         <!-- Font Awesome Free: american-sign-language-interpreting (solid) — CC BY 4.0 -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" class="w-4 h-4">
-          <path d="M290.547 189.039c-20.295-10.149-44.147-11.199-64.739-3.89 42.606 0 71.208 20.475 85.578 50.576 8.576 17.899-5.148 38.071-23.617 38.071 18.429 0 32.211 20.136 23.617 38.071-14.725 30.846-46.123 50.854-80.298 50.854-.557 0-94.471-8.615-94.471-8.615l-66.406 33.347c-9.384 4.693-19.815.379-23.895-7.781L1.86 290.747c-4.167-8.615-1.111-18.897 6.946-23.621l58.072-33.069L108 159.861c6.39-57.245 34.731-109.767 79.743-146.726 11.391-9.448 28.341-7.781 37.51 3.613 9.446 11.394 7.78 28.067-3.612 37.516-12.503 10.559-23.618 22.509-32.509 35.57 21.672-14.729 46.679-24.732 74.186-28.067 14.725-1.945 28.063 8.336 29.73 23.065 1.945 14.728-8.336 28.067-23.062 29.734-16.116 1.945-31.12 7.503-44.178 15.284 26.114-5.713 58.712-3.138 88.079 11.115 13.336 6.669 18.893 22.509 12.224 35.848-6.389 13.06-22.504 18.617-35.564 12.226zm-27.229 69.472c-6.112-12.505-18.338-20.286-32.231-20.286a35.46 35.46 0 0 0-35.565 35.57c0 21.428 17.808 35.57 35.565 35.57 13.893 0 26.119-7.781 32.231-20.286 4.446-9.449 13.614-15.006 23.339-15.284-9.725-.277-18.893-5.835-23.339-15.284zm374.821-37.237c4.168 8.615 1.111 18.897-6.946 23.621l-58.071 33.069L532 352.16c-6.39 57.245-34.731 109.767-79.743 146.726-10.932 9.112-27.799 8.144-37.51-3.613-9.446-11.394-7.78-28.067 3.613-37.516 12.503-10.559 23.617-22.509 32.508-35.57-21.672 14.729-46.679 24.732-74.186 28.067-10.021 2.506-27.552-5.643-29.73-23.065-1.945-14.728 8.336-28.067 23.062-29.734 16.116-1.946 31.12-7.503 44.178-15.284-26.114 5.713-58.712 3.138-88.079-11.115-13.336-6.669-18.893-22.509-12.224-35.848 6.389-13.061 22.505-18.619 35.565-12.227 20.295 10.149 44.147 11.199 64.739 3.89-42.606 0-71.208-20.475-85.578-50.576-8.576-17.899 5.148-38.071 23.617-38.071-18.429 0-32.211-20.136-23.617-38.071 14.033-29.396 44.039-50.887 81.966-50.854l92.803 8.615 66.406-33.347c9.408-4.704 19.828-.354 23.894 7.781l44.455 88.926zm-229.227-18.618c-13.893 0-26.119 7.781-32.231 20.286-4.446 9.449-13.614 15.006-23.339 15.284 9.725.278 18.893 5.836 23.339 15.284 6.112 12.505 18.338 20.286 32.231 20.286a35.46 35.46 0 0 0 35.565-35.57c0-21.429-17.808-35.57-35.565-35.57z"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 512"
+          fill="currentColor"
+          class="h-4 w-4"
+        >
+          <path
+            d="M290.547 189.039c-20.295-10.149-44.147-11.199-64.739-3.89 42.606 0 71.208 20.475 85.578 50.576 8.576 17.899-5.148 38.071-23.617 38.071 18.429 0 32.211 20.136 23.617 38.071-14.725 30.846-46.123 50.854-80.298 50.854-.557 0-94.471-8.615-94.471-8.615l-66.406 33.347c-9.384 4.693-19.815.379-23.895-7.781L1.86 290.747c-4.167-8.615-1.111-18.897 6.946-23.621l58.072-33.069L108 159.861c6.39-57.245 34.731-109.767 79.743-146.726 11.391-9.448 28.341-7.781 37.51 3.613 9.446 11.394 7.78 28.067-3.612 37.516-12.503 10.559-23.618 22.509-32.509 35.57 21.672-14.729 46.679-24.732 74.186-28.067 14.725-1.945 28.063 8.336 29.73 23.065 1.945 14.728-8.336 28.067-23.062 29.734-16.116 1.945-31.12 7.503-44.178 15.284 26.114-5.713 58.712-3.138 88.079 11.115 13.336 6.669 18.893 22.509 12.224 35.848-6.389 13.06-22.504 18.617-35.564 12.226zm-27.229 69.472c-6.112-12.505-18.338-20.286-32.231-20.286a35.46 35.46 0 0 0-35.565 35.57c0 21.428 17.808 35.57 35.565 35.57 13.893 0 26.119-7.781 32.231-20.286 4.446-9.449 13.614-15.006 23.339-15.284-9.725-.277-18.893-5.835-23.339-15.284zm374.821-37.237c4.168 8.615 1.111 18.897-6.946 23.621l-58.071 33.069L532 352.16c-6.39 57.245-34.731 109.767-79.743 146.726-10.932 9.112-27.799 8.144-37.51-3.613-9.446-11.394-7.78-28.067 3.613-37.516 12.503-10.559 23.617-22.509 32.508-35.57-21.672 14.729-46.679 24.732-74.186 28.067-10.021 2.506-27.552-5.643-29.73-23.065-1.945-14.728 8.336-28.067 23.062-29.734 16.116-1.946 31.12-7.503 44.178-15.284-26.114 5.713-58.712 3.138-88.079-11.115-13.336-6.669-18.893-22.509-12.224-35.848 6.389-13.061 22.505-18.619 35.565-12.227 20.295 10.149 44.147 11.199 64.739 3.89-42.606 0-71.208-20.475-85.578-50.576-8.576-17.899 5.148-38.071 23.617-38.071-18.429 0-32.211-20.136-23.617-38.071 14.033-29.396 44.039-50.887 81.966-50.854l92.803 8.615 66.406-33.347c9.408-4.704 19.828-.354 23.894 7.781l44.455 88.926zm-229.227-18.618c-13.893 0-26.119 7.781-32.231 20.286-4.446 9.449-13.614 15.006-23.339 15.284 9.725.278 18.893 5.836 23.339 15.284 6.112 12.505 18.338 20.286 32.231 20.286a35.46 35.46 0 0 0 35.565-35.57c0-21.429-17.808-35.57-35.565-35.57z"
+          ></path>
         </svg>
         ASL Interpreting Info
       </a>
@@ -80,103 +101,113 @@ const navItems = [
 <!-- Mobile hamburger button -->
 <button
   id="hamburger-btn"
-  class="lg:hidden fixed top-4 left-4 z-50 p-2 bg-brand-bg border border-gray-200 rounded-lg shadow-sm"
+  class="bg-brand-bg fixed top-4 left-4 z-50 rounded-lg border border-gray-200 p-2 shadow-sm lg:hidden"
   aria-label="Open menu"
   aria-expanded="false"
 >
-  <div id="hamburger-lines" class="w-5 h-4 flex flex-col justify-between">
-    <span class="block w-full h-0.5 bg-brand-text transition-all duration-300 ease-out origin-center"></span>
-    <span class="block w-full h-0.5 bg-brand-text transition-all duration-300 ease-out"></span>
-    <span class="block w-full h-0.5 bg-brand-text transition-all duration-300 ease-out origin-center"></span>
+  <div id="hamburger-lines" class="flex h-4 w-5 flex-col justify-between">
+    <span
+      class="bg-brand-text block h-0.5 w-full origin-center transition-all duration-300 ease-out"
+    ></span>
+    <span
+      class="bg-brand-text block h-0.5 w-full transition-all duration-300 ease-out"
+    ></span>
+    <span
+      class="bg-brand-text block h-0.5 w-full origin-center transition-all duration-300 ease-out"
+    ></span>
   </div>
 </button>
 
 <!-- Mobile overlay menu -->
 <div
   id="mobile-menu"
-  class="lg:hidden fixed inset-0 z-40 bg-brand-bg/95 backdrop-blur-xl hidden flex-col p-8 pt-20"
+  class="bg-brand-bg/95 fixed inset-0 z-40 hidden flex-col p-8 pt-20 backdrop-blur-xl lg:hidden"
   aria-hidden="true"
 >
   <ul class="space-y-4">
-    {navItems.map((item, i) => (
-      <li
-        class="mobile-nav-item opacity-0 translate-y-4 transition-all duration-300 ease-out"
-        style={`transition-delay: ${i * 50}ms`}
-      >
-        <a
-          href={item.href}
-          class="text-2xl font-display font-bold text-brand-text hover:text-brand-accent transition-colors duration-200"
+    {
+      navItems.map((item, i) => (
+        <li
+          class="mobile-nav-item translate-y-4 opacity-0 transition-all duration-300 ease-out"
+          style={`transition-delay: ${i * 50}ms`}
         >
-          {item.label}
-        </a>
-      </li>
-    ))}
+          <a
+            href={item.href}
+            class="font-display text-brand-text hover:text-brand-accent text-2xl font-bold transition-colors duration-200"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </div>
 
 <script>
-  const btn = document.getElementById('hamburger-btn');
-  const menu = document.getElementById('mobile-menu');
-  const lines = btn?.querySelectorAll('span');
-  const navItems = document.querySelectorAll('.mobile-nav-item');
+  const btn = document.getElementById("hamburger-btn");
+  const menu = document.getElementById("mobile-menu");
+  const lines = btn?.querySelectorAll("span");
+  const navItems = document.querySelectorAll(".mobile-nav-item");
   let open = false;
 
-  btn?.addEventListener('click', () => {
+  btn?.addEventListener("click", () => {
     open = !open;
-    btn.setAttribute('aria-expanded', String(open));
-    menu?.setAttribute('aria-hidden', String(!open));
+    btn.setAttribute("aria-expanded", String(open));
+    menu?.setAttribute("aria-hidden", String(!open));
 
     if (open) {
-      menu?.classList.remove('hidden');
-      menu?.classList.add('flex');
+      menu?.classList.remove("hidden");
+      menu?.classList.add("flex");
       // Staggered item reveal
       navItems.forEach((item) => {
-        item.classList.remove('opacity-0', 'translate-y-4');
+        item.classList.remove("opacity-0", "translate-y-4");
       });
       // Hamburger → X
       if (lines) {
-        lines[0].style.transform = 'rotate(45deg) translateY(7px)';
-        lines[1].style.opacity = '0';
-        lines[2].style.transform = 'rotate(-45deg) translateY(-7px)';
+        lines[0].style.transform = "rotate(45deg) translateY(7px)";
+        lines[1].style.opacity = "0";
+        lines[2].style.transform = "rotate(-45deg) translateY(-7px)";
       }
     } else {
       navItems.forEach((item) => {
-        item.classList.add('opacity-0', 'translate-y-4');
+        item.classList.add("opacity-0", "translate-y-4");
       });
       if (lines) {
-        lines[0].style.transform = '';
-        lines[1].style.opacity = '';
-        lines[2].style.transform = '';
+        lines[0].style.transform = "";
+        lines[1].style.opacity = "";
+        lines[2].style.transform = "";
       }
       setTimeout(() => {
-        menu?.classList.add('hidden');
-        menu?.classList.remove('flex');
+        menu?.classList.add("hidden");
+        menu?.classList.remove("flex");
       }, 300);
     }
   });
 
   // Close on nav link click
-  menu?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
       open = false;
-      btn?.setAttribute('aria-expanded', 'false');
-      menu?.setAttribute('aria-hidden', 'true');
-      navItems.forEach((item) => item.classList.add('opacity-0', 'translate-y-4'));
+      btn?.setAttribute("aria-expanded", "false");
+      menu?.setAttribute("aria-hidden", "true");
+      navItems.forEach((item) =>
+        item.classList.add("opacity-0", "translate-y-4"),
+      );
       if (lines) {
-        lines[0].style.transform = '';
-        lines[1].style.opacity = '';
-        lines[2].style.transform = '';
+        lines[0].style.transform = "";
+        lines[1].style.opacity = "";
+        lines[2].style.transform = "";
       }
       setTimeout(() => {
-        menu?.classList.add('hidden');
-        menu?.classList.remove('flex');
+        menu?.classList.add("hidden");
+        menu?.classList.remove("flex");
       }, 300);
     });
   });
 
   // Highlight active section in desktop nav
   const sectionLinks = document.querySelectorAll('#sidebar-nav a[href^="#"]');
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll("section[id]");
 
   const sectionObserver = new IntersectionObserver(
     (entries) => {
@@ -184,18 +215,18 @@ const navItems = [
         if (entry.isIntersecting) {
           sectionLinks.forEach((link) => {
             link.classList.toggle(
-              'text-brand-text',
-              link.getAttribute('href') === `#${entry.target.id}`
+              "text-brand-text",
+              link.getAttribute("href") === `#${entry.target.id}`,
             );
             link.classList.toggle(
-              'bg-gray-50',
-              link.getAttribute('href') === `#${entry.target.id}`
+              "bg-gray-50",
+              link.getAttribute("href") === `#${entry.target.id}`,
             );
           });
         }
       });
     },
-    { threshold: 0.3 }
+    { threshold: 0.3 },
   );
 
   sections.forEach((s) => sectionObserver.observe(s));
