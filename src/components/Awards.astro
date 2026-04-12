@@ -1,0 +1,70 @@
+---
+import yaml from "js-yaml";
+import { readFileSync } from "node:fs";
+
+interface Award {
+  name: string;
+  date: string;
+  description?: string;
+  citation?: string;
+  url?: string;
+}
+interface AwardsData {
+  awards: Award[];
+}
+
+const { awards } = yaml.load(
+  readFileSync("src/data/awards.yaml", "utf8"),
+) as AwardsData;
+---
+
+<section
+  id="awards"
+  class="section-fade bg-brand-bg relative"
+  style="z-index: 1;"
+>
+  <div class="mx-auto max-w-5xl px-6 py-20">
+    <!-- Section header -->
+    <div class="mb-12 flex items-center gap-4">
+      <span class="bg-brand-accent h-px max-w-12 flex-1"></span>
+      <h2
+        class="font-display text-brand-text text-2xl font-bold tracking-tight"
+      >
+        Awards
+      </h2>
+    </div>
+
+    <div class="divide-y divide-gray-100">
+      {
+        awards.map((award) => (
+          <div class="group -mx-3 flex flex-col gap-2 rounded-lg px-3 py-5 transition-colors duration-200 hover:bg-gray-50/60 sm:flex-row sm:items-baseline sm:justify-between">
+            <div class="flex-1">
+              {award.url ? (
+                <a
+                  href={award.url}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-brand-text hover:text-brand-accent leading-snug font-medium transition-colors duration-200"
+                >
+                  {award.name}
+                </a>
+              ) : (
+                <p class="text-brand-text leading-snug font-medium">
+                  {award.name}
+                </p>
+              )}
+              {(award.description || award.citation) && (
+                <p class="text-brand-muted mt-1.5 max-w-[65ch] text-sm leading-relaxed italic">
+                  {award.citation ?? award.description}
+                </p>
+              )}
+            </div>
+            <span class="text-brand-muted shrink-0 text-sm font-medium tabular-nums">
+              {award.date}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

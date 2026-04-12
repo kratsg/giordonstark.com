@@ -1,0 +1,322 @@
+categories:
+  - name: Physics Searches
+    projects:
+      - title: Electroweak SUSY Statistical Combination
+        role: Lead analyst
+        subtitle: SUSY Run-2 Summaries Convener (2020-2022)
+        images: []
+        description: >
+          Led the first large-scale statistical combination of 14 electroweak
+          SUSY searches at ATLAS, extending mass exclusion limits by up to
+          100 GeV. Appointed first convener of the new "Run 2 Summaries"
+          subgroup to coordinate harmonization across analysis teams. As part
+          of this work, developed the technical software needed for likelihood
+          serialization and inference, open-source particle-level analysis
+          framework, and analysis preservation efforts.
+        timeline:
+          - year: 2018
+            label: Joined Combinations Task Force; groundwork for statistical models
+          - year: 2020
+            label: Appointed first Run-2 Summaries convener
+          - year: 2021
+            label: "Initial 3L combination published (EPJC)"
+            url: https://doi.org/10.1140/epjc/s10052-021-09749-7
+          - year: 2022
+            label: "14-analysis statistical combination published (PRL)"
+            url: https://link.aps.org/doi/10.1103/PhysRevLett.133.031802
+        links:
+          - label: PRL
+            url: https://link.aps.org/doi/10.1103/PhysRevLett.133.031802
+            icon: file-text
+          - label: EPJC (3L)
+            url: https://doi.org/10.1140/epjc/s10052-021-09749-7
+            icon: file-text
+
+      - title: Strong SUSY Searches
+        role: Lead analyst (thesis)
+        subtitle: University of Chicago, 2015-2018
+        images: []
+        description: >
+          Pioneered optimized selections for gluino/squark searches via strong
+          production with multiple heavy-flavor and large-radius jets. Set the
+          strongest limits on gluino and stop squark masses multiple times over.
+          Published multiple ATLAS papers and conference notes across Run 1 and
+          Run 2, covering multi-b-jet plus large-R jet plus missing transverse
+          momentum final states.
+        timeline:
+          - year: 2015
+            label: ATLAS-CONF-2015-067
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2015-067/
+          - year: 2016
+            label: ATLAS-CONF-2016-052
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2016-052/
+          - year: 2016
+            label: "Published SUSY-2015-10 (Phys.Rev.D 94, 032003)"
+            url: https://doi.org/10.1103/PhysRevD.94.032003
+          - year: 2017
+            label: ATLAS-CONF-2017-021
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2017-021/
+          - year: 2017
+            label: "Published SUSY-2016-10 (Phys.Rev.D 97, 012008)"
+            url: https://doi.org/10.1103/PhysRevD.97.012008
+          - year: 2018
+            label: PhD Thesis (Springer Thesis Award)
+            url: https://kratsg.github.io/thesis/
+        links:
+          - label: Thesis
+            url: https://kratsg.github.io/thesis/
+            icon: book
+          - label: Springer
+            url: https://books.google.com/books?vid=ISBN978-3-030-34548-8
+            icon: book
+          - label: "Phys.Rev.D 94"
+            url: https://doi.org/10.1103/PhysRevD.94.032003
+            icon: file-text
+          - label: "Phys.Rev.D 97"
+            url: https://doi.org/10.1103/PhysRevD.97.012008
+            icon: file-text
+
+      - title: EWK SUSY Radiative Decays
+        role: Analysis contact
+        subtitle: 2024-2025
+        images: []
+        description: >
+          Analysis targeting new physics signatures with radiative decays in
+          electroweak supersymmetry at the ATLAS detector.
+
+      - title: Collinear W-boson Radiation
+        role: Analysis contact
+        subtitle: 2019-2024
+        images: []
+        description: >
+          Cross-section measurement of collinear W-boson radiation in the ATLAS
+          detector at 13 TeV (ANA-STDM-2020-30, in preparation), building on
+          the 7 TeV predecessor measurement. Studies rare QCD topology where a
+          W boson is radiated collinearly from a quark leg.
+        links:
+          - label: "7 TeV predecessor (PLB)"
+            url: https://doi.org/10.1016/j.physletb.2016.12.005
+            icon: file-text
+
+      - title: pMSSM Scans & RPV-RPC Reinterpretations
+        role: Coordinator
+        subtitle: SUSY Run-2 Summaries Convener (2020-2022)
+        images: []
+        description: >
+          Coordinated analysis contacts for phenomenological MSSM (pMSSM)
+          parameter scans and R-parity violating/conserving (RPV/RPC)
+          reinterpretations as Run 2 Summaries convener. For RPV-RPC analyses,
+          seeded the Run 2 analysis program and worked on modifying existing
+          RECAST implementations to support the analysis effort. For pMSSM,
+          led work on g-2 interpretations, RECAST executions for existing
+          analyses, and software support — with a general pMSSM parameter scan
+          in progress.
+
+  - name: Detector Instrumentation
+    projects:
+      - title: ITk Pixel Module Testing
+        role: Lead, infrastructure builder
+        subtitle: UCSC SCIPP, 2018-2025
+        images: []
+        description: >
+          Built UCSC into one of the leading U.S. institutions for digital
+          pixel module QC/QA for the ATLAS Inner Tracker upgrade. Designed and
+          built the full test bench infrastructure: four testing stands (alpha,
+          beta, delta, epsilon), 9 low-voltage power supplies, 8-channel
+          high-voltage supply, 2 multimeters, 2 chillers, 4 DAQ PCs, 1 server,
+          a dry air cabinet, and 14 Raspberry Pis.
+        details:
+          - "Software stack: Ansible orchestration, Prometheus metrics, Mosquitto MQTT, InfluxDB + Telegraf, Grafana dashboards, supervisord/multivisor"
+          - "Custom PCB for per-stand interlock system"
+          - "TUI/GUI for slow control, monitoring, and visual inspection"
+          - "All electrical QC tests except visual inspection and radiation scanning can be done remotely"
+          - "Module and stand status monitored through Grafana dashboards mounted on lab walls"
+        timeline:
+          - year: 2018
+            label: Joined UCSC/SCIPP; began building ITk test bench infrastructure
+          - year: 2019
+            label: Created itkdb — Python library for the ITk Production Database
+          - year: 2022
+            label: Joined admin team as software/database/EOS expert
+        links:
+          - label: itkdb (PyPI)
+            url: https://pypi.org/project/itkdb/
+            icon: package
+          - label: itkdb (GitLab)
+            url: https://gitlab.cern.ch/atlas-itk/sw/db/itkdb/
+            icon: gitlab
+          - label: itksn
+            url: https://pypi.org/project/itksn/
+            icon: package
+          - label: mqdt
+            url: https://pypi.org/project/module-qc-data-transport/
+            icon: package
+          - label: mqdbt
+            url: https://pypi.org/project/module-qc-db-tools/
+            icon: package
+          - label: mqat
+            url: https://pypi.org/project/module-qc-analysis-tools/
+            icon: package
+          - label: mqt
+            url: https://pypi.org/project/module-qc-tools/
+            icon: package
+          - label: localDB
+            url: https://pypi.org/project/localdb/
+            icon: package
+          - label: drstorage
+            url: https://github.com/kratsg/drstorage
+            icon: github
+
+      - title: gFEX Trigger Electronics
+        role: Key contributor & FDR editor
+        subtitle: University of Chicago, 2014-2018
+        images: []
+        description: >
+          Contributed to design and prototyping of the Global Feature Extractor
+          (gFEX), a high-speed trigger electronics system for the ATLAS Phase 1
+          upgrade. Served as editor of the Final Design Report. Developed
+          firmware, ML algorithms, and monitoring systems; mentored
+          undergraduates on the same. This was installed and commissioned
+          inside the ATLAS detector in October 2021.
+        timeline:
+          - year: 2014
+            label: Joined gFEX team
+          - year: 2017
+            label: "Final Design Report published (editor)"
+          - year: 2018
+            label: Mentored undergrads on firmware/ML/monitoring
+          - year: 2021
+            label: Installed and commissioned in ATLAS
+        links:
+          - label: ironman
+            url: https://github.com/kratsg/ironman
+            icon: github
+          - label: meta-l1calo
+            url: https://github.com/kratsg/meta-l1calo
+            icon: github
+
+      - title: LIGO Gravitational Wave Detector
+        role: Research Assistant
+        subtitle: MIT, Summer 2011
+        images: []
+        description: >
+          Contributed to improving detection resolution of the LIGO
+          interferometer at MIT. Diagnosed crosstalk between capacitive
+          position sensors (CPS) — used for seismic noise measurement in the
+          feedback/feed-forward systems — finding that racks of sensors
+          generated mutual interference at 25 kHz, corrupting distance
+          measurements. Characterized and implemented a feed-forward seismic
+          noise cancellation system using transfer functions, achieving a
+          2-orders-of-magnitude noise reduction. Developed watchdog/guardian
+          software in Python, Perl, and C to monitor ~32,000 instrument
+          variables and manage safe state transitions across the MIT lab.
+          Findings published as internal LIGO/VIRGO community documents.
+        timeline:
+          - year: 2011
+            label: "Feed-forward seismic noise cancellation — 100× reduction"
+          - year: 2011
+            label: Watchdog/guardian system for 32,000+ instrument variables
+
+      - title: Submillimeter Wave Observatory
+        role: Research Assistant (Edward C. and Alice Stone Fellow)
+        subtitle: Caltech CASIMIR group, 2010
+        images: []
+        description: >
+          Characterized the optical transmittance of materials in the
+          submillimeter band (0.1–1.0 mm, 300 GHz–3 THz) for use in sensitive
+          submillimeter telescopes and detectors. Built the optical arrangement
+          coupling a Fourier Transform Spectrometer to a liquid-helium–cooled
+          bolometer (1.4 K), performed cryogenic cooldowns, and conducted
+          spectral scans of fourteen material types — including Zitex, Crystal
+          Quartz, Sapphire, Mylar, and multi-layer windows. Applied discrete
+          Fourier transform analysis to convert interferograms to frequency-domain
+          spectra. Results inform component selection for the CASIMIR (Caltech
+          Airborne Submillimeter Interstellar Medium Investigations Receiver)
+          instrument.
+        timeline:
+          - year: 2010
+            label: "Spring–summer SURF project (14 weeks); bolometer cooldown procedures"
+          - year: 2010
+            label: Three spectral scans, DFT analysis of interferograms
+
+  - name: Analysis Systems & Facilities
+    projects:
+      - title: IRIS-HEP Analysis Systems
+        role: Researcher, Tool Developer
+        subtitle: 2025-present
+        images: []
+        description: >
+          Part of the IRIS-HEP Analysis Systems focus area, which builds
+          software for HL-LHC analyses. Core contributions: pyhf (enabling the
+          first published likelihoods from an LHC experiment), histserv
+          (distributed histogram management), and analysis workflow tooling.
+          Also involved in the DEMOS (Democratizing Models) effort to make
+          statistical models from LHC experiments reusable.
+        links:
+          - label: IRIS-HEP
+            url: https://iris-hep.org/
+            icon: globe
+          - label: Analysis Systems
+            url: https://iris-hep.org/as.html
+            icon: globe
+          - label: DEMOS
+            url: https://democratizing-models.github.io/
+            icon: globe
+
+      - title: USATLAS Operations / UChicago Analysis Facility
+        role: Analysis Support & Infrastructure
+        subtitle: 2024-present
+        images: []
+        description: >
+          Maintaining and supporting the UChicago Analysis Facility, one of the
+          primary ATLAS analysis facilities serving hundreds of physicists for
+          USATLAS Operations. Responsibilities include user support via CERN
+          Mattermost, Discourse, and e-mail; revamping and maintaining AF
+          documentation (migrated from RTD to GitHub Pages with improved build
+          and contributor experience); maintaining ML platform images for
+          JupyterLab/BinderHub; developing a custom GitHub Actions runner for
+          executing CI jobs directly on AF hardware; and benchmarking analysis
+          facility performance across compute nodes and storage systems.
+        links:
+          - label: AF Docs
+            url: https://usatlas.github.io/af-docs/
+            icon: book
+          - label: Benchmarking
+            url: https://usatlas.github.io/af-benchmarking/
+            icon: globe
+          - label: Mattermost
+            url: https://mattermost.web.cern.ch/uchicago-af
+            icon: globe
+          - label: Discourse
+            url: https://atlas-talk.sdcc.bnl.gov/
+            icon: globe
+
+      - title: Agentic Analysis Facility (Elwood)
+        role: Principal Investigator / Lead Architect
+        subtitle: UChicago Analysis Facility, 2026-present
+        images: []
+        description: >
+          Building an AI-native analysis platform where a physicist describes
+          their research intent in natural language and Elwood autonomously
+          orchestrates the complete analysis workflow — data discovery via Rucio,
+          columnar delivery via ServiceX, histogram production via coffea, and
+          statistical inference via pyhf — on a real, operating analysis
+          facility. The architecture organizes into three layers: a domain
+          "codebook" of structured HEP knowledge articles, MCP tool wrappers
+          (for HTCondor, Rucio, ServiceX, coffea, pyhf, Kubernetes, and
+          Elasticsearch), and facility configuration files that make the system
+          facility-agnostic (UChicago AF, NERSC, future nodes — swap the config,
+          the reasoning is indifferent); an agentic harness that selects and
+          configures the reasoning loop; and a pluggable reasoning codec.
+          The AF Skills Marketplace provides community-contributed domain skills
+          for use by agents running on the facility.
+        links:
+          - label: AF Skills Marketplace
+            url: https://github.com/usatlas/marketplace
+            icon: github
+          - label: rucio-mcp
+            url: https://github.com/kratsg/rucio-mcp
+            icon: github
+          - label: ami-mcp
+            url: https://github.com/kratsg/ami-mcp
+            icon: github

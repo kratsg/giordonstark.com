@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-display: "Satoshi", system-ui, sans-serif;
+  --font-body: "Geist", system-ui, sans-serif;
+
+  /* Brand colors */
+  --color-brand-bg: #fafaf8;
+  --color-brand-text: #1a1a1a;
+  --color-brand-accent: #c53030;
+  --color-brand-muted: #6b6b6b;
+  --color-brand-card: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #fafaf8;
+    color: #1a1a1a;
+  }
+
+  body {
+    font-family: "Geist", "system-ui", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Satoshi", "system-ui", sans-serif;
+  }
+}
+
+/* Section fade-in via IntersectionObserver */
+.section-fade {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition:
+    opacity 0.7s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

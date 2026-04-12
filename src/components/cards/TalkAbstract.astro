@@ -1,0 +1,75 @@
+---
+export interface TalkAbstractEntry {
+  title: string;
+  abstract: string;
+  footer?: string;
+}
+
+interface Props {
+  entry: TalkAbstractEntry;
+  index: number;
+}
+
+const { entry, index } = Astro.props;
+const id = `abstract-${index}`;
+---
+
+<!-- Expandable abstract card -->
+<div class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5">
+  <button
+    class="flex w-full items-start justify-between gap-4 px-6 py-5 text-left transition-colors duration-200 hover:bg-gray-50/60"
+    aria-expanded="false"
+    aria-controls={id}
+    data-abstract-toggle
+  >
+    <h3
+      class="font-display text-brand-text text-base leading-snug font-semibold"
+    >
+      {entry.title}
+    </h3>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      class="text-brand-muted h-5 w-5 shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
+      data-chevron
+    >
+      <path
+        fill-rule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </button>
+
+  <div id={id} class="hidden px-6 pb-6" data-abstract-body>
+    <p
+      class="text-brand-muted mb-4 text-sm leading-relaxed whitespace-pre-wrap"
+    >
+      {entry.abstract}
+    </p>
+    {
+      entry.footer && (
+        <p class="text-brand-muted mt-3 border-t border-gray-100 pt-3 text-xs italic">
+          {entry.footer}
+        </p>
+      )
+    }
+  </div>
+</div>
+
+<script>
+  // Accordion toggle for each abstract card
+  document.querySelectorAll("[data-abstract-toggle]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      const body = btn.nextElementSibling as HTMLElement | null;
+      const chevron = btn.querySelector("[data-chevron]") as SVGElement | null;
+
+      btn.setAttribute("aria-expanded", String(!expanded));
+      body?.classList.toggle("hidden", expanded);
+      if (chevron) {
+        chevron.style.transform = expanded ? "" : "rotate(180deg)";
+      }
+    });
+  });
+</script>

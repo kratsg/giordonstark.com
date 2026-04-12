@@ -1,0 +1,14 @@
+links:
+  - platform: Facebook
+    url: https://fb.me/kratsg
+    icon: facebook
+  - platform: Bluesky
+    url: https://bsky.app/profile/giordonstark.com
+    icon: bluesky
+  - platform: Mastodon
+    url: https://sciencemastodon.com/@kratsg
+    icon: mastodon
+    rel: me
+  - platform: GitHub
+    url: https://github.com/kratsg
+    icon: github

@@ -1,0 +1,67 @@
+talks:
+  - type: Seminar
+    venue: University of Hawaii
+    date: January 2025
+  - type: Seminar
+    venue: CEA Paris-Saclay
+    date: March 2024
+  - type: Colloquium
+    venue: University of Arizona
+    date: January 2024
+  - type: Seminar
+    venue: University of Arizona
+    date: January 2024
+  - type: Seminar
+    venue: University of Notre Dame
+    date: January 2024
+  - type: Seminar
+    venue: Karlsruhe Institute of Technology
+    date: December 2023
+  - type: Colloquium
+    venue: University of Victoria
+    date: November 2023
+  - type: Conference
+    venue: DOEPy
+    date: August 2023
+  - type: Colloquium
+    venue: Wayne State University
+    date: April 2023
+  - type: Seminar
+    venue: Southern Methodist University
+    date: March 2023
+  - type: Seminar
+    venue: Stony Brook University
+    date: February 2023
+  - type: Seminar
+    venue: Lund University, Sweden
+    date: September 2022
+  - type: Seminar
+    venue: University of Washington, Bothell
+    date: July 2022
+  - type: Seminar
+    venue: University of Pennsylvania
+    date: February 2022
+  - type: Conference
+    venue: Lepton-Photon 2022
+    date: January 2022
+  - type: Seminar
+    venue: The University of Cambridge, UK
+    date: January 2022
+  - type: Seminar
+    venue: The University of Tennessee, Knoxville
+    date: October 2021
+  - type: Seminar
+    venue: ICPS 2021
+    date: August 2021
+  - type: Plenary
+    venue: SUSY2019
+    date: May 2019
+  - type: Seminar
+    venue: The University of Chicago
+    date: November 2018
+  - type: Seminar
+    venue: Columbia College Chicago
+    date: November 2018
+  - type: Conference
+    venue: BOOST2016
+    date: July 2016

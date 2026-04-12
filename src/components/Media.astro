@@ -1,0 +1,36 @@
+---
+import yaml from "js-yaml";
+import { readFileSync } from "node:fs";
+import MediaItem from "./cards/MediaItem.astro";
+import type { MediaEntry } from "./cards/MediaItem.astro";
+
+interface MediaData {
+  items: MediaEntry[];
+}
+
+const { items } = yaml.load(
+  readFileSync("src/data/media.yaml", "utf8"),
+) as MediaData;
+---
+
+<section
+  id="media"
+  class="section-fade bg-brand-bg relative"
+  style="z-index: 1;"
+>
+  <div class="mx-auto max-w-5xl px-6 py-20">
+    <!-- Section header -->
+    <div class="mb-12 flex items-center gap-4">
+      <span class="bg-brand-accent h-px max-w-12 flex-1"></span>
+      <h2
+        class="font-display text-brand-text text-2xl font-bold tracking-tight"
+      >
+        Media &amp; Online Presence
+      </h2>
+    </div>
+
+    <div>
+      {items.map((item) => <MediaItem item={item} />)}
+    </div>
+  </div>
+</section>

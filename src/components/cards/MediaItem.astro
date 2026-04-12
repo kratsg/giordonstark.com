@@ -1,0 +1,71 @@
+---
+export interface MediaEntry {
+  title: string;
+  source: string;
+  description?: string;
+  url: string;
+  date: string;
+  type: "video" | "article" | "event";
+}
+
+interface Props {
+  item: MediaEntry;
+}
+
+const { item } = Astro.props;
+
+const typeConfig: Record<string, { label: string; color: string }> = {
+  video: { label: "Video", color: "text-red-600 bg-red-50 border-red-100" },
+  article: {
+    label: "Article",
+    color: "text-blue-700 bg-blue-50 border-blue-100",
+  },
+  event: {
+    label: "Event",
+    color: "text-emerald-700 bg-emerald-50 border-emerald-100",
+  },
+};
+
+const typeInfo = typeConfig[item.type] ?? {
+  label: item.type,
+  color: "text-brand-muted bg-gray-50 border-gray-100",
+};
+---
+
+<div class="group flex gap-4 border-b border-gray-100 py-5 last:border-0">
+  <!-- Type badge column -->
+  <div class="w-16 shrink-0 pt-0.5">
+    <span
+      class={`inline-block text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${typeInfo.color}`}
+    >
+      {typeInfo.label}
+    </span>
+  </div>
+
+  <!-- Content -->
+  <div class="min-w-0 flex-1">
+    <div
+      class="mb-1 flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between"
+    >
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener"
+        class="text-brand-text hover:text-brand-accent group-hover:text-brand-accent/90 text-sm leading-snug font-medium transition-colors duration-200"
+      >
+        {item.title}
+      </a>
+      <span class="text-brand-muted shrink-0 text-xs tabular-nums"
+        >{item.date}</span
+      >
+    </div>
+    <p class="text-brand-muted mb-1 text-xs font-medium">{item.source}</p>
+    {
+      item.description && (
+        <p class="text-brand-muted line-clamp-2 text-xs leading-relaxed">
+          {item.description}
+        </p>
+      )
+    }
+  </div>
+</div>

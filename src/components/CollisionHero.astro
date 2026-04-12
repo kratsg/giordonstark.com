@@ -1,0 +1,23 @@
+---
+// CollisionHero: fixed canvas behind the hero/About section.
+// The canvas is aria-hidden and pointer-events-none (decorative only).
+// initCollision is called client-side to set up GSAP ScrollTrigger.
+---
+
+<canvas
+  id="collision-canvas"
+  class="pointer-events-none fixed inset-0 h-full w-full"
+  style="z-index: 0;"
+  aria-hidden="true"></canvas>
+
+<script>
+  import { initCollision } from "../scripts/collision";
+
+  const canvas = document.getElementById(
+    "collision-canvas",
+  ) as HTMLCanvasElement | null;
+  if (canvas) {
+    const cleanup = initCollision(canvas);
+    window.addEventListener("beforeunload", cleanup, { once: true });
+  }
+</script>

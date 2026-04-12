@@ -1,0 +1,121 @@
+items:
+  - number: 1
+    text: >
+      You'll find a lot of things about me and my work if you google my name.
+      This website and my CV may be helpful, as well as my twitter, to give you
+      a sense of my wording/register/patter/sense of humor, etc. I really love
+      puns. Additionally, my thesis website is a great example of how I
+      approach public speaking.
+    extra: >
+      A short simple summary of my work: "Tons of small small small things go
+      boom in large tube that takes pics of the smash quite fast. I write code
+      to look at the pics and try to find new things to fill gaps in our map of
+      the field."
+    links:
+      - label: CV
+        url: https://kratsg.github.io/cv/?utm_source=giordonstark.com&utm_medium=section:interpreting
+      - label: bluesky
+        url: https://bsky.app/profile/giordonstark.com
+      - label: thesis website
+        url: https://kratsg.github.io/thesis/?utm_source=giordonstark.com&utm_medium=section:interpreting
+      - label: Twitter source
+        url: https://twitter.com/kratsg/status/1481995315465138186
+
+  - number: 2
+    text: >
+      I grew up oral. In one-on-one, I speech-read very well. People will not
+      realize I'm Deaf as I have no noticeable deaf accent, however I am a very
+      quiet speaker. Sometimes you need to let me know if I'm too quiet and
+      need to speak up. For brief interactions, I may be fine alone if the
+      other person isn't too quiet or does not have a strong accent. If it's
+      longer, please interpret. A good rule of thumb is to proactively slide in
+      behind the speaker and begin interpreting.
+
+  - number: 3
+    text: >
+      I will default to speaking for myself in hearing settings always. Voicing
+      for me will only ever be in very informal situations that are not
+      Physics-heavy. I'm usually bad about making (and following) a script for
+      any presentation I do. If you don't feel comfortable voicing for me, even
+      if I want you to, let me know as I will switch to voicing. I don't mind.
+      If there is a D/HoH person around, I might accidentally sim-com, but I
+      try to avoid this. Usually, if there's at least one D/HoH person, I will
+      sign for them and expect you to voice for sign-language impaired people.
+
+  - number: 4
+    text: >
+      I learned ASL relatively late. In fact, I learned it after I started
+      learning PJM. Because I travel internationally a lot for conferences, I
+      will also have picked up many pieces of other sign languages. Regardless
+      of how I sign, I tend to prefer receiving in ASL where possible. If you
+      do not feel comfortable with the subject material/jargon, because this
+      ain't your daddy's physics, signed-english (PSE-like) and more
+      fingerspelling is fine as I'll figure it out from there. Additionally,
+      whenever I sign, I'm a bit lazier and tend not to finish my thoughts on
+      the assumption that whenever I drop a sign, it's implicit what fits in.
+
+  - number: 5
+    text: >
+      Context and shared vocabulary will often not be clear, because they're
+      research discussions! I'm accustomed to academic ASL with mouthing of key
+      vocabulary, and do appreciate seeing the English when interacting in
+      situations where using the same vocabulary as the hearing speakers would
+      be helpful. If you aren't familiar with the jargon, mouth the word and
+      guess at the phonetic spelling, and we'll have a high chance of getting
+      the right word. If I know the word, I'll quickly feed you a sign to
+      replace that word if it comes up often, so you do not need to fingerspell
+      over and over again. Do not assume that's the official sign. Drop it like
+      it's hot afterwards.
+
+  - number: 6
+    text: >
+      During presentations with minimal audience interaction, visual aids, and
+      a single speaker, I'm comfortable following the presentation slides as
+      long as you indicate where the focus is on the slides. Switch back to
+      interpreting when the speaker starts spontaneous expression again or
+      diverges from the slides significantly. I might not always look at you
+      the entire time, but I'm always paying attention. I have photographic
+      memory.
+
+  - number: 7
+    text: >
+      I'm always tired. Don't take offense.
+
+  - number: 8
+    text: >
+      When meetings are informal, please introduce yourself to everyone,
+      because I'll forget. The exception is with people I work with. They're
+      used to seeing me with interpreters by now and usually introductions are
+      not needed.
+
+  - number: 9
+    text: >
+      I often work with hearing people who have never met a Deaf professional
+      before. Please let me know how you feel about educating hearing
+      participants about sign language and interpreting. I know "empowering the
+      Deaf person to explain this stuff themselves" is a thing, but I've also
+      answered that question fifty thousand times before, and delegation is an
+      empowered act (if you're comfortable with it).
+
+  - number: 10
+    text: >
+      I work in a large international collaboration with 3000+ folks. The
+      people in my community have varying levels of fluency in English. Many
+      people will have accents. If you cannot work with accents at all,
+      reconsider taking the job. You also need to let me know so I can make
+      sure you have a strident team. It's not going to be just Spanish or
+      Italian, but also French, Moldovan, Afrikaans, etc...
+
+  - number: 11
+    text: >
+      Are you fluent in signed languages other than ASL? Let me know! I will
+      always want more practice with those during informal situations.
+
+  - number: 12
+    text: >
+      Shared vocabulary/names will be stored in my vocabulary sheet. Request
+      access if you don't have access. Please be sure to add all unfamiliar
+      terms to the spreadsheet after each session.
+    links:
+      - label: vocabulary sheet
+        url: https://docs.google.com/spreadsheets/d/1caEe8zdOblo_qufUgIYpL0nqMcjI4l37TZNvDTLLtTw/edit?usp=sharing
