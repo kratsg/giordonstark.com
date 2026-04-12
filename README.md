@@ -20,9 +20,11 @@ Everything is YAML under `src/data/`. Edit the file, rebuild, done.
 | File                           | Section                                                                |
 | ------------------------------ | ---------------------------------------------------------------------- |
 | `src/data/social.yaml`         | Social links in the About section                                      |
+| `src/data/education.yaml`      | Education entries (degree, institution, thesis, advisors, publications) |
 | `src/data/research.yaml`       | Research & Instrumentation cards (physics searches, detector hardware) |
 | `src/data/software.yaml`       | Software & Open Source cards, grouped by category                      |
 | `src/data/awards.yaml`         | Awards list                                                            |
+| `src/data/professional_history.yaml` | Professional History entries (company, title, start/end dates) |
 | `src/data/teaching.yaml`       | Teaching highlights, workshops, courses                                |
 | `src/data/media.yaml`          | Media/online presence items                                            |
 | `src/data/service.yaml`        | Service roles, outreach, American Red Cross history                    |
