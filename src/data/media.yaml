@@ -62,7 +62,7 @@ items:
     description: >
       Keynote presentation at the International Conference of Physics Students
       2021.
-    url: https://events.iaps.info/event/9/page/5-keynote-speakers
+    url: https://iaps.info/events/icps/icps-2021-in-copenhagen/ # broken: https://events.iaps.info/event/9/page/5-keynote-speakers
     date: August 2021
     type: event
 
@@ -186,7 +186,7 @@ items:
       TV sets are going out of fashion. Actually, not quite. But that's what it
       seems like. You could feign a comparison between Online Shopping and Brick
       & Mortar stores.
-    url: http://www.forbes.com/sites/quora/2014/11/25/tv-not-quite-dead-but-time-to-pull-the-plug/
+    url: https://web.archive.org/web/20250123161155///www.forbes.com/sites/quora/2014/11/25/tv-not-quite-dead-but-time-to-pull-the-plug/
     date: November 25th, 2014
     type: article
 
@@ -195,7 +195,7 @@ items:
     description: >
       It's reminiscent of a Facebook-style newsfeed that changes the way that I
       look at email.
-    url: http://www.forbes.com/sites/quora/2014/10/24/the-pros-and-cons-of-inbox-by-gmail/
+    url: https://web.archive.org/web/20250715121622/http://www.forbes.com/sites/quora/2014/10/24/the-pros-and-cons-of-inbox-by-gmail/
     date: November 24th, 2014
     type: article
 
@@ -203,6 +203,6 @@ items:
     source: Thought Catalog
     description: >
       If a person is born deaf, which language do they think in?
-    url: http://thoughtcatalog.com/giordon-stark/2014/09/my-inner-voice-as-a-deaf-person
+    url: https://web.archive.org/web/20230209123440/https://thoughtcatalog.com/giordon-stark/2014/09/my-inner-voice-as-a-deaf-person/
     date: September 17th, 2014
     type: article
