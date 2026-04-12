@@ -1,6 +1,7 @@
 ---
 import yaml from "js-yaml";
 import { readFileSync } from "node:fs";
+import { humanizeDate } from "../utils/date";
 
 interface Role {
   title: string;
@@ -36,17 +37,9 @@ const serviceData = yaml.load(
   readFileSync("src/data/service.yaml", "utf8"),
 ) as ServiceData;
 
-const communityPapers = [...(serviceData.community_papers ?? [])].sort(
-  (a, b) => b.date.localeCompare(a.date),
+const communityPapers = [...(serviceData.community_papers ?? [])].sort((a, b) =>
+  b.date.localeCompare(a.date),
 );
-
-function humanizeDate(date: string): string {
-  return new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(date + "-01"));
-}
 ---
 
 <section

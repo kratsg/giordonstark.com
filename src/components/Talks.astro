@@ -3,6 +3,7 @@ import yaml from "js-yaml";
 import { readFileSync } from "node:fs";
 import TalkAbstract from "./cards/TalkAbstract.astro";
 import type { TalkAbstractEntry } from "./cards/TalkAbstract.astro";
+import { humanizeDate } from "../utils/date";
 
 interface TalkAbstractsData {
   speaker_bio: string;
@@ -126,7 +127,7 @@ const contributedTalks = talks.filter((t) => !INVITED_TYPES.has(t.type));
                     )}
                   </div>
                   <span class="text-brand-muted shrink-0 text-xs tabular-nums">
-                    {talk.date}
+                    {humanizeDate(talk.date)}
                   </span>
                 </div>
               ))
@@ -166,7 +167,7 @@ const contributedTalks = talks.filter((t) => !INVITED_TYPES.has(t.type));
                     )}
                   </div>
                   <span class="text-brand-muted shrink-0 text-xs tabular-nums">
-                    {talk.date}
+                    {humanizeDate(talk.date)}
                   </span>
                 </div>
               ))
@@ -201,7 +202,7 @@ const contributedTalks = talks.filter((t) => !INVITED_TYPES.has(t.type));
                         )}
                       </div>
                       <span class="text-brand-muted shrink-0 text-xs tabular-nums">
-                        {talk.date}
+                        {humanizeDate(talk.date)}
                       </span>
                     </div>
                   ))}
