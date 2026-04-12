@@ -5,4 +5,6 @@ exclude = [
   'https://doi\.org/10\.1103/PhysRevD.+', # 403 for APS
   'https://.+\.aps\.org/.+', # 403 for APS
   'https://www.instagram.com/garrett.nichols.37', # 429
+  'https://cds\.cern\.ch/', # will often timeout, slower
+  'https://indico\.fnal\.gov', # 403 for fnal.gov
 ]

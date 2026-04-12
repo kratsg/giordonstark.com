@@ -30,3 +30,9 @@ jobs:
 
       - name: Check all
         run: pixi run check
+
+      - name: Check issue templates are up-to-date
+        run: |
+          pixi run generate-issue-templates
+          pixi run format .github/ISSUE_TEMPLATE/
+          git diff --exit-code .github/ISSUE_TEMPLATE/
