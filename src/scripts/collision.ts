@@ -137,8 +137,8 @@ function render(): void {
   const p = scrollProgress; // 0..1
 
   // Phase thresholds
-  const approachEnd = 0.4;
-  const collisionEnd = 0.45; // short glow window so tracks appear quickly
+  const approachEnd = 0.2;
+  const collisionEnd = 0.3; // short glow window so tracks appear quickly
 
   if (p < approachEnd) {
     // Approach phase: bunches move from edges toward center, wiggling vertically
