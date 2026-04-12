@@ -1,0 +1,30 @@
+# Static file — not generated. Edit directly.
+name: "@claude command"
+description: Free-form instruction for Claude (research projects, software entries, content updates, etc.)
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        <!-- @claude
+        Process the instruction in this issue.
+        - Consult AGENTS.md for file locations, schemas, date formats, and ordering conventions.
+        - Run `pixi run format .` after making changes, then `pixi run check` to validate.
+        - Open a PR and include `Closes #<issue-number>` in the description.
+        -->
+  - type: textarea
+    id: instruction
+    attributes:
+      label: Instruction
+      placeholder: >-
+        e.g. Add a new research project on diHiggs standard model measurement
+        to research.yaml under Higgs Physics. arXiv: 2407.XXXXX, role: co-author.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Links, DOIs, dates, or anything else Claude needs.
+    validations:
+      required: false
