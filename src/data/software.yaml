@@ -46,6 +46,23 @@ categories:
             icon: globe
         tags: [python, statistics, serialization]
 
+      - title: SimpleAnalysis
+        role: Contact Editor
+        images: []
+        description: >
+          Generator-level (truth-level) analysis framework for ATLAS, providing
+          an easy-to-use interface for running reinterpretations of ATLAS SUSY
+          searches without requiring the full detector simulation. Served as
+          contact editor for the public documentation (ATL-PHYS-PUB-2022-017).
+        links:
+          - label: ATL-PHYS-PUB-2022-017
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2022-017/
+            icon: file-text
+          - label: GitLab
+            url: https://gitlab.cern.ch/atlas-sa/
+            icon: gitlab
+        tags: [c++, reinterpretation, atlas]
+
       - title: mapyde
         role: Developer
         images: []
