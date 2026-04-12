@@ -4,6 +4,7 @@
  * Canvas is fixed behind the hero/About section, aria-hidden for accessibility.
  */
 
+import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -21,14 +22,11 @@ interface Particle {
 }
 
 interface Track {
-  x0: number;
-  y0: number;
-  curvature: number;
-  angle: number;
-  length: number;
+  // Pre-computed path: interleaved x,y pairs [x0,y0, x1,y1, ...]
+  points: Float32Array;
+  maxSteps: number;
   alpha: number;
   color: string;
-  charge: number; // +1 or -1 for bending direction
 }
 
 let canvas: HTMLCanvasElement | null = null;
@@ -37,6 +35,7 @@ let rafId = 0;
 
 // State driven by GSAP scroll progress (0 → 1)
 let scrollProgress = 0;
+let lastRenderedProgress = -1;
 
 // Particles for the two proton bunches
 const leftBunch: Particle[] = [];
@@ -96,21 +95,35 @@ function initBunches(w: number, h: number): void {
     });
   }
 
-  // Build tracks
+  // Build tracks — pre-compute point paths so the render loop avoids per-frame trig
   tracks.length = 0;
   const tc = trackCount();
+  const trackColors = [COLORS.track1, COLORS.track2, COLORS.track3];
+  const stepSize = 4;
   for (let i = 0; i < tc; i++) {
-    const angle = Math.random() * Math.PI * 2;
-    const trackColors = [COLORS.track1, COLORS.track2, COLORS.track3];
+    const maxSteps = Math.ceil(Math.random() * (isMobile() ? 120 : 260) + 60);
+    const curvature = (Math.random() - 0.5) * 0.04;
+    const charge = Math.random() > 0.5 ? 1 : -1;
+    let px = w / 2,
+      py = cy,
+      angle = Math.random() * Math.PI * 2;
+
+    const points = new Float32Array((maxSteps + 1) * 2);
+    points[0] = px;
+    points[1] = py;
+    for (let s = 0; s < maxSteps; s++) {
+      angle += curvature * charge;
+      px += Math.cos(angle) * stepSize;
+      py += Math.sin(angle) * stepSize;
+      points[(s + 1) * 2] = px;
+      points[(s + 1) * 2 + 1] = py;
+    }
+
     tracks.push({
-      x0: w / 2,
-      y0: cy,
-      curvature: (Math.random() - 0.5) * 0.04,
-      angle,
-      length: Math.random() * (isMobile() ? 120 : 260) + 60,
+      points,
+      maxSteps,
       alpha: Math.random() * 0.7 + 0.3,
       color: trackColors[Math.floor(Math.random() * trackColors.length)],
-      charge: Math.random() > 0.5 ? 1 : -1,
     });
   }
 }
@@ -128,6 +141,14 @@ function drawGlow(x: number, y: number, radius: number, alpha: number): void {
 
 function render(): void {
   if (!canvas || !ctx) return;
+
+  // Skip redraw when scroll position hasn't changed
+  if (scrollProgress === lastRenderedProgress) {
+    rafId = requestAnimationFrame(render);
+    return;
+  }
+  lastRenderedProgress = scrollProgress;
+
   const w = canvas.width;
   const h = canvas.height;
   const cy = h / 2;
@@ -137,8 +158,8 @@ function render(): void {
   const p = scrollProgress; // 0..1
 
   // Phase thresholds
-  const approachEnd = 0.2;
-  const collisionEnd = 0.3; // short glow window so tracks appear quickly
+  const approachEnd = 0.5;
+  const collisionEnd = 0.6; // short glow window so tracks appear quickly
 
   if (p < approachEnd) {
     // Approach phase: bunches move from edges toward center, wiggling vertically
@@ -196,31 +217,22 @@ function render(): void {
     // Fading glow at center
     drawGlow(w / 2, cy, 30, Math.max(0, 0.4 - t * 0.4));
 
+    const fadeFactor = Math.max(0, 1 - t * 0.5);
+    ctx.lineWidth = 1;
     tracks.forEach((track) => {
-      const steps = Math.floor(track.length * t);
+      const steps = Math.floor(track.maxSteps * t);
       if (steps < 2) return;
 
-      ctx!.save();
-      ctx!.globalAlpha = track.alpha * Math.max(0, 1 - t * 0.5);
+      ctx!.globalAlpha = track.alpha * fadeFactor;
       ctx!.strokeStyle = track.color;
-      ctx!.lineWidth = 1;
       ctx!.beginPath();
-
-      let x = track.x0;
-      let y = track.y0;
-      let angle = track.angle;
-      const stepSize = 4;
-
-      ctx!.moveTo(x, y);
-      for (let s = 0; s < steps; s++) {
-        angle += track.curvature * track.charge;
-        x += Math.cos(angle) * stepSize;
-        y += Math.sin(angle) * stepSize;
-        ctx!.lineTo(x, y);
+      ctx!.moveTo(track.points[0], track.points[1]);
+      for (let s = 1; s <= steps; s++) {
+        ctx!.lineTo(track.points[s * 2], track.points[s * 2 + 1]);
       }
       ctx!.stroke();
-      ctx!.restore();
     });
+    ctx.globalAlpha = 1;
   }
 
   rafId = requestAnimationFrame(render);
@@ -243,6 +255,14 @@ export function initCollision(canvasEl: HTMLCanvasElement): () => void {
   // Start render loop
   rafId = requestAnimationFrame(render);
 
+  // Lenis smooth scrolling, driven by GSAP's ticker
+  const lenis = new Lenis();
+  lenis.on("scroll", ScrollTrigger.update);
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+
   // GSAP ScrollTrigger drives scrollProgress
   ScrollTrigger.create({
     trigger: "#about",
@@ -259,5 +279,6 @@ export function initCollision(canvasEl: HTMLCanvasElement): () => void {
     cancelAnimationFrame(rafId);
     window.removeEventListener("resize", resize);
     ScrollTrigger.getAll().forEach((st) => st.kill());
+    lenis.destroy();
   };
 }
