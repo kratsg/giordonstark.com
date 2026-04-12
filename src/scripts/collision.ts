@@ -101,9 +101,7 @@ function initBunches(w: number, h: number): void {
   const trackColors = [COLORS.track1, COLORS.track2, COLORS.track3];
   const stepSize = 4;
   for (let i = 0; i < tc; i++) {
-    const maxSteps = Math.ceil(
-      Math.random() * (isMobile() ? 120 : 260) + 60,
-    );
+    const maxSteps = Math.ceil(Math.random() * (isMobile() ? 120 : 260) + 60);
     const curvature = (Math.random() - 0.5) * 0.04;
     const charge = Math.random() > 0.5 ? 1 : -1;
     let px = w / 2,
