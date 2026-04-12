@@ -110,7 +110,7 @@ categories:
           RECAST implementations to support the analysis effort. For pMSSM,
           led work on g-2 interpretations, RECAST executions for existing
           analyses, and software support — with a general pMSSM parameter scan
-          forthcoming to be made public in the near future.
+          in progress.
 
   - name: Detector Instrumentation
     projects:
@@ -172,13 +172,12 @@ categories:
         subtitle: University of Chicago, 2014-2018
         images: []
         description: >
-          Critical contributions to design and prototyping of the Global
-          Feature Extractor (gFEX), a high-speed trigger electronics system
-          for the ATLAS Phase 1 upgrade. Served as editor of the Final Design
-          Report. Developed firmware, ML algorithms, and monitoring systems.
-          Mentored undergraduates on firmware, ML algorithms, and monitoring.
-          Successfully installed and commissioned inside the ATLAS detector in
-          October 2021.
+          Contributed to design and prototyping of the Global Feature Extractor
+          (gFEX), a high-speed trigger electronics system for the ATLAS Phase 1
+          upgrade. Served as editor of the Final Design Report. Developed
+          firmware, ML algorithms, and monitoring systems; mentored
+          undergraduates on the same. This was installed and commissioned
+          inside the ATLAS detector in October 2021.
         timeline:
           - year: 2014
             label: Joined gFEX team
@@ -247,17 +246,12 @@ categories:
         subtitle: 2025-present
         images: []
         description: >
-          Active member of the Analysis Systems (AS) focus area of the Institute
-          for Research and Innovation in Software for High Energy Physics
-          (IRIS-HEP). The AS focus area develops sustainable analysis tools to
-          extend the physics reach of the HL-LHC experiments by creating greater
-          functionality, reducing time-to-insight, lowering barriers for smaller
-          teams, and streamlining analysis preservation, reproducibility, and
-          reuse. Contributions include core development of pyhf (enabling the
+          Part of the IRIS-HEP Analysis Systems focus area, which builds
+          software for HL-LHC analyses. Core contributions: pyhf (enabling the
           first published likelihoods from an LHC experiment), histserv
           (distributed histogram management), and analysis workflow tooling.
-          Also engaged with the DEMOS (Democratizing Models) effort, an
-          associated partnership working to broaden reuse of statistical models.
+          Also involved in the DEMOS (Democratizing Models) effort to make
+          statistical models from LHC experiments reusable.
         links:
           - label: IRIS-HEP
             url: https://iris-hep.org/
@@ -315,9 +309,7 @@ categories:
           the reasoning is indifferent); an agentic harness that selects and
           configures the reasoning loop; and a pluggable reasoning codec.
           The AF Skills Marketplace provides community-contributed domain skills
-          for use by agents running on the facility. The system is designed to
-          accelerate the full HEP analysis cycle — from petabyte-scale data
-          access through statistical inference — across experiment boundaries.
+          for use by agents running on the facility.
         links:
           - label: AF Skills Marketplace
             url: https://github.com/usatlas/marketplace

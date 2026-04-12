@@ -94,10 +94,9 @@ categories:
         role: Developer
         images: []
         description: >
-          Dashboard for histogram serving. Distributed histogram management
-          service allowing remote filling and snapshot retrieval for processing
-          large datasets across distributed systems. Developed as part of
-          IRIS-HEP Analysis Systems work.
+          Distributed histogram management service — fill remotely, retrieve
+          snapshots, process large datasets across distributed systems.
+          Developed a web dashboard as part of IRIS-HEP Analysis Systems work.
         links:
           - label: GitHub
             url: https://github.com/pfackeldey/histserv/
@@ -290,10 +289,9 @@ categories:
         role: Developer
         images: []
         description: >
-          MCP server enabling LLMs like Claude to query and manage Rucio
-          distributed data management operations -- search datasets, check
-          replicas, manage replication rules, and monitor quotas through
-          natural language.
+          MCP server for Rucio distributed data management — lets LLMs search
+          datasets, check replicas, manage replication rules, and monitor
+          quotas.
         links:
           - label: GitHub
             url: https://github.com/kratsg/rucio-mcp
@@ -307,10 +305,9 @@ categories:
         role: Developer
         images: []
         description: >
-          MCP server wrapping ATLAS AMI (Metadata Interface) and the PMG
-          cross-section database, exposing them as tools for LLMs to discover
-          MC samples, retrieve cross-sections, and validate dataset
-          classifications.
+          MCP server for ATLAS AMI (Metadata Interface) and the PMG
+          cross-section database — lets LLMs find MC samples, retrieve
+          cross-sections, and validate dataset classifications.
         links:
           - label: GitHub
             url: https://github.com/kratsg/ami-mcp
@@ -439,10 +436,10 @@ categories:
         images: []
         description: >
           Co-administrator and co-owner of the Scikit-HEP organization
-          (2017-present), a community-driven effort to build a coherent Python
-          ecosystem for particle physics data analysis. Joined when root_numpy
-          was brought under the Scikit-HEP umbrella; contributions span
-          root_numpy, pyhf, atlas-schema, and organizational governance.
+          (2017-present), a community effort to build a Python ecosystem for
+          particle physics. Joined when root_numpy was brought under the
+          Scikit-HEP umbrella; contributions span root_numpy, pyhf, and
+          organizational governance.
         links:
           - label: Scikit-HEP
             url: https://scikit-hep.org/
