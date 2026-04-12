@@ -1,0 +1,116 @@
+---
+import yaml from "js-yaml";
+import { readFileSync } from "node:fs";
+
+interface Position {
+  company: string;
+  title?: string;
+  note?: string;
+  start_date: string; // YYYY-MM
+  end_date?: string; // YYYY-MM; absent means current
+  citation?: string; // context label shown below company/title
+  description?: string;
+  bullets?: string[];
+}
+interface PositionsData {
+  positions: Position[];
+}
+
+function parseYM(dateStr: string): Date {
+  const [year, month] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1);
+}
+
+function formatYM(dateStr: string): string {
+  return parseYM(dateStr).toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+}
+
+function dateRange(pos: Position): string {
+  const start = formatYM(pos.start_date);
+  if (!pos.end_date) return `${start} – Present`;
+  if (pos.end_date === pos.start_date) return start;
+  return `${start} – ${formatYM(pos.end_date)}`;
+}
+
+const { positions } = yaml.load(
+  readFileSync("src/data/professional_history.yaml", "utf8"),
+) as PositionsData;
+
+// Current (no end_date) first; then by start_date desc; ties broken by end_date desc
+const sorted = [...positions].sort((a, b) => {
+  const aCurrent = !a.end_date;
+  const bCurrent = !b.end_date;
+  if (aCurrent !== bCurrent) return aCurrent ? -1 : 1;
+  const startDiff =
+    parseYM(b.start_date).getTime() - parseYM(a.start_date).getTime();
+  if (startDiff !== 0) return startDiff;
+  if (a.end_date && b.end_date) {
+    return parseYM(b.end_date).getTime() - parseYM(a.end_date).getTime();
+  }
+  return 0;
+});
+---
+
+<section
+  id="professional-history"
+  class="section-fade relative bg-gray-50/60"
+  style="z-index: 1;"
+>
+  <div class="mx-auto max-w-5xl px-6 py-20">
+    <!-- Section header -->
+    <div class="mb-12 flex items-center gap-4">
+      <span class="bg-brand-accent h-px max-w-12 flex-1"></span>
+      <h2
+        class="font-display text-brand-text text-2xl font-bold tracking-tight"
+      >
+        Professional History
+      </h2>
+    </div>
+
+    <div class="divide-y divide-gray-100">
+      {
+        sorted.map((position) => (
+          <div class="group -mx-3 flex flex-col gap-2 rounded-lg px-3 py-5 transition-colors duration-200 hover:bg-gray-50/60 sm:flex-row sm:items-baseline sm:justify-between">
+            <div class="flex-1">
+              <p class="text-brand-text leading-snug">
+                <strong class="font-semibold">{position.company}</strong>
+                {position.title && (
+                  <>
+                    {" · "}
+                    <em>{position.title}</em>
+                  </>
+                )}
+                {position.note && (
+                  <span class="text-brand-muted ml-2 text-sm font-normal not-italic">
+                    ({position.note})
+                  </span>
+                )}
+              </p>
+              {position.citation && (
+                <p class="text-brand-muted mt-0.5 text-sm">{position.citation}</p>
+              )}
+              {position.description && (
+                <p class="text-brand-muted mt-1.5 max-w-[65ch] text-sm leading-relaxed">
+                  {position.description}
+                </p>
+              )}
+              {position.bullets && position.bullets.length > 0 && (
+                <ul class="text-brand-muted mt-1.5 max-w-[65ch] list-disc space-y-1 pl-4 text-sm leading-relaxed">
+                  {position.bullets.map((bullet) => (
+                    <li>{bullet}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            <span class="text-brand-muted shrink-0 text-sm font-medium tabular-nums">
+              {dateRange(position)}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

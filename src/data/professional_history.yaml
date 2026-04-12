@@ -1,0 +1,102 @@
+positions:
+  - company: SCIPP, UC Santa Cruz
+    title: Project Scientist
+    start_date: "2024-08"
+
+  - company: SCIPP, UC Santa Cruz
+    title: Postdoctoral Scholar Employee
+    start_date: "2018-08"
+    end_date: "2024-07"
+
+  - company: CERN
+    title: Fellow
+    note: turned down
+    start_date: "2018-04"
+    end_date: "2018-04"
+
+  - company: University of Chicago
+    title: Graduate Student Research Assistant
+    citation: High Energy Physics
+    start_date: "2017-07"
+    end_date: "2018-07"
+    description: Thesis research.
+
+  - company: Brookhaven National Laboratory
+    title: DOE Office of Science Graduate Student Researcher
+    start_date: "2015-10"
+    end_date: "2016-01"
+    description: >
+      Boosted object hardware trigger development and testing for the Phase I
+      upgrade of the ATLAS Experiment at Brookhaven National Lab.
+
+  - company: University of Chicago
+    title: Bridge Program Tutor
+    start_date: "2014-06"
+    end_date: "2016-06"
+
+  - company: University of Chicago
+    title: Graduate Student Teaching Assistant
+    start_date: "2012-06"
+    end_date: "2017-06"
+
+  - company: University of Chicago
+    title: Graduate Student Research Assistant
+    citation: Ultracold Atomic Physics
+    start_date: "2012-06"
+    end_date: "2013-05"
+    description: >
+      Started a project on trapping of water droplets using temperature
+      gradients at room pressure.
+
+  - company: Adaptly
+    title: Software Engineer II
+    start_date: "2012-06"
+    end_date: "2012-09"
+
+  - company: California Institute of Technology
+    title: Research Assistant
+    citation: Laser Interferometer Gravitational Observatory
+    start_date: "2011-09"
+    end_date: "2012-06"
+    description: >
+      Researching the effects of Brownian Thermal Noise and how it relates to
+      the Quality Factors and Loss Angles of thin-film coated mirrors used in LIGO.
+
+  - company: Massachusetts Institute of Technology
+    title: Research Assistant
+    citation: Laser Interferometer Gravitational Observatory
+    start_date: "2011-06"
+    end_date: "2011-09"
+    bullets:
+      - >
+        Developed control systems for monitoring the state of the LIGO system
+        via multiple physical chassis setups and software collaborations.
+      - >
+        Developed software to analyze noise levels in LIGO hardware (capacitative
+        position sensors and various chassis), analyzed noise levels in the hardware
+        to verify its quality before sending it to other LIGO labs in the country.
+      - Worked on the feed-forward systems to minimize mechanical vibrations in the system.
+
+  - company: California Institute of Technology
+    title: Research Assistant and Computational Specialist
+    citation: Computational Physics Lab
+    start_date: "2011-03"
+    end_date: "2011-06"
+    description: >
+      Developed a new version of Caltech's Sophomore Physics Laboratory
+      Mathematica CurveFit program.
+
+  - company: California Institute of Technology
+    title: Teaching Assistant
+    citation: Information Systems and Technology
+    start_date: "2011-03"
+    end_date: "2011-06"
+
+  - company: California Institute of Technology
+    title: Edward C. and Alice Stone Fellow
+    citation: Submillimeter Wave Observatory / CASIMIR Group
+    start_date: "2010-04"
+    end_date: "2010-09"
+    description: >
+      Characterized the optical transmittance of materials in the submillimeter
+      band for use in sensitive submillimeter telescopes and detectors.
