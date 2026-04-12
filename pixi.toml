@@ -2,7 +2,7 @@
 authors = ["Giordon Stark <kratsg@gmail.com>"]
 channels = ["conda-forge"]
 name = "giordonstark.com"
-platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64", "win-64", "win-arm64"]
+platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64", "win-64"]
 version = "0.1.0"
 
 [tasks]
@@ -13,6 +13,9 @@ preview = { cmd = "npm run preview", depends-on = ["build"], description = "Serv
 format = { cmd = "npx prettier --write .", depends-on = ["install"], description = "Auto-format all files (Astro + Tailwind plugins)" }
 format-check = { cmd = "npx prettier --check .", depends-on = ["install"], description = "Check formatting without writing changes (CI-safe)" }
 lint = { cmd = "npx eslint .", depends-on = ["install"], description = "Lint Astro components with eslint-plugin-astro" }
+linkcheck = { cmd = "lychee --root-dir='dist/' dist/", description = "Check for broken links", depends-on = ["build"] }
+check = { depends-on = ["format-check", "lint", "linkcheck"] }
 
 [dependencies]
 nodejs = ">=22,<23"
+lychee = ">=0.23.0,<0.24"

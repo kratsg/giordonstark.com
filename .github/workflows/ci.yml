@@ -28,11 +28,5 @@ jobs:
           pixi-version: v0.67.0
           cache: true
 
-      - name: Check formatting
-        run: pixi run format-check
-
-      - name: Lint
-        run: pixi run lint
-
-      - name: Build
-        run: pixi run build
+      - name: Check all
+        run: pixi run check
