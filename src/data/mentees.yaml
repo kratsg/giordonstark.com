@@ -8,7 +8,7 @@ undergraduate:
 
   - name: Sylvia Wartell
     institution: UC Santa Cruz
-    project: "ITk Pixels Upgrade: QC/QA technician (performing QC/QA steps using the full test bench infrastructure)"
+    project: "ITk Pixels Upgrade: QC/QA of pixel modules"
     period: "2025"
     url: ""
 
@@ -26,7 +26,7 @@ undergraduate:
 
   - name: Aan Yadav
     institution: UC Santa Cruz
-    project: "ITk Pixels Upgrade: PCB design for per-stand interlock board and vacuum monitoring board for pixel module QC/QA"
+    project: "ITk Pixels Upgrade: PCB design for interlock and vacuum monitoring boards"
     period: 2024-present
     url: ""
 
