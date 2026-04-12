@@ -210,6 +210,8 @@ const navItems = [
   const sectionLinks = document.querySelectorAll('#sidebar-nav a[href^="#"]');
   const sections = document.querySelectorAll("section[id]");
 
+  // rootMargin "-20% 0px -75% 0px" creates a narrow trigger band near the top
+  // of the viewport, so only one section can be "active" at a time.
   const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -224,10 +226,11 @@ const navItems = [
               link.getAttribute("href") === `#${entry.target.id}`,
             );
           });
+          history.replaceState(null, "", `#${entry.target.id}`);
         }
       });
     },
-    { threshold: 0.3 },
+    { rootMargin: "-20% 0px -75% 0px", threshold: 0 },
   );
 
   sections.forEach((s) => sectionObserver.observe(s));
