@@ -17,6 +17,21 @@ Run `pixi task list` to see all tasks with descriptions.
 
 Everything is YAML under `src/data/`. Edit the file, rebuild, done.
 
+### Date formats
+
+Machine-parseable dates use `YYYY-MM` (e.g. `2024-08`). Two shared helpers in `src/utils/date.ts` handle rendering:
+
+| Helper                         | Input                  | Output                      |
+| ------------------------------ | ---------------------- | --------------------------- |
+| `humanizeDate(date)`           | `"2024-08"`            | `"August 2024"`             |
+| `formatDateRange(start, end?)` | `"2018-08", "2024-07"` | `"August 2018 – July 2024"` |
+
+`end` omitted → `"August 2024 – Present"`. `end === start` → single label.
+
+Fields using this format: `talks[].date`, `community_papers[].date`, `positions[].start_date` / `end_date`.
+
+Free-text periods (e.g. `"2025-present"`, `"Fall 2016-2017"`) appear elsewhere and are rendered as-is — don't convert them.
+
 | File                                 | Section                                                                 |
 | ------------------------------------ | ----------------------------------------------------------------------- |
 | `src/data/social.yaml`               | Social links in the About section                                       |

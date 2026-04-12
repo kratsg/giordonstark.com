@@ -80,6 +80,13 @@ outreach:
       Panel member for equality, diversity, and inclusion at the
       Lepton-Photon conference.
 
+  - title: Accessibility in High Energy Physics (Snowmass 2022)
+    period: "2022"
+    url: https://arxiv.org/abs/2203.08748
+    description: >
+      Co-authored the Snowmass 2022 paper documenting lessons on accessibility
+      in the HEP community from the Snowmass process.
+
   - title: ASLCore Physics Lexicon
     period: 2019-2021
     description: >
@@ -119,3 +126,61 @@ american_red_cross:
   - title: Health & Safety Education Chair
     organization: Youth Council, Greater Palm Beach Area Chapter
     period: 2006-2007
+
+community_papers:
+  - title: "Building an AI-native Research Ecosystem for Experimental Particle Physics: A Community Vision"
+    date: 2026-02
+    url: https://arxiv.org/abs/2602.17582
+    description: Craig Group community vision paper for AI-native experimental HEP research.
+
+  - title: "PyHEP.dev 2024 Workshop Summary Report"
+    date: 2024-10
+    url: https://arxiv.org/abs/2410.02112
+    description: Summary report from the PyHEP.dev 2024 workshop in Aachen, Germany.
+
+  - title: "Analysis Facilities White Paper"
+    date: 2024-04
+    url: https://arxiv.org/abs/2404.02100
+    description: Community white paper on HEP analysis facilities for the HL-LHC era.
+
+  - title: "Towards a muon collider"
+    date: 2023-09
+    url: https://doi.org/10.1140/epjc/s10052-023-11889-x
+    description: EPJC 83, 864 (2023) — community paper on the physics case and accelerator design for a muon collider.
+
+  - title: "Muon Collider Forum Report"
+    date: 2022-09
+    url: https://arxiv.org/abs/2209.01318
+    description: FERMILAB-FN-1194 — forum report on the physics and detector case for a muon collider.
+
+  - title: "Report of the Topical Group on Physics Beyond the Standard Model at Energy Frontier for Snowmass 2021"
+    date: 2022-09
+    url: https://arxiv.org/abs/2209.13128
+    description: Snowmass 2021 BSM/Energy Frontier topical group report.
+
+  - title: "Publishing statistical models: Getting the most out of particle physics experiments"
+    date: 2022-01
+    url: https://doi.org/10.21468/SciPostPhys.12.1.037
+    description: >
+      SciPost Phys. 12, 37 (2022) — Cranmer, Heinrich, Stark et al. Community
+      paper on publishing full statistical models from LHC experiments.
+
+  - title: "Data and Analysis Preservation, Recasting, and Reinterpretation (Snowmass 2021)"
+    date: 2022-03
+    url: https://arxiv.org/abs/2203.10057
+    description: Snowmass white paper on data preservation and reinterpretation workflows.
+
+  - title: "Strategy for Understanding the Higgs Physics: The Cool Copper Collider (C³)"
+    date: 2022-03
+    url: https://arxiv.org/abs/2203.07646
+    description: Snowmass 2022 paper on the Cool Copper Collider physics program.
+
+  - title: "Jets and Jet Substructure at Future Colliders (Snowmass 2022)"
+    date: 2022-03
+    url: https://arxiv.org/abs/2203.07462
+    description: Snowmass 2022 community paper on jet substructure at future colliders.
+
+  - title: "Reinterpretation of LHC Results for New Physics: Status and Recommendations after Run 2"
+    date: 2020-03
+    url: https://arxiv.org/abs/2003.07868
+    description: LHC Reinterpretation Forum white paper (CERN-LPCC-2020-001).

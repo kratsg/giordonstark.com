@@ -24,6 +24,15 @@ categories:
           - label: JOSS
             url: https://doi.org/10.21105/joss.02823
             icon: file-text
+          - label: CHEP 2020
+            url: https://doi.org/10.1051/epjconf/202024506017
+            icon: file-text
+          - label: ICHEP 2022
+            url: https://doi.org/10.22323/1.414.0245
+            icon: file-text
+          - label: PyHEP 2021 (funcX)
+            url: https://doi.org/10.1051/epjconf/202125102070
+            icon: file-text
         tags: [python, statistics, scikit-hep, iris-hep]
 
       - title: pyhs3
@@ -45,6 +54,23 @@ categories:
             url: https://democratizing-models.github.io/
             icon: globe
         tags: [python, statistics, serialization]
+
+      - title: SimpleAnalysis
+        role: Contact Editor
+        images: []
+        description: >
+          Generator-level (truth-level) analysis framework for ATLAS, providing
+          an easy-to-use interface for running reinterpretations of ATLAS SUSY
+          searches without requiring the full detector simulation. Served as
+          contact editor for the public documentation (ATL-PHYS-PUB-2022-017).
+        links:
+          - label: ATL-PHYS-PUB-2022-017
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2022-017/
+            icon: file-text
+          - label: GitLab
+            url: https://gitlab.cern.ch/atlas-sa/
+            icon: gitlab
+        tags: [c++, reinterpretation, atlas]
 
       - title: mapyde
         role: Developer
@@ -231,6 +257,9 @@ categories:
           - label: Docs
             url: https://xaodanahelpers.readthedocs.io
             icon: book
+          - label: Zenodo
+            url: https://doi.org/10.5281/zenodo.3743307
+            icon: file-text
         tags: [c++, python, atlas]
 
       - title: root_numpy
@@ -249,6 +278,9 @@ categories:
           - label: Docs
             url: https://scikit-hep.org/root_numpy/
             icon: book
+          - label: JOSS
+            url: https://doi.org/10.21105/joss.00307
+            icon: file-text
         tags: [python, root, scikit-hep]
 
       - title: root-optimize

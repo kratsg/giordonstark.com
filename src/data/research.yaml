@@ -21,7 +21,10 @@ categories:
           - year: 2021
             label: "Initial 3L combination published (EPJC)"
             url: https://doi.org/10.1140/epjc/s10052-021-09749-7
-          - year: 2022
+          - year: 2023
+            label: ATLAS-CONF-2023-046
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2023-046/
+          - year: 2024
             label: "14-analysis statistical combination published (PRL)"
             url: https://link.aps.org/doi/10.1103/PhysRevLett.133.031802
         links:
@@ -56,12 +59,18 @@ categories:
           - year: 2017
             label: ATLAS-CONF-2017-021
             url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2017-021/
-          - year: 2017
-            label: "Published SUSY-2016-10 (Phys.Rev.D 97, 012008)"
-            url: https://doi.org/10.1103/PhysRevD.97.012008
+          - year: 2018
+            label: ATLAS-CONF-2018-041
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2018-041/
+          - year: 2018
+            label: "Published SUSY-2016-10 (JHEP 06 2018)"
+            url: https://doi.org/10.1007/JHEP06(2018)107
           - year: 2018
             label: PhD Thesis (Springer Thesis Award)
             url: https://kratsg.github.io/thesis/
+          - year: 2023
+            label: "Published SUSY-2018-30 (EPJC 83, 561)"
+            url: https://doi.org/10.1140/epjc/s10052-023-11543-6
         links:
           - label: Thesis
             url: https://kratsg.github.io/thesis/
@@ -69,11 +78,17 @@ categories:
           - label: Springer
             url: https://books.google.com/books?vid=ISBN978-3-030-34548-8
             icon: book
+          - label: Springer DOI
+            url: https://doi.org/10.1007/978-3-030-34548-8
+            icon: file-text
           - label: "Phys.Rev.D 94"
             url: https://doi.org/10.1103/PhysRevD.94.032003
             icon: file-text
-          - label: "Phys.Rev.D 97"
-            url: https://doi.org/10.1103/PhysRevD.97.012008
+          - label: "JHEP 06 (2018)"
+            url: https://doi.org/10.1007/JHEP06(2018)107
+            icon: file-text
+          - label: "EPJC 83 (2023)"
+            url: https://doi.org/10.1140/epjc/s10052-023-11543-6
             icon: file-text
 
       - title: EWK SUSY Radiative Decays
@@ -84,18 +99,115 @@ categories:
           Analysis targeting new physics signatures with radiative decays in
           electroweak supersymmetry at the ATLAS detector.
 
+      - title: EWK Higgsino Searches (Multi-b-jets)
+        role: Member / Software support
+        subtitle: University of Chicago & UCSC, 2017-2024
+        images: []
+        description: >
+          Contributed to searches for higgsino pair production in final states
+          with multiple b-tagged jets, targeting higgsino decays via Higgs
+          bosons. Roles included high-mass analysis development, main software
+          developer and maintenance, theory systematics, and software support.
+        timeline:
+          - year: 2017
+            label: ATLAS-CONF-2017-081
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2017-081/
+          - year: 2018
+            label: "Published SUSY-2017-02 (Phys.Rev.D 98, 092002)"
+            url: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.98.092002
+          - year: 2023
+            label: ATLAS-CONF-2023-048
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2023-048/
+          - year: 2024
+            label: "Published SUSY-2020-16 (Phys.Rev.D 109, 112011)"
+            url: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.112011
+        links:
+          - label: "Phys.Rev.D 98 (4b)"
+            url: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.98.092002
+            icon: file-text
+          - label: "Phys.Rev.D 109 (2h)"
+            url: https://doi.org/10.1103/PhysRevD.109.112011
+            icon: file-text
+
+      - title: EWK All-Hadronic SUSY Search
+        role: Member / Code contributor
+        subtitle: University of Chicago, 2017-2019
+        images: []
+        description: >
+          Contributed to a search for chargino and neutralino production in
+          final states with a Higgs boson and missing transverse momentum,
+          with all-hadronic decays. Contributed analysis code and authored the
+          optimisation framework.
+        timeline:
+          - year: 2019
+            label: "Published SUSY-2017-01 (Phys.Rev.D 100, 012006)"
+            url: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.012006
+        links:
+          - label: "Phys.Rev.D 100"
+            url: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.012006
+            icon: file-text
+
+      - title: EWK Compressed SUSY Searches
+        role: Supervisor (Santa Cruz team)
+        subtitle: UCSC, 2023-2025
+        images: []
+        description: >
+          Supervised UCSC team contributions to two searches for electroweakly
+          produced SUSY particles in compressed mass spectra: one targeting
+          vector-boson-fusion topologies and the other searching for direct
+          slepton production in the moderately compressed corridor. Also
+          contributed to signal generation job options.
+        timeline:
+          - year: 2024
+            label: "Published SUSY-2023-26 (JHEP 12 2024)"
+            url: https://doi.org/10.1007/JHEP12(2024)116
+          - year: 2025
+            label: "Published HMBS-2024-64 (JHEP 08 2025)"
+            url: https://doi.org/10.1007/JHEP08(2025)053
+        links:
+          - label: "JHEP (VBF)"
+            url: https://doi.org/10.1007/JHEP12(2024)116
+            icon: file-text
+          - label: "JHEP (sleptons)"
+            url: https://doi.org/10.1007/JHEP08(2025)053
+            icon: file-text
+
+      - title: "DiHiggs Boosted VBF HH→4b"
+        role: Editorial Board Member
+        subtitle: UCSC, 2022-2024
+        images: []
+        description: >
+          Served on the editorial board for the search for pair production of
+          boosted Higgs bosons via vector-boson fusion in the four b-jet final
+          state using the full ATLAS Run 2 dataset at 13 TeV.
+        timeline:
+          - year: 2024
+            label: ATLAS-CONF-2024-003
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2024-003/
+        links:
+          - label: ATLAS-CONF-2024-003
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2024-003/
+            icon: file-text
+
       - title: Collinear W-boson Radiation
         role: Analysis contact
         subtitle: 2019-2024
         images: []
         description: >
           Cross-section measurement of collinear W-boson radiation in the ATLAS
-          detector at 13 TeV (ANA-STDM-2020-30, in preparation), building on
-          the 7 TeV predecessor measurement. Studies rare QCD topology where a
-          W boson is radiated collinearly from a quark leg.
+          detector at 13 TeV (STDM-2020-30), building on the 7 TeV predecessor
+          measurement. Studies a rare QCD topology where a W boson is radiated
+          collinearly from a quark leg.
+        timeline:
+          - year: 2024
+            label: "Published STDM-2020-30 (EPJC 2025)"
+            url: https://doi.org/10.1140/epjc/s10052-025-14078-0
         links:
           - label: "7 TeV predecessor (PLB)"
             url: https://doi.org/10.1016/j.physletb.2016.12.005
+            icon: file-text
+          - label: "EPJC (13 TeV)"
+            url: https://doi.org/10.1140/epjc/s10052-025-14078-0
             icon: file-text
 
       - title: pMSSM Scans & RPV-RPC Reinterpretations
@@ -109,8 +221,98 @@ categories:
           seeded the Run 2 analysis program and worked on modifying existing
           RECAST implementations to support the analysis effort. For pMSSM,
           led work on g-2 interpretations, RECAST executions for existing
-          analyses, and software support — with a general pMSSM parameter scan
-          in progress.
+          analyses, and software support.
+        timeline:
+          - year: 2023
+            label: ATLAS-CONF-2023-055
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2023-055/
+          - year: 2024
+            label: "Published SUSY-2020-15 (JHEP 05 2024)"
+            url: https://doi.org/10.1007/JHEP05(2024)106
+          - year: 2026
+            label: "Published HMBS-2024-04 (arXiv:2603.15007)"
+            url: https://arxiv.org/abs/2603.15007
+        links:
+          - label: "JHEP (pMSSM)"
+            url: https://doi.org/10.1007/JHEP05(2024)106
+            icon: file-text
+          - label: "arXiv (RPV-RPC)"
+            url: https://arxiv.org/abs/2603.15007
+            icon: file-text
+
+      - title: SUSY Summary Plots
+        role: Subconvener / Member
+        subtitle: SUSY Run-2 Summaries (2020-2022)
+        images: []
+        description: >
+          Contributed to and coordinated ATLAS SUSY summary plot updates as
+          SUSY Run-2 Summaries subconvener. Contributions included smuon
+          production plots with g-2 constraints and slepton exclusion regions.
+        timeline:
+          - year: 2020
+            label: ATL-PHYS-PUB-2020-013
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2020-013/
+          - year: 2020
+            label: ATL-PHYS-PUB-2020-020
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2020-020/
+          - year: 2021
+            label: ATL-PHYS-PUB-2021-007
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2021-007/
+          - year: 2021
+            label: ATL-PHYS-PUB-2021-019
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2021-019/
+          - year: 2022
+            label: ATL-PHYS-PUB-2022-013
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2022-013/
+        links:
+          - label: ATL-PHYS-PUB-2022-013
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2022-013/
+            icon: file-text
+          - label: ATL-PHYS-PUB-2021-019
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2021-019/
+            icon: file-text
+
+      - title: Boosted Higgs (Xbb) Tagging
+        role: Member
+        subtitle: University of Chicago, 2015
+        images: []
+        description: >
+          Contributed to the ATLAS study of expected performance for boosted
+          Higgs boson identification via H→bb̄ decay at 13 TeV, which informed
+          early Run 2 b-tagging strategy for large-R jets.
+        timeline:
+          - year: 2015
+            label: ATL-PHYS-PUB-2015-035
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2015-035/
+        links:
+          - label: ATL-PHYS-PUB-2015-035
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2015-035/
+            icon: file-text
+
+      - title: Statistical Likelihoods in ATLAS
+        role: Contact Editor / Member
+        subtitle: 2019-2021
+        images: []
+        description: >
+          Led ATLAS's first publication of full statistical likelihoods for
+          searches for new physics (ATL-PHYS-PUB-2019-029), enabling external
+          reproducibility of search results. Contributed to follow-up work
+          publishing simplified likelihood implementations in HistFactory
+          (ATL-PHYS-PUB-2021-038).
+        timeline:
+          - year: 2019
+            label: ATL-PHYS-PUB-2019-029
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2019-029/
+          - year: 2021
+            label: ATL-PHYS-PUB-2021-038
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2021-038/
+        links:
+          - label: ATL-PHYS-PUB-2019-029
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2019-029/
+            icon: file-text
+          - label: ATL-PHYS-PUB-2021-038
+            url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2021-038/
+            icon: file-text
 
   - name: Detector Instrumentation
     projects:
@@ -194,6 +396,12 @@ categories:
           - label: meta-l1calo
             url: https://github.com/kratsg/meta-l1calo
             icon: github
+          - label: gFEX FDR
+            url: https://cds.cern.ch/record/2233958
+            icon: file-text
+          - label: gFEX Proceedings
+            url: https://cds.cern.ch/record/2104248
+            icon: file-text
 
       - title: LIGO Gravitational Wave Detector
         role: Research Assistant
@@ -262,6 +470,9 @@ categories:
           - label: DEMOS
             url: https://democratizing-models.github.io/
             icon: globe
+          - label: ML-HEQUPP
+            url: https://arxiv.org/abs/2602.22248
+            icon: file-text
 
       - title: USATLAS Operations / UChicago Analysis Facility
         role: Analysis Support & Infrastructure

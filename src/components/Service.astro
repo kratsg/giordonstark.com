@@ -1,6 +1,7 @@
 ---
 import yaml from "js-yaml";
 import { readFileSync } from "node:fs";
+import { humanizeDate } from "../utils/date";
 
 interface Role {
   title: string;
@@ -19,15 +20,26 @@ interface Outreach {
   url?: string;
   description?: string;
 }
+interface CommunityPaper {
+  title: string;
+  date: string;
+  url?: string;
+  description?: string;
+}
 interface ServiceData {
   roles: Role[];
   american_red_cross: ARCRole[];
   outreach: Outreach[];
+  community_papers: CommunityPaper[];
 }
 
 const serviceData = yaml.load(
   readFileSync("src/data/service.yaml", "utf8"),
 ) as ServiceData;
+
+const communityPapers = [...(serviceData.community_papers ?? [])].sort((a, b) =>
+  b.date.localeCompare(a.date),
+);
 ---
 
 <section
@@ -109,6 +121,48 @@ const serviceData = yaml.load(
         }
       </div>
     </div>
+
+    <!-- Community papers & white papers -->
+    {
+      communityPapers.length > 0 && (
+        <div class="mb-14">
+          <h3 class="text-brand-muted mb-6 flex items-center gap-3 text-[11px] font-medium tracking-[0.2em] uppercase">
+            <span>Community Papers &amp; Reports</span>
+            <span class="h-px flex-1 bg-gray-200" />
+          </h3>
+          <div class="divide-y divide-gray-100">
+            {communityPapers.map((paper) => (
+              <div class="flex flex-col gap-2 py-4 sm:flex-row sm:items-start sm:justify-between">
+                <div class="flex-1">
+                  {paper.url ? (
+                    <a
+                      href={paper.url}
+                      target="_blank"
+                      rel="noopener"
+                      class="text-brand-text hover:text-brand-accent text-sm font-medium transition-colors duration-200"
+                    >
+                      {paper.title}
+                    </a>
+                  ) : (
+                    <p class="text-brand-text text-sm font-medium">
+                      {paper.title}
+                    </p>
+                  )}
+                  {paper.description && (
+                    <p class="text-brand-muted mt-1 max-w-[60ch] text-xs leading-relaxed">
+                      {paper.description}
+                    </p>
+                  )}
+                </div>
+                <span class="text-brand-muted shrink-0 self-start rounded-full border border-gray-100 bg-gray-50 px-2.5 py-1 text-xs tabular-nums">
+                  {humanizeDate(paper.date)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
 
     <!-- Outreach -->
     <div>

@@ -1,6 +1,7 @@
 ---
 import yaml from "js-yaml";
 import { readFileSync } from "node:fs";
+import { formatDateRange } from "../utils/date";
 
 interface Position {
   company: string;
@@ -19,20 +20,6 @@ interface PositionsData {
 function parseYM(dateStr: string): Date {
   const [year, month] = dateStr.split("-").map(Number);
   return new Date(year, month - 1);
-}
-
-function formatYM(dateStr: string): string {
-  return parseYM(dateStr).toLocaleDateString("en-US", {
-    month: "long",
-    year: "numeric",
-  });
-}
-
-function dateRange(pos: Position): string {
-  const start = formatYM(pos.start_date);
-  if (!pos.end_date) return `${start} – Present`;
-  if (pos.end_date === pos.start_date) return start;
-  return `${start} – ${formatYM(pos.end_date)}`;
 }
 
 const { positions } = yaml.load(
@@ -98,7 +85,7 @@ const sorted = [...positions].sort((a, b) => {
                 )}
               </div>
               <span class="text-brand-muted shrink-0 self-start rounded-full border border-gray-100 bg-gray-50 px-3 py-1 text-sm">
-                {dateRange(position)}
+                {formatDateRange(position.start_date, position.end_date)}
               </span>
             </div>
 

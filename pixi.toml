@@ -14,7 +14,8 @@ format = { cmd = "npx prettier --write .", depends-on = ["install"], description
 format-check = { cmd = "npx prettier --check .", depends-on = ["install"], description = "Check formatting without writing changes (CI-safe)" }
 lint = { cmd = "npx eslint .", depends-on = ["install"], description = "Lint Astro components with eslint-plugin-astro" }
 linkcheck = { cmd = "lychee --root-dir $PIXI_PROJECT_ROOT/dist dist/", description = "Check for broken links", depends-on = ["build"] }
-check = { depends-on = ["format-check", "lint", "linkcheck"] }
+test = { cmd = "npx vitest run", depends-on = ["install"], description = "Run unit tests" }
+check = { depends-on = ["format-check", "lint", "test", "linkcheck"] }
 
 [dependencies]
 nodejs = ">=22,<23"

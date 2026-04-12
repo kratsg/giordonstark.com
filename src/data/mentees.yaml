@@ -9,7 +9,13 @@ undergraduate:
   - name: Sylvia Wartell
     institution: UC Santa Cruz
     project: "ITk Pixels Upgrade: QC/QA of pixel modules"
-    period: "2025"
+    period: 2025-present
+    url: ""
+
+  - name: Zach Pizzo
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: Type-1 services cable assembly"
+    period: 2024-present
     url: ""
 
   - name: Casey Bishop
@@ -27,13 +33,7 @@ undergraduate:
   - name: Aan Yadav
     institution: UC Santa Cruz
     project: "ITk Pixels Upgrade: PCB design for interlock and vacuum monitoring boards"
-    period: 2024-present
-    url: ""
-
-  - name: Zach Pizzo
-    institution: UC Santa Cruz
-    project: "ITk Pixels Upgrade: Type-1 services cable assembly"
-    period: "2024"
+    period: 2024-2025
     url: ""
 
   - name: Samantha Contreras
@@ -76,6 +76,12 @@ undergraduate:
     institution: UC Santa Cruz
     project: "ITk Pixels Upgrade: technician for pixel modules and pixel services testing"
     period: 2019-2022
+    url: ""
+
+  - name: Katie Dunne
+    institution: UC Santa Cruz
+    project: "ITk Pixels Upgrade: RD53A testing and Aurora protocol implementation"
+    period: 2018-2019
     url: ""
 
   - name: Henry Zheng

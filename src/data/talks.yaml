@@ -1,67 +1,166 @@
 talks:
+  - type: Plenary
+    venue: DOEPy
+    date: 2026-01
   - type: Seminar
     venue: University of Hawaii
-    date: January 2025
+    date: 2025-01
   - type: Seminar
     venue: CEA Paris-Saclay
-    date: March 2024
+    date: 2024-03
   - type: Colloquium
     venue: University of Arizona
-    date: January 2024
+    date: 2024-01
   - type: Seminar
     venue: University of Arizona
-    date: January 2024
+    date: 2024-01
   - type: Seminar
     venue: University of Notre Dame
-    date: January 2024
+    date: 2024-01
   - type: Seminar
     venue: Karlsruhe Institute of Technology
-    date: December 2023
+    date: 2023-12
   - type: Colloquium
     venue: University of Victoria
-    date: November 2023
-  - type: Conference
+    date: 2023-11
+  - type: Plenary
     venue: DOEPy
-    date: August 2023
+    date: 2023-08
   - type: Colloquium
     venue: Wayne State University
-    date: April 2023
+    date: 2023-04
   - type: Seminar
     venue: Southern Methodist University
-    date: March 2023
+    date: 2023-03
   - type: Seminar
     venue: Stony Brook University
-    date: February 2023
+    date: 2023-02
   - type: Seminar
     venue: Lund University, Sweden
-    date: September 2022
+    date: 2022-09
   - type: Seminar
     venue: University of Washington, Bothell
-    date: July 2022
+    date: 2022-07
   - type: Seminar
     venue: University of Pennsylvania
-    date: February 2022
-  - type: Conference
+    date: 2022-02
+  - type: Plenary
     venue: Lepton-Photon 2022
-    date: January 2022
+    date: 2022-01
   - type: Seminar
     venue: The University of Cambridge, UK
-    date: January 2022
+    date: 2022-01
   - type: Seminar
     venue: The University of Tennessee, Knoxville
-    date: October 2021
+    date: 2021-10
   - type: Seminar
     venue: ICPS 2021
-    date: August 2021
+    date: 2021-08
+  - type: Parallel
+    venue: APS DPF 2019
+    date: 2019-08
+    url: https://indico.cern.ch/event/782953/contributions/3454898/
   - type: Plenary
     venue: SUSY2019
-    date: May 2019
+    date: 2019-05
   - type: Seminar
     venue: The University of Chicago
-    date: November 2018
+    date: 2018-11
   - type: Seminar
     venue: Columbia College Chicago
-    date: November 2018
-  - type: Conference
+    date: 2018-11
+  - type: Plenary
+    venue: ATLAS P&P Week (Topical Plenary)
+    date: 2018-02
+    url: https://indico.cern.ch/event/698458/
+  - type: Parallel
+    venue: Hadronic Final State Forum 2017
+    date: 2017-12
+    url: https://indico.cern.ch/event/666007/
+  - type: Parallel
+    venue: US LHC Users Association 2017
+    date: 2017-11
+    url: https://indico.fnal.gov/event/15068/
+  - type: Parallel
+    venue: ATLAS Week Bratislava
+    date: 2017-10
+    url: https://indico.cern.ch/event/558932
+  - type: Parallel
+    venue: Hadronic Calibration Workshop 2017
+    date: 2017-09
+    url: https://indico.cern.ch/event/642438
+  - type: Parallel
+    venue: APS DPF 2017 (SUSY)
+    date: 2017-08
+    url: https://indico.fnal.gov/event/11999/session/10/contribution/191
+  - type: Parallel
+    venue: APS DPF 2017 (gFEX)
+    date: 2017-08
+    url: https://indico.fnal.gov/event/11999/session/21/contribution/192
+  - type: Parallel
+    venue: US ATLAS Workshop 2017 (boosted objects)
+    date: 2017-07
+    url: https://indico.cern.ch/event/631514/contributions/2670476/
+  - type: Parallel
+    venue: US ATLAS Workshop 2017 (gFEX)
+    date: 2017-07
+    url: https://indico.cern.ch/event/631514/contributions/2656535/
+  - type: Parallel
+    venue: US ATLAS Workshop 2017 (SUSY)
+    date: 2017-07
+    url: https://indico.cern.ch/event/631514/contributions/2656482/
+  - type: Parallel
+    venue: Hadronic Final State Forum 2016
+    date: 2016-12
+    url: https://indico.cern.ch/event/565930/
+  - type: Parallel
+    venue: Hadronic Calibration Workshop 2016
+    date: 2016-09
+    url: https://indico.cern.ch/event/506093/
+  - type: Poster
+    venue: ATLAS Week NYU 2016 (gFEX)
+    date: 2016-07
+    url: https://indico.cern.ch/event/544717/
+  - type: Poster
+    venue: ATLAS Week NYU 2016 (SUSY)
+    date: 2016-07
+    url: https://indico.cern.ch/event/544717/
+  - type: Parallel
     venue: BOOST2016
-    date: July 2016
+    date: 2016-07
+  - type: Parallel
+    venue: Hadronic Final State Forum 2015
+    date: 2015-12
+    url: https://indico.cern.ch/event/437024/
+  - type: Parallel
+    venue: Young Researchers' Symposium, BNL
+    date: 2015-11
+    #url: https://www.bnl.gov/bnlyrs2015/index.php # broken
+  - type: Parallel
+    venue: Hadronic Calibration Workshop 2015 (multi-b-jets)
+    date: 2015-09
+    url: https://indico.cern.ch/event/368856/contributions/1785727/
+  - type: Parallel
+    venue: Hadronic Calibration Workshop 2015 (gFEX/gTowers)
+    date: 2015-09
+    url: https://indico.cern.ch/event/368856/contributions/1785772/
+  - type: Parallel
+    venue: Hadronic Calibration Workshop 2015 (jet reclustering)
+    date: 2015-09
+    url: https://indico.cern.ch/event/368856/contributions/1785890/
+  - type: Parallel
+    venue: Hadronic Calibration Workshop 2015 (JetSubstructureUtils)
+    date: 2015-09
+    url: https://indico.cern.ch/event/368856/contributions/1785785/
+  - type: Parallel
+    venue: US ATLAS Physics Workshop 2015
+    date: 2015-06
+    url: https://indico.cern.ch/event/388328
+  - type: Parallel
+    venue: APS April Meeting 2015
+    date: 2015-04
+    url: http://meetings.aps.org/Meeting/APR15/Session/C16.6
+  - type: Parallel
+    venue: US LHC Users Association 2014
+    date: 2014-11
+    #url: https://indico.hep.anl.gov/indico/conferenceDisplay.py?confId=410  # broken
