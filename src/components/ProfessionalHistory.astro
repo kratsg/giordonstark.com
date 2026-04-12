@@ -104,7 +104,9 @@ const sorted = [...positions].sort((a, b) => {
 
             <div class="text-brand-muted space-y-2 text-sm">
               {position.description && (
-                <p class="max-w-[65ch] leading-relaxed">{position.description}</p>
+                <p class="max-w-[65ch] leading-relaxed">
+                  {position.description}
+                </p>
               )}
               {position.bullets && position.bullets.length > 0 && (
                 <ul class="max-w-[65ch] list-disc space-y-1 pl-4 leading-relaxed">
