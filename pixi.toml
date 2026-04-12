@@ -10,11 +10,12 @@ install = { cmd = "npm install", description = "Install npm dependencies", input
 dev = { cmd = "npm run dev", depends-on = ["install"], description = "Start development server at http://localhost:4321" }
 build = { cmd = "npm run build", depends-on = ["install"], description = "Build static site to dist/", inputs = ["src/**", "public/**", "astro.config.mjs", "tailwind.config.mjs", "tsconfig.json"], outputs = ["dist/"] }
 preview = { cmd = "npm run preview", depends-on = ["build"], description = "Serve production build locally for inspection" }
-format = { cmd = "npx prettier --write .", depends-on = ["install"], description = "Auto-format all files (Astro + Tailwind plugins)" }
+format = { cmd = "npx prettier --write {{ path }}", args = [{ arg = "path", default = "." }], depends-on = ["install"], description = "Auto-format files (Astro + Tailwind plugins); defaults to `.`" }
 format-check = { cmd = "npx prettier --check .", depends-on = ["install"], description = "Check formatting without writing changes (CI-safe)" }
 lint = { cmd = "npx eslint .", depends-on = ["install"], description = "Lint Astro components with eslint-plugin-astro" }
 linkcheck = { cmd = "lychee --root-dir $PIXI_PROJECT_ROOT/dist dist/", description = "Check for broken links", depends-on = ["build"] }
 test = { cmd = "npx vitest run", depends-on = ["install"], description = "Run unit tests" }
+generate-issue-templates = { cmd = "node scripts/generate-issue-templates.mjs", depends-on = ["install"], description = "Regenerate .github/ISSUE_TEMPLATE/ from component interfaces" }
 check = { depends-on = ["format-check", "lint", "test", "linkcheck"] }
 
 [dependencies]
