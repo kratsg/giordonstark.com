@@ -31,7 +31,7 @@ const { links: socialLinks } = yaml.load(
         <div class="mb-8 inline-flex items-center gap-2">
           <span class="bg-brand-accent h-px w-8"></span>
           <span
-            class="text-brand-accent text-[11px] font-medium tracking-[0.2em] uppercase"
+            class="text-brand-accent text-xs font-medium tracking-[0.2em] uppercase sm:text-[11px]"
           >
             Project Scientist · UCSC
           </span>
@@ -39,23 +39,25 @@ const { links: socialLinks } = yaml.load(
 
         <!-- Name -->
         <h1
-          class="font-display text-brand-text mb-6 text-5xl leading-none font-bold tracking-tight md:text-7xl"
+          class="font-display text-brand-text mb-6 text-3xl leading-none font-bold tracking-tight sm:text-5xl md:text-7xl"
         >
           Giordon<br /><span class="text-brand-accent">Stark</span>
         </h1>
 
         <!-- Pronouns -->
-        <p class="text-brand-muted text-sm font-medium tracking-wide">
+        <p
+          class="text-brand-muted text-xs font-medium tracking-wide sm:text-sm"
+        >
           he / him / point
         </p>
       </div>
 
       <!-- Portrait trace + credit -->
-      <div class="shrink-0 flex-col items-center gap-1">
+      <div class="flex shrink-0 flex-col items-center gap-1">
         <img
           src="/img/giordon_trace.svg"
           alt="Portrait of Giordon Stark"
-          class="pointer-events-none w-40 select-none md:w-56 lg:w-64"
+          class="pointer-events-none w-32 select-none sm:w-40 md:w-56 lg:w-64"
         />
         <a
           href="https://www.instagram.com/garrett.nichols.37"
