@@ -1,0 +1,27 @@
+degrees:
+  - degree: Doctor of Philosophy in Physics
+    institution: University of Chicago
+    start: "Sep 2012"
+    end: "Jun 2018"
+    thesis:
+      title: >-
+        The search for supersymmetry in hadronic final states using boosted
+        object reconstruction
+      url: https://kratsg.github.io/thesis/?utm_source=giordonstark.com
+    advisors:
+      - name: David W. Miller
+        url: https://hep.uchicago.edu/~DavidMiller/?utm_source=giordonstark.com
+    publications:
+      - label: "Springer Theses (ISBN 978-3-030-34548-8)"
+        url: https://books.google.com/books?vid=ISBN978-3-030-34548-8
+        note: Springer Thesis Award recipient
+
+  - degree: Bachelor of Science in Physics
+    institution: California Institute of Technology
+    start: "Sep 2008"
+    end: "Jun 2012"
+    thesis:
+      title: Optical Coating Brownian Thermal Noise in Gravitational Wave Detectors
+    advisors:
+      - name: Kenneth Libbrecht
+      - name: Harvey Newman
