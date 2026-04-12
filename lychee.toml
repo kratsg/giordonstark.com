@@ -1,4 +1,5 @@
 exclude = [
+  'https://web\.archive\.org/web/', # exclude archive.org to reduce traffic
   'https://atlas-talk\.sdcc\.bnl\.gov/', # 400
   'https://docs\.google\.com/spreadsheets/d/1caEe8zdOblo_qufUgIYpL0nqMcjI4l37TZNvDTLLtTw',  # 401
   'https://doi\.org/10\.1103/PhysRevD.+', # 403 for APS

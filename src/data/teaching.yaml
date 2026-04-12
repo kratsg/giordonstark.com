@@ -317,6 +317,12 @@ other_instruction:
       mentor: Ofer Rind, BNL).
     url: https://watchep.org/
 
+  - role: Co-author
+    organization: Software Training in HEP (HSF / IRIS-HEP)
+    description: >
+      Co-authored the community paper documenting HEP software training
+      initiatives across the community (arXiv:2103.00659, CHEP 2021).
+
   - role: Referee
     organization: JHEP & SciPost Physics
     description: >

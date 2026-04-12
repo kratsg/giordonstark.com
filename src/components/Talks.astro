@@ -27,12 +27,9 @@ const { talks } = yaml.load(
   readFileSync("src/data/talks.yaml", "utf8"),
 ) as TalksData;
 
-// Group talks by type for display
-const talksByType: Record<string, Talk[]> = {};
-for (const talk of talks) {
-  if (!talksByType[talk.type]) talksByType[talk.type] = [];
-  talksByType[talk.type].push(talk);
-}
+const INVITED_TYPES = new Set(["Seminar", "Colloquium", "Plenary"]);
+const invitedTalks = talks.filter((t) => INVITED_TYPES.has(t.type));
+const contributedTalks = talks.filter((t) => !INVITED_TYPES.has(t.type));
 ---
 
 <section
@@ -87,7 +84,7 @@ for (const talk of talks) {
       </p>
     </div>
 
-    <!-- Prior talks list -->
+    <!-- Prior talks: two-column split (invited vs contributed) -->
     <div>
       <h3
         class="text-brand-muted mb-6 flex items-center gap-3 text-[11px] font-medium tracking-[0.2em] uppercase"
@@ -96,34 +93,145 @@ for (const talk of talks) {
         <span class="h-px flex-1 bg-gray-100"></span>
       </h3>
 
-      <div class="divide-y divide-gray-100">
-        {
-          talks.map((talk) => (
-            <div class="flex flex-col gap-2 py-3 sm:flex-row sm:items-baseline sm:justify-between">
-              <div class="flex items-baseline gap-3">
-                <span class="bg-brand-accent/8 text-brand-accent shrink-0 rounded px-2 py-0.5 text-[10px] font-semibold tracking-wide uppercase">
-                  {talk.type}
-                </span>
-                {talk.url ? (
-                  <a
-                    href={talk.url}
-                    target="_blank"
-                    rel="noopener"
-                    class="text-brand-text hover:text-brand-accent text-sm transition-colors duration-200"
-                  >
-                    {talk.venue}
-                  </a>
-                ) : (
-                  <span class="text-brand-text text-sm">{talk.venue}</span>
-                )}
-              </div>
-              <span class="text-brand-muted shrink-0 text-xs tabular-nums">
-                {talk.date}
-              </span>
-            </div>
-          ))
-        }
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <!-- Invited: Seminar / Colloquium / Plenary -->
+        <div>
+          <p
+            class="text-brand-muted mb-3 text-xs font-semibold tracking-wider uppercase"
+          >
+            Invited ({invitedTalks.length})
+          </p>
+          <p class="text-brand-muted mb-4 text-[10px] tracking-wide">
+            Seminar · Colloquium · Plenary
+          </p>
+          <div class="divide-y divide-gray-100">
+            {
+              invitedTalks.map((talk) => (
+                <div class="flex flex-col gap-1 py-2.5 sm:flex-row sm:items-baseline sm:justify-between">
+                  <div class="flex items-baseline gap-2">
+                    <span class="bg-brand-accent/8 text-brand-accent shrink-0 rounded px-1.5 py-0.5 text-[9px] font-semibold tracking-wide uppercase">
+                      {talk.type}
+                    </span>
+                    {talk.url ? (
+                      <a
+                        href={talk.url}
+                        target="_blank"
+                        rel="noopener"
+                        class="text-brand-text hover:text-brand-accent text-sm transition-colors duration-200"
+                      >
+                        {talk.venue}
+                      </a>
+                    ) : (
+                      <span class="text-brand-text text-sm">{talk.venue}</span>
+                    )}
+                  </div>
+                  <span class="text-brand-muted shrink-0 text-xs tabular-nums">
+                    {talk.date}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Contributed: Parallel / Poster -->
+        <div>
+          <p
+            class="text-brand-muted mb-3 text-xs font-semibold tracking-wider uppercase"
+          >
+            Contributed ({contributedTalks.length})
+          </p>
+          <p class="text-brand-muted mb-4 text-[10px] tracking-wide">
+            Parallel · Poster
+          </p>
+          <div class="divide-y divide-gray-100" id="contributed-list">
+            {
+              contributedTalks.slice(0, 10).map((talk) => (
+                <div class="flex flex-col gap-1 py-2.5 sm:flex-row sm:items-baseline sm:justify-between">
+                  <div class="flex items-baseline gap-2">
+                    <span class="bg-brand-accent/8 text-brand-accent shrink-0 rounded px-1.5 py-0.5 text-[9px] font-semibold tracking-wide uppercase">
+                      {talk.type}
+                    </span>
+                    {talk.url ? (
+                      <a
+                        href={talk.url}
+                        target="_blank"
+                        rel="noopener"
+                        class="text-brand-text hover:text-brand-accent text-sm transition-colors duration-200"
+                      >
+                        {talk.venue}
+                      </a>
+                    ) : (
+                      <span class="text-brand-text text-sm">{talk.venue}</span>
+                    )}
+                  </div>
+                  <span class="text-brand-muted shrink-0 text-xs tabular-nums">
+                    {talk.date}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+          {
+            contributedTalks.length > 10 && (
+              <>
+                <div
+                  id="contributed-extra"
+                  class="hidden divide-y divide-gray-100"
+                >
+                  {contributedTalks.slice(10).map((talk) => (
+                    <div class="flex flex-col gap-1 py-2.5 sm:flex-row sm:items-baseline sm:justify-between">
+                      <div class="flex items-baseline gap-2">
+                        <span class="bg-brand-accent/8 text-brand-accent shrink-0 rounded px-1.5 py-0.5 text-[9px] font-semibold tracking-wide uppercase">
+                          {talk.type}
+                        </span>
+                        {talk.url ? (
+                          <a
+                            href={talk.url}
+                            target="_blank"
+                            rel="noopener"
+                            class="text-brand-text hover:text-brand-accent text-sm transition-colors duration-200"
+                          >
+                            {talk.venue}
+                          </a>
+                        ) : (
+                          <span class="text-brand-text text-sm">
+                            {talk.venue}
+                          </span>
+                        )}
+                      </div>
+                      <span class="text-brand-muted shrink-0 text-xs tabular-nums">
+                        {talk.date}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <button
+                  id="contributed-toggle"
+                  class="text-brand-accent hover:text-brand-accent/80 mt-4 text-sm font-medium transition-colors duration-200"
+                >
+                  Show {contributedTalks.length - 10} more ↓
+                </button>
+              </>
+            )
+          }
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const toggle = document.getElementById("contributed-toggle");
+  const extra = document.getElementById("contributed-extra");
+
+  if (toggle && extra) {
+    toggle.addEventListener("click", () => {
+      const isHidden = extra.classList.contains("hidden");
+      extra.classList.toggle("hidden", !isHidden);
+      toggle.textContent = isHidden
+        ? "Show fewer ↑"
+        : `Show ${extra.children.length} more ↓`;
+    });
+  }
+</script>

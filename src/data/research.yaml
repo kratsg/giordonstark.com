@@ -78,6 +78,9 @@ categories:
           - label: Springer
             url: https://books.google.com/books?vid=ISBN978-3-030-34548-8
             icon: book
+          - label: Springer DOI
+            url: https://doi.org/10.1007/978-3-030-34548-8
+            icon: file-text
           - label: "Phys.Rev.D 94"
             url: https://doi.org/10.1103/PhysRevD.94.032003
             icon: file-text
@@ -123,7 +126,7 @@ categories:
             url: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.98.092002
             icon: file-text
           - label: "Phys.Rev.D 109 (2h)"
-            url: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.112011
+            url: https://doi.org/10.1103/PhysRevD.109.112011
             icon: file-text
 
       - title: EWK All-Hadronic SUSY Search
@@ -198,13 +201,13 @@ categories:
         timeline:
           - year: 2024
             label: "Published STDM-2020-30 (EPJC 2025)"
-            url: https://link.springer.com/article/10.1140/epjc/s10052-025-14078-0
+            url: https://doi.org/10.1140/epjc/s10052-025-14078-0
         links:
           - label: "7 TeV predecessor (PLB)"
             url: https://doi.org/10.1016/j.physletb.2016.12.005
             icon: file-text
           - label: "EPJC (13 TeV)"
-            url: https://link.springer.com/article/10.1140/epjc/s10052-025-14078-0
+            url: https://doi.org/10.1140/epjc/s10052-025-14078-0
             icon: file-text
 
       - title: pMSSM Scans & RPV-RPC Reinterpretations
@@ -311,6 +314,23 @@ categories:
             url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2021-038/
             icon: file-text
 
+      - title: Muon Collider Community Contributions
+        role: Co-author
+        subtitle: 2022-2023
+        images: []
+        description: >
+          Co-authored community papers and reports on the physics case and
+          accelerator design for a muon collider, including the Muon Collider
+          Forum Report (FERMILAB-FN-1194) and the "Towards a muon collider"
+          community paper (EPJC 83, 864).
+        links:
+          - label: Muon Collider Forum Report
+            url: https://arxiv.org/abs/2209.01318
+            icon: file-text
+          - label: Towards a muon collider (EPJC)
+            url: https://doi.org/10.1140/epjc/s10052-023-11889-x
+            icon: file-text
+
   - name: Detector Instrumentation
     projects:
       - title: ITk Pixel Module Testing
@@ -393,6 +413,12 @@ categories:
           - label: meta-l1calo
             url: https://github.com/kratsg/meta-l1calo
             icon: github
+          - label: gFEX FDR
+            url: https://cds.cern.ch/record/2233958
+            icon: file-text
+          - label: gFEX Proceedings
+            url: https://cds.cern.ch/record/2104248
+            icon: file-text
 
       - title: LIGO Gravitational Wave Detector
         role: Research Assistant
@@ -461,6 +487,9 @@ categories:
           - label: DEMOS
             url: https://democratizing-models.github.io/
             icon: globe
+          - label: ML-HEQUPP
+            url: https://arxiv.org/abs/2602.22248
+            icon: file-text
 
       - title: USATLAS Operations / UChicago Analysis Facility
         role: Analysis Support & Infrastructure
