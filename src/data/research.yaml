@@ -314,23 +314,6 @@ categories:
             url: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2021-038/
             icon: file-text
 
-      - title: Muon Collider Community Contributions
-        role: Co-author
-        subtitle: 2022-2023
-        images: []
-        description: >
-          Co-authored community papers and reports on the physics case and
-          accelerator design for a muon collider, including the Muon Collider
-          Forum Report (FERMILAB-FN-1194) and the "Towards a muon collider"
-          community paper (EPJC 83, 864).
-        links:
-          - label: Muon Collider Forum Report
-            url: https://arxiv.org/abs/2209.01318
-            icon: file-text
-          - label: Towards a muon collider (EPJC)
-            url: https://doi.org/10.1140/epjc/s10052-023-11889-x
-            icon: file-text
-
   - name: Detector Instrumentation
     projects:
       - title: ITk Pixel Module Testing

@@ -143,6 +143,16 @@ community_papers:
     url: https://arxiv.org/abs/2404.02100
     description: Community white paper on HEP analysis facilities for the HL-LHC era.
 
+  - title: "Towards a muon collider"
+    date: 2023-09
+    url: https://doi.org/10.1140/epjc/s10052-023-11889-x
+    description: EPJC 83, 864 (2023) — community paper on the physics case and accelerator design for a muon collider.
+
+  - title: "Muon Collider Forum Report"
+    date: 2022-09
+    url: https://arxiv.org/abs/2209.01318
+    description: FERMILAB-FN-1194 — forum report on the physics and detector case for a muon collider.
+
   - title: "Report of the Topical Group on Physics Beyond the Standard Model at Energy Frontier for Snowmass 2021"
     date: 2022-09
     url: https://arxiv.org/abs/2209.13128
