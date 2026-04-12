@@ -4,6 +4,7 @@
  * Canvas is fixed behind the hero/About section, aria-hidden for accessibility.
  */
 
+import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -137,8 +138,8 @@ function render(): void {
   const p = scrollProgress; // 0..1
 
   // Phase thresholds
-  const approachEnd = 0.2;
-  const collisionEnd = 0.3; // short glow window so tracks appear quickly
+  const approachEnd = 0.5;
+  const collisionEnd = 0.6; // short glow window so tracks appear quickly
 
   if (p < approachEnd) {
     // Approach phase: bunches move from edges toward center, wiggling vertically
@@ -243,6 +244,14 @@ export function initCollision(canvasEl: HTMLCanvasElement): () => void {
   // Start render loop
   rafId = requestAnimationFrame(render);
 
+  // Lenis smooth scrolling, driven by GSAP's ticker
+  const lenis = new Lenis();
+  lenis.on("scroll", ScrollTrigger.update);
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+
   // GSAP ScrollTrigger drives scrollProgress
   ScrollTrigger.create({
     trigger: "#about",
@@ -259,5 +268,6 @@ export function initCollision(canvasEl: HTMLCanvasElement): () => void {
     cancelAnimationFrame(rafId);
     window.removeEventListener("resize", resize);
     ScrollTrigger.getAll().forEach((st) => st.kill());
+    lenis.destroy();
   };
 }
