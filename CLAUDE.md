@@ -5,17 +5,14 @@ See [AGENTS.md](AGENTS.md) for content schemas, data file locations, date format
 ## Environment
 
 ```sh
-pixi run install   # install npm dependencies
-pixi run test      # run unit tests
-pixi run build     # build static site to dist/
-pixi run format    # auto-format all files
+pixi run install        # install npm dependencies
+pixi run format .       # auto-format all files
+pixi run check          # format-check + lint + test + build (run before pushing)
 ```
-
-Always run `pixi run test` and `pixi run build` before pushing a PR.
 
 ## Issue-based content management
 
-When triggered by a GitHub issue with the `claude-cms` label, parse the form fields from the issue body and apply the corresponding YAML edit.
+When triggered by a GitHub issue (detected via `<!-- @claude template: <id> -->` in the body), parse the form fields and apply the corresponding YAML edit.
 
 GitHub issue forms render fields as:
 
@@ -42,9 +39,10 @@ The hidden `<!-- @claude template: <id> -->` comment at the top of each issue bo
 
 1. Parse form fields from issue body.
 2. Read the target YAML file and add the new entry per the ordering rule above.
-3. Run `pixi run test` and `pixi run build`.
-4. Create a branch and PR with a title like `"feat: add mentee Jane Smith"`.
-5. Include `Closes #<issue-number>` in the PR description.
+3. Run `pixi run format .` to format any changed files.
+4. Run `pixi run check` to validate (format-check, lint, tests, full build).
+5. Create a branch and PR with a title like `"feat: add mentee Jane Smith"`.
+6. Include `Closes #<issue-number>` in the PR description.
 
 ### Free-form `@claude` commands
 
