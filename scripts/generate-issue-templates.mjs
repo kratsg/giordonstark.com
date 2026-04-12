@@ -2,12 +2,39 @@
  * Generates .github/ISSUE_TEMPLATE/*.yml from TypeScript interfaces defined
  * in Astro component frontmatter.
  *
- * Uses ts-morph (TypeScript compiler API wrapper) to parse interfaces from
- * source — no regex, no string matching. Run via `pixi run generate-issue-templates`.
+ * ## Flow
  *
- * Drift detection: if a fieldOverride references a field that no longer exists
- * in the interface, the script exits with an error. CI runs this and checks
- * `git diff --exit-code .github/ISSUE_TEMPLATE/` to catch uncommitted changes.
+ * For each entry in TEMPLATES:
+ *   1. Extract the TypeScript frontmatter from the .astro component file.
+ *   2. Parse the named interface with ts-morph (TypeScript compiler API wrapper)
+ *      to get its fields, types, and optionality — no regex, no string matching.
+ *   3. Validate that fieldOverrides and interface fields are in sync (both ways).
+ *   4. Build a GitHub issue form from the fields, applying overrides, and write
+ *      it to .github/ISSUE_TEMPLATE/{id}.yml.
+ *
+ * ## Why fieldOverrides are required for every interface field
+ *
+ * Raw interface field names (e.g. `url`, `period`) make poor form labels. Each
+ * field needs an explicit override entry so generated forms stay human-readable:
+ * labels ("Website URL"), placeholders ("e.g. 2025-06"), format descriptions,
+ * and type overrides (e.g. `type` becoming a dropdown with specific options).
+ * Requiring full coverage means adding a field to an interface forces you to
+ * also write the form label/hint — the form quality stays intentional.
+ *
+ * ## extraFields
+ *
+ * Non-interface fields inserted before the interface-derived fields. Used for
+ * routing inputs that aren't in the YAML schema (e.g. the undergrad/grad
+ * `level` dropdown for mentees, which determines the YAML target list).
+ *
+ * ## Drift detection
+ *
+ * - Override references a removed interface field → hard error (stale override).
+ * - Interface field has no override entry → hard error (missing coverage).
+ * CI runs this and checks `git diff --exit-code .github/ISSUE_TEMPLATE/` to
+ * catch uncommitted changes.
+ *
+ * Run via `pixi run generate-issue-templates`.
  */
 
 import { Project } from "ts-morph";
@@ -48,9 +75,15 @@ function getInterfaceProps(tsSource, interfaceName) {
 
 // ---------------------------------------------------------------------------
 // Template registry
-// Each entry defines: id, title, description, labels, component file,
-// interface name, optional extraFields (non-interface form fields inserted
-// first), and fieldOverrides (per-field label/placeholder/description/type).
+//
+// Each entry drives one .github/ISSUE_TEMPLATE/{id}.yml file:
+//   id            – output filename stem and routing key (<!-- @claude template: id -->)
+//   component     – .astro file whose frontmatter contains the interface
+//   interfaceName – interface to introspect for form fields
+//   extraFields   – additional form fields not in the interface (inserted first)
+//   fieldOverrides – required for every interface field; controls label,
+//                    placeholder, description, fieldType (input/textarea/dropdown),
+//                    and options (for dropdowns)
 // ---------------------------------------------------------------------------
 
 const TEMPLATES = [
@@ -290,14 +323,28 @@ function buildFormField(prop, override = {}) {
 /**
  * Error if fieldOverrides references a field not in the interface —
  * this means the interface was changed and the override is now stale.
+ *
+ * Also error if an interface field has no override entry — new fields need
+ * explicit labels/descriptions to be human-readable in the issue form.
  */
 function validateOverrides(props, fieldOverrides, templateId) {
   const propNames = new Set(props.map((p) => p.name));
-  const stale = Object.keys(fieldOverrides).filter((n) => !propNames.has(n));
+  const overrideNames = new Set(Object.keys(fieldOverrides));
+
+  const stale = [...overrideNames].filter((n) => !propNames.has(n));
   if (stale.length > 0) {
     console.error(
       `[${templateId}] fieldOverrides references fields not in interface: ${stale.join(", ")}\n` +
         `  Update the registry in scripts/generate-issue-templates.mjs.`,
+    );
+    process.exit(1);
+  }
+
+  const uncovered = props.filter((p) => !overrideNames.has(p.name));
+  if (uncovered.length > 0) {
+    console.error(
+      `[${templateId}] Interface fields with no override entry: ${uncovered.map((p) => p.name).join(", ")}\n` +
+        `  Add a fieldOverrides entry in scripts/generate-issue-templates.mjs.`,
     );
     process.exit(1);
   }
