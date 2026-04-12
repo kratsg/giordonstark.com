@@ -70,46 +70,50 @@ const sorted = [...positions].sort((a, b) => {
       </h2>
     </div>
 
-    <div class="divide-y divide-gray-100">
+    <div class="space-y-10">
       {
         sorted.map((position) => (
-          <div class="group -mx-3 flex flex-col gap-2 rounded-lg px-3 py-5 transition-colors duration-200 hover:bg-gray-50/60 sm:flex-row sm:items-baseline sm:justify-between">
-            <div class="flex-1">
-              <p class="text-brand-text leading-snug">
-                <strong class="font-semibold">{position.company}</strong>
+          <div class="group hover:border-brand-accent/40 relative border-l-2 border-gray-100 pl-6 transition-colors duration-300">
+            <div class="group-hover:bg-brand-accent absolute top-1.5 -left-[5px] h-2 w-2 rounded-full bg-gray-300 transition-colors duration-300" />
+
+            <div class="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <h3 class="font-display text-brand-text text-xl leading-tight font-bold">
+                  {position.title ?? position.company}
+                  {position.note && (
+                    <span class="text-brand-muted ml-2 text-sm font-normal">
+                      ({position.note})
+                    </span>
+                  )}
+                </h3>
                 {position.title && (
-                  <>
-                    {" · "}
-                    <em>{position.title}</em>
-                  </>
+                  <p class="text-brand-muted mt-0.5 font-medium">
+                    {position.company}
+                  </p>
                 )}
-                {position.note && (
-                  <span class="text-brand-muted ml-2 text-sm font-normal not-italic">
-                    ({position.note})
-                  </span>
+                {position.citation && (
+                  <p class="text-brand-muted mt-0.5 text-sm">
+                    {position.citation}
+                  </p>
                 )}
-              </p>
-              {position.citation && (
-                <p class="text-brand-muted mt-0.5 text-sm">
-                  {position.citation}
-                </p>
-              )}
+              </div>
+              <span class="text-brand-muted shrink-0 self-start rounded-full border border-gray-100 bg-gray-50 px-3 py-1 text-sm">
+                {dateRange(position)}
+              </span>
+            </div>
+
+            <div class="text-brand-muted space-y-2 text-sm">
               {position.description && (
-                <p class="text-brand-muted mt-1.5 max-w-[65ch] text-sm leading-relaxed">
-                  {position.description}
-                </p>
+                <p class="max-w-[65ch] leading-relaxed">{position.description}</p>
               )}
               {position.bullets && position.bullets.length > 0 && (
-                <ul class="text-brand-muted mt-1.5 max-w-[65ch] list-disc space-y-1 pl-4 text-sm leading-relaxed">
+                <ul class="max-w-[65ch] list-disc space-y-1 pl-4 leading-relaxed">
                   {position.bullets.map((bullet) => (
                     <li>{bullet}</li>
                   ))}
                 </ul>
               )}
             </div>
-            <span class="text-brand-muted shrink-0 text-sm font-medium tabular-nums">
-              {dateRange(position)}
-            </span>
           </div>
         ))
       }

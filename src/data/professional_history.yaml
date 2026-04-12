@@ -67,15 +67,9 @@ positions:
     citation: Laser Interferometer Gravitational Observatory
     start_date: "2011-06"
     end_date: "2011-09"
-    bullets:
-      - >
-        Developed control systems for monitoring the state of the LIGO system
-        via multiple physical chassis setups and software collaborations.
-      - >
-        Developed software to analyze noise levels in LIGO hardware (capacitative
-        position sensors and various chassis), analyzed noise levels in the hardware
-        to verify its quality before sending it to other LIGO labs in the country.
-      - Worked on the feed-forward systems to minimize mechanical vibrations in the system.
+    description: >
+      Developed control systems and noise-analysis software for LIGO hardware,
+      and worked on feed-forward systems to minimize mechanical vibrations.
 
   - company: California Institute of Technology
     title: Research Assistant and Computational Specialist
