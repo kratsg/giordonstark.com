@@ -99,12 +99,10 @@ items:
 
   - number: 10
     text: >
-      I work in a large international collaboration with 3000+ folks. The
-      people in my community have varying levels of fluency in English. Many
-      people will have accents. If you cannot work with accents at all,
-      reconsider taking the job. You also need to let me know so I can make
-      sure you have a strident team. It's not going to be just Spanish or
-      Italian, but also French, Moldovan, Afrikaans, etc...
+      I work in a large international collaboration with 3000+ members.
+      Interpreting in this setting requires reliably understanding speakers
+      with many different accents and varying English fluency. If this is a
+      challenge, you may not be a good fit.
 
   - number: 11
     text: >
@@ -119,3 +117,11 @@ items:
     links:
       - label: vocabulary sheet
         url: https://docs.google.com/spreadsheets/d/1caEe8zdOblo_qufUgIYpL0nqMcjI4l37TZNvDTLLtTw/edit?usp=sharing
+
+  - number: 13
+    text: >
+      For physics-specific signs I use or reference, ASLCore's physics
+      glossary is a good starting point.
+    links:
+      - label: ASLCore physics glossary
+        url: https://aslcore.org/physics/

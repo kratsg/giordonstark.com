@@ -5,6 +5,7 @@ name: Add Service Role
 description: Add an academic or community service role.
 labels:
   - service
+  - claude
 body:
   - type: markdown
     attributes:

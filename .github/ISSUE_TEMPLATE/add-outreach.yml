@@ -5,6 +5,7 @@ name: Add Outreach Activity
 description: Add an outreach or advocacy activity to the Service section.
 labels:
   - outreach
+  - claude
 body:
   - type: markdown
     attributes:

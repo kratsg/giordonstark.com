@@ -12,7 +12,7 @@ pixi run check          # format-check + lint + test + build (run before pushing
 
 ## Issue-based content management
 
-When triggered by a GitHub issue (detected via `<!-- @claude template: <id> -->` in the body), parse the form fields and apply the corresponding YAML edit.
+When triggered by a GitHub issue carrying the `claude` label (applied automatically by issue templates), parse the form fields and apply the corresponding YAML edit. The workflow routes to the right YAML target using the template-specific label (`mentee`, `talk`, `community-paper`, `award`, `service`, `outreach`).
 
 GitHub issue forms render fields as:
 
@@ -21,8 +21,6 @@ GitHub issue forms render fields as:
 
 Value
 ```
-
-The hidden `<!-- @claude template: <id> -->` comment at the top of each issue body both triggers the action and identifies the template type. It's in a non-editable `markdown` field, so it's always present.
 
 ### Template routing
 
