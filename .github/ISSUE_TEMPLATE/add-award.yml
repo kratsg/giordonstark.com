@@ -5,6 +5,7 @@ name: Add Award
 description: Add an award or honor.
 labels:
   - award
+  - claude
 body:
   - type: markdown
     attributes:

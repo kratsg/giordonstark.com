@@ -5,6 +5,7 @@ name: Add Community Paper
 description: Add a community or white paper to the Service section.
 labels:
   - community-paper
+  - claude
 body:
   - type: markdown
     attributes:

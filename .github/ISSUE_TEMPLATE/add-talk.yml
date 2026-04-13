@@ -5,6 +5,7 @@ name: Add Talk
 description: Add a new talk to the talks list.
 labels:
   - talk
+  - claude
 body:
   - type: markdown
     attributes:

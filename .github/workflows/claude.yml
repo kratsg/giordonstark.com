@@ -11,7 +11,8 @@ on:
     types: [submitted]
 
 jobs:
-  claude:
+  # Triggered by an @claude mention in a comment, issue body/title, or PR review.
+  claude-mention:
     if: |
       github.actor == github.repository_owner && (
         (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
@@ -21,11 +22,11 @@ jobs:
       )
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Required to create, push, or delete branches
-      pull-requests: write # Required to open PRs
+      contents: write
+      pull-requests: write
       issues: read
       id-token: write
-      actions: read # Required for Claude to read CI results on PRs
+      actions: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -43,15 +44,61 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-
-          # This is an optional setting that allows Claude to read CI results on PRs
           additional_permissions: |
             actions: read
 
-          # Optional: Give a custom prompt to Claude. If this is not specified, Claude will perform the instructions specified in the comment that tagged it.
-          # prompt: 'Update the pull request description to include a summary of changes.'
+  # Triggered when an issue is opened with the 'claude' label (set by issue templates).
+  # Uses an explicit prompt so Claude routes based on the other labels rather than
+  # looking for an @claude mention in the body (which template markdown fields don't emit).
+  claude-label:
+    if: |
+      github.actor == github.repository_owner &&
+      github.event_name == 'issues' &&
+      github.event.action == 'opened' &&
+      contains(github.event.issue.labels.*.name, 'claude')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: read
+      id-token: write
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
-          # Optional: Add claude_args to customize behavior and configuration
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://code.claude.com/docs/en/cli-reference for available options
-          # claude_args: '--allowed-tools Bash(gh pr:*)'
+      - name: Setup pixi
+        uses: prefix-dev/setup-pixi@v0.9.5
+        with:
+          pixi-version: v0.67.0
+          cache: true
+
+      - name: Run Claude Code
+        id: claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          additional_permissions: |
+            actions: read
+          prompt: |
+            This issue was filed via a GitHub issue template. Use the issue labels to determine what action to take.
+
+            Routing by label (consult CLAUDE.md for full ordering and schema details):
+            - 'mentee'           → parse form fields, add entry to src/data/mentees.yaml (undergraduate or graduate per the Level field). Newest first.
+            - 'talk'             → parse form fields, add entry to src/data/talks.yaml → talks. Newest first.
+            - 'community-paper'  → parse form fields, add entry to src/data/service.yaml → community_papers. Sorted at render by date.
+            - 'award'            → parse form fields, add entry to src/data/awards.yaml → awards. Newest first.
+            - 'service'          → parse form fields, add entry to src/data/service.yaml → roles. Append.
+            - 'outreach'         → parse form fields, add entry to src/data/service.yaml → outreach. Append.
+            - No routing label   → execute the instruction in the '### Instruction' field as a free-form command. Consult AGENTS.md for file locations, schemas, date formats, and ordering conventions.
+
+            Issue form fields appear in the body as:
+            ### Field Label
+
+            Value
+
+            After making changes: run `pixi run format .`, then `pixi run check` to validate.
+            Create a branch and PR with a title like "feat: add mentee Jane Smith".
+            Include `Closes #<issue-number>` in the PR description.

@@ -5,6 +5,7 @@ name: Add Mentee
 description: Add an undergraduate or graduate mentee to the website.
 labels:
   - mentee
+  - claude
 body:
   - type: markdown
     attributes:

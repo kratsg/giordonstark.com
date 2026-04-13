@@ -1,7 +1,7 @@
 # Static file — not generated. Edit directly.
 name: "@claude command"
 description: Free-form instruction for Claude (research projects, software entries, content updates, etc.)
-labels: []
+labels: ["claude"]
 body:
   - type: markdown
     attributes:
