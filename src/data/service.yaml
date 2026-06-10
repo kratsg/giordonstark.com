@@ -128,6 +128,11 @@ american_red_cross:
     period: 2006-2007
 
 community_papers:
+  - title: "HS3: A Descriptive, Interoperable Serialization Standard for Statistical Models in High-Energy Physics"
+    date: 2026-06
+    url: https://arxiv.org/abs/2606.01760
+    description: Community standard for portable, machine-readable statistical models in HEP, supporting cross-framework exchange, validation, reproducibility, and FAIR preservation.
+
   - title: "Building an AI-native Research Ecosystem for Experimental Particle Physics: A Community Vision"
     date: 2026-02
     url: https://arxiv.org/abs/2602.17582
