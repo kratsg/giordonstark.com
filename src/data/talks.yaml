@@ -1,4 +1,7 @@
 talks:
+  - type: Colloquium
+    venue: Nikef
+    date: 2026-07
   - type: Plenary
     venue: DOEPy
     date: 2026-01
