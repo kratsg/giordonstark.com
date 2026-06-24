@@ -110,3 +110,23 @@ abstracts:
       Using this tool, I will motivate some potential directions for new physics
       searches.
     footer: This can be given only as a seminar talk.
+
+  - title: "The Facility Is the Context: Agentic Computing Infrastructure for Analysis at Scale"
+    abstract: >
+      Large language model agents are arriving in scientific computing whether
+      or not we plan for them. For an analysis facility or computing cluster,
+      the interesting question is not which model is best, but how to make
+      agents genuinely useful, safe, and equitable on shared research
+      infrastructure, and how to do it once, portably, rather than re-inventing
+      it for every experiment. Drawing on a working deployment at the UChicago
+      ATLAS Analysis Facility, with one example now spanning ATLAS, CMS, DUNE,
+      and ESCAPE data access, I argue that the decisive layer is not the model
+      but the facility's own context, identity, and trust boundaries. I will
+      show what already runs for analysts today, the architecture that makes it
+      portable across facilities and experiments, and the open problems I find
+      most pressing; credential-brokered MCP gateways, OIDC-token and
+      SSH-certificate adoption, sandboxing agents on and off Kubernetes,
+      pixi-native environments that ship into batch jobs, and equitable access
+      to hosted inference. I will close with where this could go at Nikhef and
+      within ESCAPE and the questions I would most like to decide together.
+    footer: This is a colloquium that is meant to provoke thoughtful discussion.
