@@ -1,22 +1,27 @@
 speaker_bio: >
-  Dr. Giordon Stark is a Deaf project scientist and experimental particle
-  physicist working with the ATLAS collaboration at the Santa Cruz Institute
-  for Particle Physics, UC Santa Cruz. He earned his PhD in Physics from the
+  Dr. Giordon Stark is a Deaf Research Assistant Professor in the Enrico Fermi
+  Institute at the University of Chicago and an experimental particle physicist
+  with the ATLAS collaboration at CERN. He earned his PhD in Physics from the
   University of Chicago in 2018 and a B.S. in Physics from Caltech in 2012.
-  Giordon's research spans searches for Electroweak Supersymmetry, statistical
-  methodology, and analysis infrastructure for the HL-LHC era. He is a core
-  developer of pyhf, the tool that enabled the first publication of full
-  statistical likelihoods from a particle physics experiment, and he led the
-  statistical combination of fourteen electroweak SUSY searches, extending mass
-  reach by up to 100 GeV. His current work is split between IRIS-HEP Analysis
-  Systems and USATLAS Operations, focusing on columnar workflows, RNTuple
-  optimization for ATLAS, and the UChicago Analysis Facility. He previously
-  built the QC/QA software used across seven regional clusters to test ~12,000
-  pixel modules for the ATLAS Inner Tracker upgrade. He serves on the inaugural
-  DPF Coordinating Panel for Software and Computing. When Giordon is not busy
-  trying to prove the existence of new physics, he can be found in the kitchen
-  proving sourdoughs, baking pavlovas, and anything else he can get his hands
-  on.
+
+  Giordon's research spans searches for physics Beyond the Standard Model,
+  statistical methodology, scientific computing, and analysis infrastructure
+  for the HL-LHC. He is a core developer of pyhf, which enabled ATLAS to become
+  the first particle physics experiment to publish full statistical
+  likelihoods, and built the QC/QA software ecosystem used across seven
+  regional clusters to test approximately 12,000 pixel modules for the ATLAS
+  Inner Tracker upgrade.
+
+  At UChicago, Giordon leads software development for LHC Run 3 analysis and
+  AI/ML innovation for the HL-LHC. His work spans IRIS-HEP Analysis Systems and
+  USATLAS Operations, with a focus on scalable analysis infrastructure,
+  columnar workflows, RNTuple optimization, and the UChicago Analysis Facility.
+  He is also a member of the MANIAC Lab and serves on the inaugural DPF
+  Coordinating Panel for Software and Computing.
+
+  When he is not trying to prove the existence of new physics, Giordon can be
+  found in the kitchen proving sourdoughs, baking pavlovas, and anything else
+  he can get his hands on.
 
 speaker_intro: >
   My personal opinion when it comes to both seminars and colloquiums is that
