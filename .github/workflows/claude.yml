@@ -29,11 +29,11 @@ jobs:
       )
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # create branches and push commits for the automated PR
-      pull-requests: write  # open and update the automated PR
-      issues: read  # read issue/PR body, title, and labels to decide whether to run
-      id-token: write  # OIDC token used by claude-code-action to authenticate
-      actions: read  # passed through as additional_permissions for claude-code-action
+      contents: write # create branches and push commits for the automated PR
+      pull-requests: write # open and update the automated PR
+      issues: read # read issue/PR body, title, and labels to decide whether to run
+      id-token: write # OIDC token used by claude-code-action to authenticate
+      actions: read # passed through as additional_permissions for claude-code-action
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -66,11 +66,11 @@ jobs:
       contains(github.event.issue.labels.*.name, 'claude')
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # create branches and push commits for the automated PR
-      pull-requests: write  # open and update the automated PR
-      issues: read  # read issue/PR body, title, and labels to decide whether to run
-      id-token: write  # OIDC token used by claude-code-action to authenticate
-      actions: read  # passed through as additional_permissions for claude-code-action
+      contents: write # create branches and push commits for the automated PR
+      pull-requests: write # open and update the automated PR
+      issues: read # read issue/PR body, title, and labels to decide whether to run
+      id-token: write # OIDC token used by claude-code-action to authenticate
+      actions: read # passed through as additional_permissions for claude-code-action
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
