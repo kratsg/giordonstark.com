@@ -10,9 +10,16 @@ on:
   pull_request_review:
     types: [submitted]
 
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.issue.number || github.event.pull_request.number }}
+  cancel-in-progress: false
+
 jobs:
   # Triggered by an @claude mention in a comment, issue body/title, or PR review.
   claude-mention:
+    name: Claude mention
     if: |
       github.actor == github.repository_owner && (
         (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
@@ -22,16 +29,17 @@ jobs:
       )
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
-      issues: read
-      id-token: write
-      actions: read
+      contents: write  # create branches and push commits for the automated PR
+      pull-requests: write  # open and update the automated PR
+      issues: read  # read issue/PR body, title, and labels to decide whether to run
+      id-token: write  # OIDC token used by claude-code-action to authenticate
+      actions: read  # passed through as additional_permissions for claude-code-action
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 1
+          persist-credentials: false
 
       - name: Setup pixi
         uses: prefix-dev/setup-pixi@f00437f565399d418b0acc85936d12c1fb668347 # v0.10.1
@@ -50,6 +58,7 @@ jobs:
   # Uses an explicit prompt so Claude routes based on the other labels rather than
   # looking for an @claude mention in the body (which template markdown fields don't emit).
   claude-label:
+    name: Claude label routing
     if: |
       github.actor == github.repository_owner &&
       github.event_name == 'issues' &&
@@ -57,16 +66,17 @@ jobs:
       contains(github.event.issue.labels.*.name, 'claude')
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
-      issues: read
-      id-token: write
-      actions: read
+      contents: write  # create branches and push commits for the automated PR
+      pull-requests: write  # open and update the automated PR
+      issues: read  # read issue/PR body, title, and labels to decide whether to run
+      id-token: write  # OIDC token used by claude-code-action to authenticate
+      actions: read  # passed through as additional_permissions for claude-code-action
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 1
+          persist-credentials: false
 
       - name: Setup pixi
         uses: prefix-dev/setup-pixi@f00437f565399d418b0acc85936d12c1fb668347 # v0.10.1
