@@ -1,6 +1,6 @@
 # giordonstark.com
 
-Giordon Stark's personal site — particle physicist, ATLAS/CERN, UC Santa Cruz.
+Giordon Stark's personal site — particle physicist, ATLAS/CERN, Enrico Fermi Institute @ UChicago.
 
 ## Stack
 
