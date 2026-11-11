@@ -8,4 +8,5 @@ exclude = [
   'https://www.instagram.com/garrett.nichols.37', # 429
   'https://cds\.cern\.ch/', # will often timeout, slower
   'https://indico\.fnal\.gov', # 403 for fnal.gov
+  'https://doi.org/10.1007/978-3-030-34548-8', # 302 to https://link.springer.com/book/10.1007/978-3-030-34548-8
 ]
