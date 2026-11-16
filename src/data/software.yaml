@@ -223,6 +223,26 @@ categories:
             icon: github
         tags: [agents, mcp, analysis-facility]
 
+      - title: Claude Session Replays
+        role: Developer
+        images: []
+        description: >
+          Real Claude Code sessions replayed as scrollable, commented pages,
+          with every tool call expandable to show exactly what went in and
+          out. Includes a session-replay skill that turns any session into a
+          new replay with redaction and human review gates. First replays show
+          agents using the UChicago Analysis Facility through its MCP gateway
+          to convert 32 GB of TTree ntuples to RNTuple with HTCondor batch
+          jobs and to build a Z→ee tutorial notebook from one prompt.
+        links:
+          - label: Replays
+            url: https://kratsg.github.io/claude-session-replays/
+            icon: globe
+          - label: GitHub
+            url: https://github.com/kratsg/claude-session-replays
+            icon: github
+        tags: [javascript, gsap, claude-code, analysis-facility]
+
       - title: ML Platform (maniaclab)
         role: Maintainer
         images: []
